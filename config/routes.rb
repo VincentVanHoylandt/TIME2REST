@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'seens/index'
+  get 'seens/create'
 
   resources :offers
   get 'diplomas/create'
