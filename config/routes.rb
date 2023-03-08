@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :offers
 
+  resources :offers
+  get 'diplomas/create'
   devise_for :users
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
