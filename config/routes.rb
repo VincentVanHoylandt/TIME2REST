@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'appliances/index'
+  get 'appliances/create'
+  get 'appliances/destroy'
   get 'seens/index'
   get 'seens/create'
 
