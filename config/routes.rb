@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'participants/create'
+  get 'messages/create'
+  get 'chatrooms/create'
+  get 'chatrooms/show'
+  get 'chatrooms/index'
   get 'appliances/index'
   get 'appliances/create'
   get 'appliances/destroy'
