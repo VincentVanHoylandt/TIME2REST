@@ -23,10 +23,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_08_143922) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_diplomas_on_user_id"
-<<<<<<< HEAD
-
-=======
->>>>>>> fdac6ff71b264fa7caefae6578bac1ca2d0e0066
   end
 
   create_table "experiences", force: :cascade do |t|
