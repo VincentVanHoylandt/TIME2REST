@@ -30,10 +30,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_08_145108) do
   create_table "experiences", force: :cascade do |t|
     t.string "title"
     t.string "description"
-    t.string "start_time"
-    t.string "end_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "start_time"
+    t.date "end_time"
   end
 
   create_table "offers", force: :cascade do |t|
