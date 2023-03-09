@@ -1,2 +1,16 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+<%= form_with url: offers_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :job_title,
+    params[:job_title],
+    class: "form-control",
+    placeholder: "Infirmier"
+  %>
+  <%= text_field_tag :address,
+    params[:address],
+    class: "form-control",
+    placeholder: "Paris"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
