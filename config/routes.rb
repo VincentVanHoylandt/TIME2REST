@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'users/new'
+  get 'users/create'
+  get 'users/edit'
+  get 'users/update'
+  get 'users/destroy'
   get 'participants/create'
   get 'messages/create'
   get 'chatrooms/create'
