@@ -1,5 +1,7 @@
 class Offer < ApplicationRecord
   belongs_to :user
+  has_many :seens, dependent: :destroy
+  has_many :appliances, dependent: :destroy
 
   validates :user, presence: true
   validates :description, presence: true, length: { minimum: 50, maximum: 2500 }

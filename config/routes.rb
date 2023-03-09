@@ -1,4 +1,19 @@
 Rails.application.routes.draw do
+  get 'users/new'
+  get 'users/create'
+  get 'users/edit'
+  get 'users/update'
+  get 'users/destroy'
+  get 'participants/create'
+  get 'messages/create'
+  get 'chatrooms/create'
+  get 'chatrooms/show'
+  get 'chatrooms/index'
+  get 'appliances/index'
+  get 'appliances/create'
+  get 'appliances/destroy'
+  get 'seens/index'
+  get 'seens/create'
 
   resources :offers
   get 'diplomas/create'
