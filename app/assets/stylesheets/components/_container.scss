@@ -1,0 +1,77 @@
+.logo-container{
+  border: 1px solid red;
+  width: 5lh;
+  height: 9vh;
+  background-image: url('logo-time-2-rest.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.logo-sentence-container{
+  border: 1px solid red;
+  display: inline-block;
+}
+
+.logo-sentence-container h1{
+  color: black;
+  font-size: 32px;
+  font-family: 'Satisfy', cursive;
+}
+
+.index-offer-container{
+  width: 65%;
+  height: 20vh;
+  display: flex;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.first-index-offer-container {
+  width: 3%;
+  height: 100%;
+  background-color: #60A3AB;
+}
+
+.second-index-offer-container {
+  width: 70%;
+  height: 100%;
+  margin: 0 auto;
+
+}
+
+.third-index-offer-container {
+  width: 22%;
+  height: 100%;
+  background-color: rgba($color: #60A3AB, $alpha: 0.15);
+  text-align: center;
+}
+
+.third-index-offer-container p {
+  font-size: 14px;
+}
+
+.third-index-offer-container i {
+  color: #60A3AB;
+}
+
+.third-index-offer-info-container{
+  margin-left: 20px;
+  margin-bottom: 10px;
+  width: 65%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.third-index-offer-info-first-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.second-index-offer-title-container {
+  width: 100%;
+}
+
+.second-index-offer-para-container {
+  margin-top: 10px;
+  width: 65%;
+}
