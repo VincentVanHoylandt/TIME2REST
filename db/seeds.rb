@@ -7,6 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 puts "Cleaning database..."
 Offer.destroy_all
+puts "offer deleted"
 User.destroy_all
 puts "Done!"
 
