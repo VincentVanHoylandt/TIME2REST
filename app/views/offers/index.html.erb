@@ -1,33 +1,35 @@
 
-<h1>Offers#index</h1>
+<head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
 
-<div id="landing_illustation">
- <div id="landing_fader">
-  <div class="landing_info">
-    <h2> Find someone to take care of your buisness</h2>
-    <h1 id="landing_logo">Time2Rest</h1>
-    <div class="arrow_bounce">
-      <i class="fa-solid fa-chevron-down"></i>
+<div class='content'>
+  <div id="landing_illustation">
+  <div id="landing_fader">
+    <div class="landing_info">
+      <h2> Find someone to take care of your buisness</h2>
+      <h1 id="landing_logo">Time2Rest</h1>
+      <div class="arrow_bounce">
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
     </div>
   </div>
- </div>
-
-<div class='landing_container'>
-  <div class='map_landing'></div>
-  <div class='index-cards-column'>
-    <% @offers.each do |offer| %>
-    <%= render partial: 'shared/offer_card', locals: {
-                                                      titre: offer.job_title,
-                                                      description: offer.description,
-                                                      avatar: 'item3',
-                                                      location: 'Lille',
-                                                      date: offer.start_time,
-                                                      salary: offer.salary,}
-    %>
-    <% end %>
   </div>
-</div>
 
-
-
+  <div class='landing_container'>
+    <div class='map_landing'></div>
+      <div class='index-cards-column'>
+        <% @offers.each do |offer| %>
+        <%= render partial: 'shared/offer_card', locals: {
+                                                          titre: offer.job_title,
+                                                          description: offer.description,
+                                                          avatar: 'item3',
+                                                          location: 'Lille',
+                                                          date: offer.start_time,
+                                                          salary: offer.salary,}
+        %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

@@ -6,8 +6,8 @@
   z-index: 0;
   // background-position: relative;
   background-repeat: no-repeat;
-  position: absolute;
-  top: 0px;
+  // position: absolute;
+  // top: 0px;
 }
 
 #landing_fader {
@@ -66,4 +66,14 @@
   display: flex;
   justify-content: space-between;
   margin-top: 50px;
+}
+
+.content {
+  display:flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+body .navbar{
+  display: none;
 }
