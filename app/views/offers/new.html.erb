@@ -1,2 +1,21 @@
 <h1>Offers#new</h1>
 <p>Find me in app/views/offers/new.html.erb</p>
+
+<div class="container mt-5 ">
+  <h1 >Create a new mission</h1>
+  <div >
+    <%= simple_form_for @offer, html: {class: 'd-flex flex-column'} do |f| %>
+      <%= f.input :job_title, input_html: { class: 'input' } %>
+      <%# Localisation à implenter avec Geocoder %>
+      <%# f.input :localisation, input_html: { class: 'input' } %>
+
+      <%= f.input :description, input_html: { class: 'input' } %>
+      <%= f.input :start_time, input_html: { class: 'input' } %>
+      <%= f.input :end_time, input_html: { class: 'input' } %>
+      <%= f.input :salary, input_html: { class: 'input' } %>
+      <%# Absence de column 'require diploma' dans la table Offers %>
+      <%# A régler : le sort de l'input 'ajouter une pièce jointe' %>
+      <%= f.button :submit, "Create"%>
+    <% end %>
+  </div>
+</div>
