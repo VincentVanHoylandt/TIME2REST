@@ -17,9 +17,10 @@
 }
 
 .index-offer-container{
-  width: 65%;
-  height: 20vh;
+  width: 100%;
+  height: 30vh;
   display: flex;
+  margin-bottom: 2vh;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
@@ -33,6 +34,7 @@
   width: 70%;
   height: 100%;
   margin: 0 auto;
+  padding-top: 20px;
 
 }
 
@@ -40,7 +42,15 @@
   width: 22%;
   height: 100%;
   background-color: rgba($color: #60A3AB, $alpha: 0.15);
-  text-align: center;
+  // text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .my-btn-small{
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
 }
 
 .third-index-offer-container p {
@@ -54,9 +64,10 @@
 .third-index-offer-info-container{
   margin-left: 20px;
   margin-bottom: 10px;
-  width: 65%;
+  width: 75%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-self: start;
 }
 
 .third-index-offer-info-first-container{
@@ -71,7 +82,7 @@
 
 .second-index-offer-para-container {
   margin-top: 10px;
-  width: 65%;
+  width: 85%;
 }
 
 .message-container {
