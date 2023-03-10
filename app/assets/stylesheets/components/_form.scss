@@ -1,3 +1,4 @@
+
 .form-input-background-color {
   background-color: #60A3AB;
   border: solid black 1px;;
@@ -19,4 +20,17 @@ label {
   position: absolute;
   padding: 5px;
   font-weight: bold;
+
+.my-search-form {
+  display: flex;
+  background-color: rgba($color: #FFFFFF, $alpha: 0.3);
+  width: 675px;
+  height: 65px;
+  border-radius: 61px;
+}
+
+.my-search-form i{
+  font-size: 24px;
+  color: #FFFFFF;
+
 }

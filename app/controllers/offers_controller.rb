@@ -29,6 +29,8 @@ class OffersController < ApplicationController
   end
 
   def show
+    set_offer
+    @offer.user = current_user
     authorize @offer
   end
 
@@ -37,11 +39,15 @@ class OffersController < ApplicationController
   end
 
   def update
+    # @offer.update(offer_params)
+    # redirect_to offer_path(@offer)
     authorize @offer
   end
 
   def destroy
+    set_offer
     authorize @offer
+    @offer.destroy
   end
 
   private
@@ -50,10 +56,7 @@ class OffersController < ApplicationController
     @offer = Offer.find(params[:id])
   end
 
-  private
-
   def offer_params
-      params.require(:offer).permit(:job_title, :description, :start_time, :end_time, :salary)
+    params.require(:offer).permit(:job_title, :description, :start_time, :end_time, :salary)
   end
-
 end
