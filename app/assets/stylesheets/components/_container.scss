@@ -99,3 +99,19 @@
   justify-content: space-between;
   align-items: baseline;
  }
+
+ .search-bar-input-container-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin-right: 15px;
+ }
+
+ .search-bar-input-container-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin-left: 15px;
+ }

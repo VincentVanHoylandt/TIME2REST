@@ -68,16 +68,33 @@
                                                     message: "What's up dude ?"
 } %>
 
-<%= form_with url: offers_path, method: :get, class: "d-flex" do %>
-  <%= text_field_tag :job_title,
-    params[:job_title],
-    class: "form-control",
-    placeholder: "Infirmier"
-  %>
-  <%= text_field_tag :address,
-    params[:address],
-    class: "form-control",
-    placeholder: "Paris"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
+<br>
+
+
+
+  <div style = "background-color: #60A3AB">
+
+    <%= form_with url: offers_path, method: :get, class: "my-search-form" do %>
+      <div class="search-bar-input-container-left">
+        <i class="fa-solid fa-magnifying-glass" style = "margin-right: 5px;"></i>
+        <%= text_field_tag :job_title,
+          params[:job_title],
+          class: "form-control no-border",
+          placeholder: "Job",
+          style: "background-color: transparent;"
+        %>
+      </div>
+      <div class="search-bar-input-container-right">
+        <%= text_field_tag :address,
+          params[:address],
+          class: "form-control no-border",
+          placeholder: "location",
+          style: "background-color: transparent; border-left: 1px solid white; border-radius: 0px;"
+        %>
+        <i class="fa-solid fa-location-dot" style = "margin-left: 5px;"></i>
+      </div>
+    <% end %>
+  </div>
+
+
+<br>
