@@ -41,10 +41,10 @@
 <%end%>
 
 <%# partial pour faire mettre un avatar taille petit%>
-<%= render partial: 'shared/avatar_small', locals: {img: 'item3'} %>
+<%= render partial: 'shared/avatar_small', locals: {img: 'item3.png'} %>
 
 <%# partial pour faire mettre un avatar taille large%>
-<%= render partial: 'shared/avatar_large', locals: {img: 'item3'} %>
+<%= render partial: 'shared/avatar_large', locals: {img: 'item3.png'} %>
 
 <%# partial pour faire les tuiles des offres sur l'index bien pensé à mettre les instance à la place des texts%>
 <%= render partial: 'shared/offer_card', locals: {
@@ -52,7 +52,7 @@
                                                   description: "Cul de Jésus de plâtre de câlique d'étole de
                                                   maudine de viande à chien de verrat de sapristi de bout d'ciarge de
                                                   Jésus Marie Joseph de crime d'enfant d'chienne de cimonaque de calvince.",
-                                                  avatar: 'item3',
+                                                  avatar: 'item3.png',
                                                   location: 'Lille',
                                                   date: '14/02/2023',
                                                   salary: '190',}
@@ -61,7 +61,7 @@
 <br>
 
 <%# partial pour les tuiles pour la messagerie %>
-<%= render partial: 'shared/message_card', locals: {img: 'item3',
+<%= render partial: 'shared/message_card', locals: {img: 'item3.png',
                                                     first_name: 'John',
                                                     last_name: 'Doe',
                                                     time: '9h53',
