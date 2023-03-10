@@ -7,6 +7,7 @@
 @import "container";
 @import "button";
 @import "general";
+@import "form";
 
 // ne pas toucher cette ligne elle permet de reset le comportement des margins de bases
 // des éléments css pour que l'on puisse les personnaliser.
@@ -64,4 +65,3 @@ ul {
   margin: 0;
   padding: 0;
 }
-
