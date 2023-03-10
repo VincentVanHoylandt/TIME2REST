@@ -1,37 +1,39 @@
 
-<%# Ajout de cette div pour ajouter un logo dans la navbar%>
-<div class="logo-container">
-</div>
 
-
-<%# ajoute la phrase time2rest à notre logo%>
-<div class="logo-sentence-container">
-  <h1 class= "logo-sentence">Time2Rest</h1>
-</div>
-
-
-<%# Bouton orange de base, changer le name à coté du link to %>
-<%= link_to 'Hello', '#', class: "my-btn" %>
-
-<%# Bouton orange de base, changer le name à coté du link to %>
-<%= link_to 'Hello', '#', class: "my-btn-small" %>
-
-<%# Bouton orange de base, changer le name à coté du link to %>
-<%= link_to "#", class:"my-disc-btn" do  %>
-  <ul>
-    <i class="fa-solid fa-power-off"></i>
-    <li>
-        Disconnect
-    </li>
-  </ul>
-<%end%>
-
-<%# La flèche de retour %>
-<%= link_to "#", class:"my-back-btn" do  %>
-  <div class="back-container">
-    <i class="fa-sharp fa-solid fa-arrow-left"></i>
+  <%# Ajout de cette div pour ajouter un logo dans la navbar%>
+  <div class="logo-container">
   </div>
-<%end%>
+
+
+  <%# ajoute la phrase time2rest à notre logo%>
+  <div class="logo-sentence-container">
+    <h1 class= "logo-sentence">Time2Rest</h1>
+  </div>
+
+
+  <%# Bouton orange de base, changer le name à coté du link to %>
+  <%= link_to 'Hello', '#', class: "my-btn" %>
+
+  <%# Bouton orange de base, changer le name à coté du link to %>
+  <%= link_to 'Hello', '#', class: "my-btn-small" %>
+
+  <%# Bouton orange de base, changer le name à coté du link to %>
+  <%= link_to "#", class:"my-disc-btn" do  %>
+    <ul>
+      <i class="fa-solid fa-power-off"></i>
+      <li>
+          Disconnect
+      </li>
+    </ul>
+  <%end%>
+
+  <%# La flèche de retour %>
+  <%= link_to "#", class:"my-back-btn" do  %>
+    <div class="back-container">
+      <i class="fa-sharp fa-solid fa-arrow-left"></i>
+    </div>
+  <%end%>
+
 
 <%# l'icone du dashboard dans la navbar%>
 <%= link_to "#", class:"my-dashboard-btn" do  %>
@@ -44,41 +46,24 @@
 <%# partial pour faire mettre un avatar taille large%>
 <%= render partial: 'shared/avatar_large', locals: {img: 'item3'} %>
 
+<%# partial pour faire les tuiles des offres sur l'index bien pensé à mettre les instance à la place des texts%>
+<%= render partial: 'shared/offer_card', locals: {
+                                                  titre: 'Titre provisoire',
+                                                  description: "Cul de Jésus de plâtre de câlique d'étole de
+                                                  maudine de viande à chien de verrat de sapristi de bout d'ciarge de
+                                                  Jésus Marie Joseph de crime d'enfant d'chienne de cimonaque de calvince.",
+                                                  avatar: 'item3',
+                                                  location: 'Lille',
+                                                  date: '14/02/2023',
+                                                  salary: '190',}
+%>
 
+<br>
 
-<div class="index-offer-container">
-  <div class="first-index-offer-container">
-  </div>
-  <div class="second-index-offer-container">
-    <div class="second-index-offer-title-container">
-      <h2>Titre provisoire</h2>
-    </div>
-    <div class="second-index-offer-para-container">
-      <p> Cul de Jésus de plâtre de câlique d'étole de maudine de viande à chien de verrat de sapristi de bout d'ciarge de
-          Jésus Marie Joseph de crime d'enfant d'chienne de cimonaque de calvince.</p>
-    </div>
-  </div>
-  <div class="third-index-offer-container">
-
-    <%= render partial: 'shared/avatar_small', locals: {img: 'item3'} %>
-
-    <div class="third-index-offer-info-container">
-
-      <div class ="third-index-offer-info-first-container">
-        <i class="fa-solid fa-map-pin be-block"></i>
-        <i class="fa-solid fa-calendar-days"></i>
-        <i class="fa-solid fa-euro-sign"></i>
-      </div>
-
-      <div class ="third-index-offer-info-second-container text-left">
-        <p>Lille</p>
-        <p>14/03/2023</p>
-        <p>Lille</p>
-      </div>
-
-    </div>
-
-    <%= link_to 'Details', '#', class: "my-btn-small" %>
-
-  </div>
-</div>
+<%# partial pour les tuiles pour la messagerie %>
+<%= render partial: 'shared/message_card', locals: {img: 'item3',
+                                                    first_name: 'John',
+                                                    last_name: 'Doe',
+                                                    time: '9h53',
+                                                    message: "What's up dude ?"
+} %>
