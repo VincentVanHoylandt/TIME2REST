@@ -68,6 +68,7 @@
                                                     message: "What's up dude ?"
 } %>
 
+
 <%= form_with url: offers_path, method: :get, class: "d-flex" do %>
   <%= text_field_tag :job_title,
     params[:job_title],
@@ -81,3 +82,61 @@
   %>
   <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
+
+
+
+<h2>Create a new mission :</h2>
+<div>
+<%= form_with model: @offer do |f| %>
+  <p>
+  <%= label_tag "Mission Title :"  %>
+  <%= f.text_area :Mission_Title, size: "70x1", class: "form-input-background-color", placeholder: "__________________" %>
+  </p>
+  <p>
+  <%= label_tag "Localisation :" %>
+  <%= f.text_area :Localisation, size: "70x1", class: "form-input-background-color", placeholder: "__________________" %>
+  </p>
+  <p>
+  <%= label_tag "Job_Title :" %>
+  <%= f.text_area :Job_Title, size: "70x1", class: "form-input-background-color", placeholder: "__________________" %>
+  </p>
+  <p>
+  <%= label_tag "Localisation :" %>
+  <%= f.text_area :Localisation, size: "70x1", class: "form-input-background-color", placeholder: "__________________" %>
+  </p>
+  <p>
+  <%= label_tag "Age :" %>
+  <%= f.number_field :Age, size: "70x1", class: "form-input-background-color", placeholder: "__________________" %>
+  </p>
+  <p>
+  <%= label_tag "Description :" %>
+  <%= f.text_area :Description, size: "70x4", class: "form-input-background-color", placeholder: "__________________" %>
+  </p>
+  <p>
+  <%= f.label :Start_date %>
+  <%= f.date_field :Start_date, size: "70x1", class: "form-input-background-color"  %>
+  </p>
+  <p>
+  <%= label_tag :End_date %>
+  <%= f.date_field :End_date, size: "70x1", class: "form-input-background-color"  %>
+  </p>
+
+  <%= f.submit %>
+<% end %>
+</div>
+
+
+<br>
+
+
+<%# ne pas enlever la div c'est pour que la partial soit visible dans l'home%>
+  <div style = "background-color: #60A3AB">
+
+    <%# partial de la search bar%>
+    <%= render partial: 'shared/search_bar', locals: {path: offers_path} %>
+
+
+  </div>
+
+
+<br>
