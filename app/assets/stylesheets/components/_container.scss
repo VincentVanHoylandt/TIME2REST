@@ -75,3 +75,27 @@
   margin-top: 10px;
   width: 65%;
 }
+
+.message-container {
+ width: 350px;
+ height: 105px;
+ background-color: #60A3AB;
+ box-shadow: 0 0 10px rgba(0,0,0,0.2);
+ display: flex;
+ justify-content: space-around;
+ align-items: center;
+}
+
+.message-container:focus {
+  background-color: rgba($color: #60A3AB, $alpha: 0.15);
+ }
+
+ .message-container-infos {
+  width: 70%;
+ }
+
+ .message-container-upper-infos {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+ }

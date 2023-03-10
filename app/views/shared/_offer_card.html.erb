@@ -1,0 +1,37 @@
+<div class="index-offer-container">
+  <div class="first-index-offer-container">
+  </div>
+
+  <div class="second-index-offer-container">
+    <div class="second-index-offer-title-container">
+      <h2><%= titre %></h2>
+    </div>
+    <div class="second-index-offer-para-container">
+      <p> <%= description %></p>
+    </div>
+  </div>
+
+
+  <div class="third-index-offer-container">
+    <%= render partial: 'shared/avatar_small', locals: {img: avatar} %>
+
+    <div class="third-index-offer-info-container">
+      <div class ="third-index-offer-info-first-container">
+        <i class="fa-solid fa-map-pin be-block"></i>
+        <i class="fa-solid fa-calendar-days"></i>
+        <i class="fa-solid fa-euro-sign"></i>
+      </div>
+
+      <div class ="third-index-offer-info-second-container text-left">
+        <p><%= location %></p>
+        <p><%= date %></p>
+        <p><%= salary %></p>
+      </div>
+
+    </div>
+
+    <%= link_to 'Details', '#', class: "my-btn-small" %>
+
+  </div>
+
+</div>
