@@ -18,6 +18,11 @@
       <% end %>
 
       <%= button_to "Destroy this offer", @offer, method: :delete if policy(@offer).destroy? %>
+       <%= link_to offers_path, class:"my-back-btn" do  %>
+        <div class="back-container">
+          <i class="fa-sharp fa-solid fa-arrow-left"></i>
+        </div>
+      <%end%>
     </div>
   </div>
 </div>
