@@ -12,11 +12,21 @@
   </div>
  </div>
 
- <% @offers.each do |offer| %>
- <ul>
-  <li><%= offer.job_title %></li>
- </ul>
- <% end %>
+<div class='landing_container'>
+  <div class='map_landing'></div>
+  <div class='index-cards-column'>
+    <% @offers.each do |offer| %>
+    <%= render partial: 'shared/offer_card', locals: {
+                                                      titre: offer.job_title,
+                                                      description: offer.description,
+                                                      avatar: 'item3',
+                                                      location: 'Lille',
+                                                      date: offer.start_time,
+                                                      salary: offer.salary,}
+    %>
+    <% end %>
+  </div>
+</div>
 
 
 
