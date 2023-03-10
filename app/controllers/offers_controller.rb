@@ -10,6 +10,11 @@ class OffersController < ApplicationController
     @offer = Offer.new(offer_params)
     @offer.user = current_user
     authorize @offer
+    if @offer.save
+      redirect_to offers_path(@offer)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def index
@@ -44,4 +49,11 @@ class OffersController < ApplicationController
   def set_offer
     @offer = Offer.find(params[:id])
   end
+
+  private
+
+  def offer_params
+      params.require(:offer).permit(:job_title, :description, :start_time, :end_time, :salary)
+  end
+
 end
