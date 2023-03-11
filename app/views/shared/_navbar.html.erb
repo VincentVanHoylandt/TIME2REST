@@ -1,24 +1,15 @@
-<div class="navbar">
+<div class="nav-container">
 
-  <div class = "logo-main-container d-flex" >
-
-    <div class="logo-container">
-    </div>
-
-    <div class="logo-sentence-container", style = "margin: auto 0">
-      <h1 class= "logo-sentence">Time2Rest</h1>
-    </div>
-
-  </div>
-
+  <%= render partial: 'shared/logo' %>
   <%= render partial: 'shared/search_bar', locals: {path: offers_path} %>
 
-  <div class = "btn-dashboard-container">
+  <div class= "nav-btn-dshb-container">
+
     <% if user_signed_in? %>
 
       <%= link_to 'New Offer', new_offer_path, class: "my-btn" %>
       <%= link_to dashboard_path, class:"my-dashboard-btn" do  %>
-        <i class="fa-solid fa-bars" style = "margin: 0 9px"></i>
+        <i class="fa-solid fa-bars"></i>
       <%end%>
 
       <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete} %>
@@ -26,7 +17,7 @@
     <% else %>
       <%= link_to 'New Offer', new_user_session_path, class: "my-btn" %>
       <%= link_to new_user_session_path, class:"my-dashboard-btn" do  %>
-        <i class="fa-solid fa-bars" style = "margin: 0 9px"></i>
+        <i class="fa-solid fa-bars"></i>
       <%end%>
     <% end %>
 

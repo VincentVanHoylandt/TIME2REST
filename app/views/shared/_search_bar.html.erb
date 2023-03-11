@@ -1,20 +1,18 @@
 <%= form_with url: offers_path, method: :get, class: "my-search-form" do %>
-  <div class="search-bar-input-container-left">
-    <i class="fa-solid fa-magnifying-glass" style = "margin-right: 5px;"></i>
+  <div class="my-search-form-lc">
+    <i class="fa-solid fa-magnifying-glass"></i>
     <%= text_field_tag :job_title,
         params[:job_title],
         class: "form-control no-border",
-        placeholder: "Job",
-        style: "background-color: transparent;"
+        placeholder: "Job"
         %>
   </div>
-  <div class="search-bar-input-container-right">
+  <div class="my-search-form-rc">
     <%= text_field_tag :address,
         params[:address],
         class: "form-control no-border",
-        placeholder: "location",
-        style: "background-color: transparent; border-left: 1px solid white; border-radius: 0px;"
+        placeholder: "location"
     %>
-    <i class="fa-solid fa-location-dot" style = "margin-left: 5px;"></i>
+    <i class="fa-solid fa-location-dot"></i>
   </div>
 <% end %>
