@@ -49,7 +49,9 @@
     justify-content: space-around;
   }
 
-
+  i {
+    color: #60A3AB;
+  }
   p {
     margin: 3px 0px;
     padding: 0;
@@ -57,3 +59,29 @@
 }
 
 // css des tuiles dans la messagerie
+
+.msg-card {
+  display: flex;
+  background-color: rgba($color: #60a3ab, $alpha: 0.15);
+  align-items: center;
+  min-height: 100px;
+  min-width: 300px;
+  max-width: 350px;
+
+  &:focus{
+    background-color: #60a3ab;;
+  }
+  .msg-card-lc {
+    width: 30%;
+  }
+  .msg-card-rc {
+    width: 70%;
+
+    .msg-card-rc-tc {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-right: 10px;
+    }
+  }
+}
