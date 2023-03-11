@@ -60,6 +60,7 @@
 
 <br>
 
+<br>
 <%# partial pour les tuiles pour la messagerie %>
 <%= render partial: 'shared/message_card', locals: {img: 'item3.png',
                                                     first_name: 'John',
@@ -125,18 +126,12 @@
 <% end %>
 </div>
 
-
 <br>
-
-
 <%# ne pas enlever la div c'est pour que la partial soit visible dans l'home%>
-  <div style = "background-color: #60A3AB">
-
-    <%# partial de la search bar%>
-    <%= render partial: 'shared/search_bar', locals: {path: offers_path} %>
-
-
-  </div>
-
+<div style = "background-color: #60A3AB">
+  <%# partial de la search bar%>
+  <%= render partial: 'shared/search_bar', locals: {path: offers_path} %>
+</div>
 
 <br>
+<br><br>
