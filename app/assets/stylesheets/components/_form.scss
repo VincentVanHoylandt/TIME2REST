@@ -25,13 +25,45 @@ label {
 .my-search-form {
   display: flex;
   background-color: rgba($color: #FFFFFF, $alpha: 0.3);
-  width: 675px;
+  max-width: 50%;
   height: 65px;
   border-radius: 61px;
-}
 
-.my-search-form i{
-  font-size: 24px;
-  color: #FFFFFF;
+  .my-search-form-lc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin-left: 15px;
 
+     i{
+      margin-right: 5px;
+     }
+   }
+
+   .my-search-form-rc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin-right: 15px;
+
+    i{
+      margin-left: 5px;
+    }
+    .no-border{
+      border-left: 1px solid white;
+      border-radius: 0px;
+    }
+   }
+   .no-border {
+    background-color: transparent;
+    border: none;
+   }
+
+   i{
+    font-size: 24px;
+    color: #FFFFFF;
+
+  }
 }

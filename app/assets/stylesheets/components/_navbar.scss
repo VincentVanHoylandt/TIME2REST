@@ -1,12 +1,23 @@
-.navbar {
+.nav-container {
+  position: fixed;
+  top: 0;
   background-color: #3F664E;
-}
-.navbar ul {
-  background-color: #3F664E;
-  border: 1px solid;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 1200px;
   width: 100%;
-}
+  padding: 0 15px;
+  z-index: 1;
 
-.navbar li {
-  display: inline-block;
+  .nav-btn-dshb-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 13%;
+    border: 1px solid black;
+  }
+  .my-dashboard-btn i{
+    margin: 0 9px;
+  }
 }
