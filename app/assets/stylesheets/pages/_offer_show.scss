@@ -1,35 +1,90 @@
 .show-main-container {
-  min-width: 700px;
-  max-width: 60%;
-  height: 91vh;
+  max-width: 100%;
+  height: 100%;
   display: flex;
-  border: 1px solid black;
 
-  .show-lc{
+  .show-mc-lc{
     width: 8%;
-    background-color: red;
+    background-color: #60A3AB;
   }
-  .show-mc{
+  .show-mc-mc{
     width: 15%;
     text-align: center;
   }
-  .show-rc{
-    padding: 0px 0px;
+  .show-mc-rc{
+    padding: 30px 5px;
     width: 77%;
 
-    .show-infos-container {
+    .rc-infos-ul {
+      list-style-type: none;
+
+      h3{
+        margin: 5 0px;
+        padding: 0;
+        font-size: 24px;
+        font-weight: 300;
+        font-family: 'Roboto', sans-serif;
+      }
+
+      h2{
+        margin: 0;
+        padding: 0;
+        font-size: 32px;
+        font-weight: 400;
+        font-family: 'Roboto', sans-serif;
+      }
+      p{
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+        font-weight: 100;
+        font-family: 'Roboto', sans-serif;
+      }
+    }
+
+    .rc-infos-ul li:nth-of-type(1) {
+      margin-top: 10%;
+    }
+    .rc-infos-ul li:nth-of-type(2) {
+      margin-top: 10%;
+    }
+    .rc-infos-ul li:nth-of-type(3) {
+      margin-top: 5%;
+    }
+    .rc-infos-ul li:nth-of-type(4) {
+      margin-top: 15%;
+    }
+
+    .rc-description-container{
+      width: 65%;
+    }
+    .rc-btn-container{
       display: flex;
-      flex-direction: column;
+      width: 65%;
       justify-content: space-around;
-      align-items: start;
-      height: 100%;
-      width: 80%;
-      border: 1px solid black;
     }
   }
-  .show-offer-infos-container h3{
-    margin-bottom: 10px;
-  }
 
 
+}
+
+.offer-modal-main-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.om-content {
+  position: fixed;
+  top: 90px;
+  right: 0;
+  height: 100%;
+  width: 60%;
+  z-index: 3;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
