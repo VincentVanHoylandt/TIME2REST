@@ -20,16 +20,26 @@
     <div class='map_landing'></div>
       <div class='index-cards-column'>
         <% @offers.each do |offer| %>
-        <%= render partial: 'shared/offer_card', locals: {
-                                                          titre: offer.job_title,
-                                                          description: offer.description,
-                                                          avatar: 'item3.png',
-                                                          location: 'Lille',
-                                                          date: offer.start_time,
-                                                          salary: offer.salary,
-                                                          id: offer.id}
-        %>
-        <% end %>
+        <div data-controller="offer-modal">
+          <%= render partial: 'shared/offer_card', locals: {
+                                                            titre: offer.job_title,
+                                                            description: offer.description,
+                                                            avatar: 'item3.png',
+                                                            location: 'Lille',
+                                                            date: offer.start_time,
+                                                            salary: offer.salary,
+                                                            id: offer.id}
+          %>
+          <%= render partial: 'shared/offer_show', locals: { titre: offer.job_title,
+                                                      owner: offer.user.first_name + ' ' + offer.user.last_name,
+                                                      localité: 'Lille',
+                                                      date: offer.start_time,
+                                                      salary: offer.salary,
+                                                      description: offer.description,
+                                                      id: offer.id
+                                                  }%>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
