@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import OfferModalController from "./offer_modal_controller"
 application.register("offer-modal", OfferModalController)
+
+import HeroController from "./hero_controller"
+application.register("hero", HeroController)
