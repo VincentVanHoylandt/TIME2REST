@@ -4,11 +4,14 @@
 
 import { application } from "./application"
 
+import FlatpickrController from "./flatpickr_controller"
+application.register("flatpickr", FlatpickrController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
-import OfferModalController from "./offer_modal_controller"
-application.register("offer-modal", OfferModalController)
-
 import HeroController from "./hero_controller"
 application.register("hero", HeroController)
+
+import OfferModalController from "./offer_modal_controller"
+application.register("offer-modal", OfferModalController)

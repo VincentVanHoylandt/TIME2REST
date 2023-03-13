@@ -8,6 +8,10 @@ class OffersController < ApplicationController
 
   def create
     @offer = Offer.new(offer_params)
+    start_time = offer_params["start_time"].split.first
+    end_time = offer_params["start_time"].split.last
+    @offer.start_time = start_time
+    @offer.end_time = end_time
     @offer.user = current_user
     authorize @offer
     if @offer.save
