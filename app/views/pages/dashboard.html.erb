@@ -1,3 +1,55 @@
-<h1>Hello</h1>
+<div class="dashboard-main-container" data-controller="dashboard-link">
+  <div class="dmc-lc">
+    <div class="lc-nav-container">
+      <ul class = "nav">
+        <li>
+          <p data-action= "click->dashboard-link#switch_page" data-id ="message" data-dashboard-link-target="link">Messageries</p>
+        </li>
+        <li>
+          <p data-action= "click->dashboard-link#switch_page" data-id ="canditature" data-dashboard-link-target="link">Mes canditatures</p>
+        </li>
+        <li>
+          <p class="active" data-action= "click->dashboard-link#switch_page" data-id ="offre" data-dashboard-link-target="link">Mes offres</p>
+        </li>
+        <li>
+          <p data-action= "click->dashboard-link#switch_page" data-id ="edit" data-dashboard-link-target="link">Editer mon offre</p>
+        </li>
+      </ul>
+      <%= link_to "#", class:"my-disc-btn" do  %>
+        <ul>
+          <i class="fa-solid fa-power-off"></i>
+          <li>
+              Disconnect
+          </li>
+        </ul>
+    <%end%>
+    </div>
+  </div>
 
-<%= @user.id %>
+
+  <div class="dmc-rc">
+    <div class="dmc-rc-message d-none" data-dashboard-link-target="message" data-id ="msg">
+        <p>messsage</p>
+    </div>
+    <div class="dmc-rc-apply d-none" data-dashboard-link-target="apply" data-id ="cnd">
+      <p>apply</p>
+    </div>
+    <div class="dmc-rc-offer" data-dashboard-link-target="offer" data-id ="ofr">
+      <% @offers.each do |offer| %>
+        <%= render partial: 'shared/offer_card', locals: {
+                                                           titre: offer.job_title,
+                                                           description: offer.description,
+                                                           avatar: 'item3.png',
+                                                           location: 'Lille',
+                                                           date: offer.start_time,
+                                                           salary: offer.salary,
+                                                           id: offer.id}
+        %>
+      <% end %>
+
+    </div>
+    <div class="dmc-rc-edit d-none" data-dashboard-link-target="edit" data-id ="edt">
+      <p>edit</p>
+    </div>
+  </div>
+</div>

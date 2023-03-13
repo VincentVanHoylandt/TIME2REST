@@ -1,0 +1,75 @@
+.dashboard-main-container {
+  width: 100%;
+  margin-top: 90px;
+  height: calc(100vh - 90px);
+  display: flex;
+
+  .dmc-lc{
+    width: 20%;
+    background-color: rgba($color: #60A3AB, $alpha: 0.5)
+  }
+
+  .dmc-rc{
+    width: 80%;
+    background-color: white;
+    position: relative;
+  }
+
+  .lc-nav-container {
+    padding-top: 45%;
+    padding-bottom: 20%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+}
+
+.nav {
+
+  display: block;
+  text-align: start;
+  border: 1px solid black;
+
+  li {
+    font-size: 18px;
+    margin-bottom: 5%;
+    ::before{
+      content: "• ";
+    }
+  }
+
+  a {
+    color: white;
+
+    &:hover{
+      color: lightgrey
+    }
+  }
+
+  .active {
+    background-color: rgba($color: #3F664E, $alpha: 1.0);
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-size: 24px;
+    color: rgba($color: #FFA50B, $alpha: 1.0);
+    ::before {
+      color: #FFA50B;
+    }
+    &:hover {
+      color: #FFA50B;
+    }
+  }
+}
+
+.dmc-rc-offer {
+  height: 100%;
+  width: 80%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 0 auto;
+  overflow: scroll;
+}

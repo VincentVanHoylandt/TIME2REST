@@ -6,7 +6,7 @@ export default class extends Controller {
   connect() {
     new flatpickr(this.element, {
       minDate: "today",
-      inline: true,
+      inline: false,
       mode: "range",
       // dateFormat: "Y-m-d",
       // defaultDate: ["2016-10-10", "2016-10-20"]
