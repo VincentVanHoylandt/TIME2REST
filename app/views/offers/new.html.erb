@@ -41,16 +41,13 @@
           <%= label_tag "Description :" %>
           <%= f.text_area :Description, size: "100x8", class: "form-input-background-color-description" %>
         </div>
-
+<% end %>
 
 <div class="container mt-5 ">
-  <h1 >Create a new mission</h1>
+
   <div >
     <%= simple_form_for @offer, html: {class: 'd-flex flex-column'} do |f| %>
-      <%= f.input :job_title, input_html: { class: 'input' } %>
-      <%# Localisation à implenter avec Geocoder %>
-      <%# f.input :localisation, input_html: { class: 'input' } %>
-      <%= f.input :description, input_html: { class: 'input' } %>
+
       <div class="col">
       <%= f.input :start_time, as: :string,
                   wrapper_html: { class: "mb-4" },
@@ -58,9 +55,7 @@
                   input_html: { data: { controller: "flatpickr" } } %>
 
       </div>
-      <%= f.input :salary, input_html: { class: 'input' } %>
-      <%# Absence de column 'require diploma' dans la table Offers %>
-      <%# A régler : le sort de l'input 'ajouter une pièce jointe' %>
+
               <div class="container mt-5 text-center">
         <%= f.submit :Soumettre, class: "my-btn-small", style: "margin-top : 5px"%>
         </div>
@@ -68,4 +63,3 @@
 
   </div>
 </div>
-
