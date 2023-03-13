@@ -1,0 +1,12 @@
+<div class="appliance-card-container">
+  <%= render partial: 'shared/avatar_small', locals: {img: 'item3.png'} %>
+  <div class= "name-container">
+    <h3><%= appliance.user.first_name %></h3>
+    <h3><%= appliance.user.last_name %></h3>
+  </div>
+  <div class="btn-container">
+    <%= link_to 'Accept', '#',class: "my-btn-small" %>
+    <%= link_to 'Deny', '#',class: "my-btn-small" %>
+    <%= link_to 'profil', '#',class: "my-btn-small" %>
+  </div>
+</div>

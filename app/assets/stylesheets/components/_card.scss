@@ -85,3 +85,54 @@
     }
   }
 }
+
+
+.appliance-card-container {
+  width: 300px;
+  border-radius: 15px;
+  text-align: center;
+  padding-top:20px;
+  padding-bottom:20px;
+  margin-right: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+
+  .name-container{
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0px;
+  }
+  .btn-container{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+  }
+}
+
+.my-apply-container {
+  width: 300px;
+  display: flex;
+  margin-left: 10px;
+  margin-right: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+
+  .ac-lc{
+    width: 10%;
+    background-color: #60A3AB;
+  }
+  .ac-rc{
+    width: 90%;
+    padding: 10px 20px;
+  }
+
+  .name-container{
+    display: flex;
+    width: 100%;
+
+    p {
+      margin-right: 10px;
+    }
+  }
+  .date-container{
+    width: 100%;
+  }
+}

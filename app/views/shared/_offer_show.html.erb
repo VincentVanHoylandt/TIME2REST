@@ -1,4 +1,4 @@
-<div class="offer-modal-main-container d-none" id=<%=id%> data-offer-modal-target= "index">
+<div class="offer-modal-main-container d-none" id=<%=id.id%> data-offer-modal-target= "index">
   <div class="om-content">
     <div class="show-main-container">
       <div class="show-mc-lc">
@@ -32,8 +32,8 @@
           </li>
           <li>
           <div class="rc-btn-container">
-            <%= link_to 'Apply', '#', class: "my-btn" %>
-            <%= link_to 'Apply', '#', class: "my-btn" %>
+            <%= link_to 'Apply', offer_appliances_path(id), data: {turbo_method: :post} , class: "my-btn" %>
+            <%= link_to 'Apply', offer_appliances_path(id), data: {turbo_method: :post} , class: "my-btn" %>
           </div>
           </li>
         </ul>

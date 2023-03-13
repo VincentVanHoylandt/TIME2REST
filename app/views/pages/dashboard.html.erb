@@ -12,7 +12,7 @@
           <p class="active" data-action= "click->dashboard-link#switch_page" data-id ="offre" data-dashboard-link-target="link">Mes offres</p>
         </li>
         <li>
-          <p data-action= "click->dashboard-link#switch_page" data-id ="edit" data-dashboard-link-target="link">Editer mon offre</p>
+          <p data-action= "click->dashboard-link#switch_page" data-id ="edit" data-dashboard-link-target="link">Editer mon profil</p>
         </li>
       </ul>
       <%= link_to "#", class:"my-disc-btn" do  %>
@@ -31,8 +31,12 @@
     <div class="dmc-rc-message d-none" data-dashboard-link-target="message" data-id ="msg">
         <p>messsage</p>
     </div>
-    <div class="dmc-rc-apply d-none" data-dashboard-link-target="apply" data-id ="cnd">
-      <p>apply</p>
+    <div class="dmc-rc-apply d-none d-flex" data-dashboard-link-target="apply" data-id ="cnd">
+
+        <% @user.appliances.each do |appliance| %>
+          <%= render partial: 'shared/my_apply_card', locals: {appliance: appliance} %>
+        <% end %>
+
     </div>
     <div class="dmc-rc-offer" data-dashboard-link-target="offer" data-id ="ofr">
       <% @offers.each do |offer| %>
@@ -45,6 +49,20 @@
                                                            salary: offer.salary,
                                                            id: offer.id}
         %>
+
+
+        <% if offer.appliances != [] %>
+          <div class="offers-appliance">
+          <ul style = "display: flex;">
+           <% offer.appliances.each do |appliance| %>
+             <li style = "display: inline-block"> <%= render partial: 'shared/apply_card', locals: {appliance: appliance} %></li>
+            <% end %>
+          </ul>
+
+          </div>
+        <% end %>
+
+
       <% end %>
 
     </div>
