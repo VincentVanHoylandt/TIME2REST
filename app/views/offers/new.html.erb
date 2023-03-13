@@ -10,7 +10,7 @@
   </div>
   <div class="container-form-new-page">
     <h2>Creer une nouvelle offre :</h2> <br>
-    <%= simple_form_for @offer, html: {class: 'd-flex flex-column'} do |f| %>
+    <%= simple_form_for @offer, html: {class: 'd-flex flex-column testtest'} do |f| %>
 
       <div>
         <%= label_tag "Intitule de la mission :"  %>
@@ -33,7 +33,7 @@
       </div>
 
       <div>
-        <%= f.input :start_time, as: :string, input_html: { data: { controller: "flatpickr" } } %>
+        <%= f.input :start_time, as: :string, placeholder: "dates", label: false, input_html: { data: { controller: "flatpickr" } } %>
       </div>
 
       <div class="container mt-5 text-center">
