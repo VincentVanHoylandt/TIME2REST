@@ -8,10 +8,14 @@
       <%= f.input :job_title, input_html: { class: 'input' } %>
       <%# Localisation à implenter avec Geocoder %>
       <%# f.input :localisation, input_html: { class: 'input' } %>
-
       <%= f.input :description, input_html: { class: 'input' } %>
-      <%= f.input :start_time, input_html: { class: 'input' } %>
-      <%= f.input :end_time, input_html: { class: 'input' } %>
+      <div class="col">
+      <%= f.input :start_time, as: :string,
+                  wrapper_html: { class: "mb-4" },
+                  label_html: { class: "form-label text-secondary fw-bold" },
+                  input_html: { data: { controller: "flatpickr" } } %>
+
+      </div>
       <%= f.input :salary, input_html: { class: 'input' } %>
       <%# Absence de column 'require diploma' dans la table Offers %>
       <%# A régler : le sort de l'input 'ajouter une pièce jointe' %>
@@ -19,3 +23,5 @@
     <% end %>
   </div>
 </div>
+
+<%# , id="myFlatpickr" %>
