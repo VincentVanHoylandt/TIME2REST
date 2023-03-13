@@ -17,7 +17,11 @@
   </div>
 
   <div class='landing_container'>
-    <div class='map_landing'></div>
+    <div data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+      class='map_landing'>
+    </div>
       <div class='index-cards-column'>
         <% @offers.each do |offer| %>
         <div data-controller="offer-modal">
