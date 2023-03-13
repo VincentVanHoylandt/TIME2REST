@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "pages#home"
+  root to: "offers#index"
+  get 'home', to: 'pages#home'
   get "dashboard", to: 'pages#dashboard', as: :dashboard
 
   resources :appliances, only: %i[index create destroy]

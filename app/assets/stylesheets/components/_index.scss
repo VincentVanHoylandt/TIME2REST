@@ -1,14 +1,18 @@
 // Import your components CSS files here.
 @import "alert";
 @import "avatar";
-@import "form_legend_clear";
-@import "navbar";
-@import "landing";
 @import "button";
-@import "form";
 @import "card";
+@import "container";
+@import "form";
+@import "form_legend_clear";
+@import "landing";
 @import "logo";
 @import "dashboard";
+@import "navbar";
+
+
+
 
 // ne pas toucher cette ligne elle permet de reset le comportement des margins de bases
 // des éléments css pour que l'on puisse les personnaliser.

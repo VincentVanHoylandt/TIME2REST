@@ -8,7 +8,12 @@ class OffersController < ApplicationController
 
   def create
     @offer = Offer.new(offer_params)
+    start_time = offer_params["start_time"].split.first
+    end_time = offer_params["start_time"].split.last
+    @offer.start_time = start_time
+    @offer.end_time = end_time
     @offer.user = current_user
+    raise
     authorize @offer
     if @offer.save
       redirect_to offers_path(@offer)
@@ -25,6 +30,14 @@ class OffersController < ApplicationController
       @offers = Offer.where("job_title ILIKE ?", "%#{params[:job_title]}%")
     elsif params[:address].present?
       @offers = Offer.where("address ILIKE ?", "%#{params[:address]}%")
+    end
+
+    @markers = @offers.geocoded.map do |offer|
+      {
+        lat: offer.latitude,
+        lng: offer.longitude
+
+      }
     end
   end
 

@@ -1,21 +1,43 @@
-<h1>Offers#new</h1>
-<p>Find me in app/views/offers/new.html.erb</p>
-
-<div class="container mt-5 ">
-  <h1 >Create a new mission</h1>
-  <div >
+  <div class= "container-global-new-page">
+  <div class= "container-advices-new-page">
+    <div class="advices-new-page">
+      <h2>Quelques conseils pour ameliorer votre annonce</h2><br>
+      <p> Utilisez des mots-clés pertinents : Utilisez des mots-clés pertinents dans votre annonce pour augmenter la visibilité de celle-ci. Faites des recherches sur les mots-clés les plus utilisés dans votre catégorie et utilisez-les dans le titre et la description de votre annonce.</p><br>
+      <p> Soyez précis dans votre description : Selon une étude, les annonces avec une description détaillée sont plus susceptibles d'être cliquées que les annonces avec une description courte. Décrivez votre demande de manière précise et complète, en mentionnant les avantages et les caractéristiques principales.</p><br>
+      <p> Fixez un prix compétitif : Recherchez les prix des produits ou services similaires dans votre catégorie et fixez un prix compétitif. Selon une étude, les annonces avec un prix compétitif sont plus susceptibles d'être consultées.</p><br>
+      <p> Utilisez des titres accrocheurs : Le titre de votre annonce est le premier élément que les utilisateurs voient lorsqu'ils cherchent un produit ou un service. Utilisez des titres accrocheurs et descriptifs qui donnent aux utilisateurs une idée précise de ce que vous vendez et qui les incitent à cliquer sur votre annonce.</p><br>
+    </div>
+  </div>
+  <div class="container-form-new-page">
+    <h2>Creer une nouvelle offre :</h2> <br>
     <%= simple_form_for @offer, html: {class: 'd-flex flex-column'} do |f| %>
-      <%= f.input :job_title, input_html: { class: 'input' } %>
-      <%# Localisation à implenter avec Geocoder %>
-      <%# f.input :localisation, input_html: { class: 'input' } %>
 
-      <%= f.input :description, input_html: { class: 'input' } %>
-      <%= f.input :start_time, input_html: { class: 'input' } %>
-      <%= f.input :end_time, input_html: { class: 'input' } %>
-      <%= f.input :salary, input_html: { class: 'input' } %>
-      <%# Absence de column 'require diploma' dans la table Offers %>
-      <%# A régler : le sort de l'input 'ajouter une pièce jointe' %>
-      <%= f.button :submit, "Create"%>
+      <div>
+        <%= label_tag "Intitule de la mission :"  %>
+        <%= f.text_area :job_title, size: "100x2", class: "form-input-background-color" %>
+      </div>
+
+      <div>
+        <%= label_tag "Localisation :" %>
+        <%= f.text_area :address, size: "100x2", class: "form-input-background-color" %>
+      </div>
+
+      <div>
+        <%= label_tag "Description :" %>
+        <%= f.text_area :description, size: "100x8", class: "form-input-background-color-description" %>
+      </div>
+
+      <div>
+        <%= label_tag "Salaire :" %>
+        <%= f.text_area :salary, size: "10x2", class: "form-input-background-color" %>
+      </div>
+
+      <div>
+        <%= f.input :start_time, as: :string, input_html: { data: { controller: "flatpickr" } } %>
+      </div>
+
+      <div class="container mt-5 text-center">
+        <%= f.submit :Soumettre, class: "my-btn-small", style: "margin-top : 5px"%>
+      </div>
     <% end %>
   </div>
-</div>

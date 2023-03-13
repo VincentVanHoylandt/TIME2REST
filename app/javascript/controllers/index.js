@@ -6,6 +6,8 @@ import { application } from "./application"
 
 import DashboardLinkController from "./dashboard_link_controller"
 application.register("dashboard-link", DashboardLinkController)
+import FlatpickrController from "./flatpickr_controller"
+application.register("flatpickr", FlatpickrController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
@@ -15,3 +17,6 @@ application.register("hero", HeroController)
 
 import OfferModalController from "./offer_modal_controller"
 application.register("offer-modal", OfferModalController)
+
+import MapController from "./map_controller"
+application.register("map", MapController)
