@@ -4,7 +4,7 @@ let position = "landing";
 
 // Connects to data-controller="hero"
 export default class extends Controller {
-  static targets = ['image', 'bar']
+  static targets = ['image', 'bar', 'map']
 
 
   connect() {
@@ -46,7 +46,7 @@ export default class extends Controller {
     // }
 
     function fade(element) {
-      console.log("fade activated")
+      console.log("fade activated");
       if (element.classList.contains('fade-out')) {
         fadeIn(element);
       } else {
@@ -57,6 +57,8 @@ export default class extends Controller {
     if (scrollPosition > (imageHeight - 90)) {
       if (position === "landing") {
       this.imageTarget.classList.add('fixed');
+      // this.mapTarget.classList.add('fixed-map');
+      this.mapTarget.setAttribute("id", "fixed-map");
       this.barTarget.classList.remove('d-none');
       fade(this.barTarget);
       }
@@ -65,10 +67,12 @@ export default class extends Controller {
     else {
       if (position === "list") {
         this.imageTarget.classList.remove('fixed');
+        // this.mapTarget.classList.remove('fixed-map');
+        this.mapTarget.removeAttribute("id", "fixed-map");
         fade(this.barTarget);
         setTimeout(() => { this.barTarget.classList.add('d-none') }, 550);
       }
-      position = 'landing'
+      position = 'landing';
     }
   }
 }

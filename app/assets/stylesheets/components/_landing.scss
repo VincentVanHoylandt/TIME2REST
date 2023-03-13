@@ -89,7 +89,7 @@
 
   margin-right: 20px;
   width: 80%;
-  height: 450px
+  height: calc(75vh);
 
 
 }
@@ -126,4 +126,10 @@
     opacity: 0;
     transform: translateY(-20px);
   }
+}
+
+#fixed-map {
+  position: sticky;
+  top: 130px;
+  left: 5%;
 }
