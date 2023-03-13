@@ -87,40 +87,39 @@
 <h2>Create a new mission :</h2>
 <div>
 <%= form_with model: @offer do |f| %>
-  <p>
+  <div>
   <%= label_tag "Mission Title :"  %>
-  <%= f.text_area :Mission_Title, size: "70x1", class: "form-input-background-color", placeholder: "__________________" %>
-  </p>
-  <p>
+  <%= f.text_area :Mission_Title, size: "120x2", class: "form-input-background-color" %>
+  </div>
+  <div>
   <%= label_tag "Localisation :" %>
-  <%= f.text_area :Localisation, size: "70x1", class: "form-input-background-color", placeholder: "__________________" %>
-  </p>
-  <p>
+  <%= f.text_area :Localisation, size: "120x2", class: "form-input-background-color" %>
+  </div>
+  <div>
   <%= label_tag "Job_Title :" %>
-  <%= f.text_area :Job_Title, size: "70x1", class: "form-input-background-color", placeholder: "__________________" %>
-  </p>
-  <p>
+  <%= f.text_area :Job_Title, size: "120x2", class: "form-input-background-color" %>
+  </div>
+  <div>
   <%= label_tag "Localisation :" %>
-  <%= f.text_area :Localisation, size: "70x1", class: "form-input-background-color", placeholder: "__________________" %>
-  </p>
-  <p>
+  <%= f.text_area :Localisation, size: "120x2", class: "form-input-background-color" %>
+  </div>
+  <div>
   <%= label_tag "Age :" %>
-  <%= f.number_field :Age, size: "70x1", class: "form-input-background-color", placeholder: "__________________" %>
-  </p>
-  <p>
+  <%= f.text_area :Age, size: "10x2", class: "form-input-background-color" %>
+  </div>
+  <div>
   <%= label_tag "Description :" %>
-  <%= f.text_area :Description, size: "70x4", class: "form-input-background-color", placeholder: "__________________" %>
-  </p>
-  <p>
-  <%= f.label :Start_date %>
-  <%= f.date_field :Start_date, size: "70x1", class: "form-input-background-color"  %>
-  </p>
-  <p>
+  <%= f.text_area :Description, size: "120x8", class: "form-input-background-color-description" %>
+  </div>
+  <div>
+  <%= label_tag :Start_date %>
+  <%= f.date_field :Start_date, class: "form-input-background-color"  %>
   <%= label_tag :End_date %>
-  <%= f.date_field :End_date, size: "70x1", class: "form-input-background-color"  %>
-  </p>
-
-  <%= f.submit %>
+  <%= f.date_field :End_date, class: "form-input-background-color"  %>
+  </div>
+  <div>
+  <%= f.submit :Submit, class: "my-btn-small", style: "margin-top : 5px"%>
+  </div>
 <% end %>
 </div>
 
