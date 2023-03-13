@@ -1,0 +1,87 @@
+
+// css des offres sur l'index
+.offer-card-container {
+  max-width: 1200px;
+  min-width: 700px;
+  display: flex;
+  margin-bottom: 2vh;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+
+  .offer-card-lc {
+   width: 3%;
+   background-color: #60A3AB;
+   }
+   .offer-card-mc {
+   width: 75%;
+   height: 100%;
+   }
+   .offer-card-rc {
+    text-align: center;
+    padding-bottom: 10px;
+    width: 22%;
+    background-color: rgba($color: #60A3AB, $alpha: 0.15);
+   }
+   h2 {
+     padding: 10px 30px;
+   }
+   p {
+    padding: 10px 30px;
+  }
+}
+
+.rc-infos {
+  display: flex;
+  justify-content: space-around;
+  max-width: 85%;
+  margin-bottom: 10px;
+  margin-left: 10px;
+
+  .rc-infos-fc{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .rc-infos-sc{
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  i {
+    color: #60A3AB;
+  }
+  p {
+    margin: 3px 0px;
+    padding: 0;
+  }
+}
+
+// css des tuiles dans la messagerie
+
+.msg-card {
+  display: flex;
+  background-color: rgba($color: #60a3ab, $alpha: 0.15);
+  align-items: center;
+  min-height: 100px;
+  min-width: 300px;
+  max-width: 350px;
+
+  &:focus{
+    background-color: #60a3ab;;
+  }
+  .msg-card-lc {
+    width: 30%;
+  }
+  .msg-card-rc {
+    width: 70%;
+
+    .msg-card-rc-tc {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-right: 10px;
+    }
+  }
+}

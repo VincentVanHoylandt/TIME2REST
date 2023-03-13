@@ -1,37 +1,28 @@
-<div class="index-offer-container">
-  <div class="first-index-offer-container">
+
+<div class="offer-card-container">
+  <div class="offer-card-lc"></div>
+
+  <div class="offer-card-mc">
+    <h2><%= titre %></h2>
+    <p> <%= description.truncate(300, separator: ' ') %> </p>
   </div>
 
-  <div class="second-index-offer-container">
-    <div class="second-index-offer-title-container">
-      <h2><%= titre %></h2>
-    </div>
-    <div class="second-index-offer-para-container">
-      <p> <%= description.truncate(150, separator: ' ') %></p>
-    </div>
-  </div>
-
-
-  <div class="third-index-offer-container">
-    <%= render partial: 'shared/avatar_small', locals: {img: avatar} %>
-
-    <div class="third-index-offer-info-container">
-      <div class ="third-index-offer-info-first-container">
-        <i class="fa-solid fa-map-pin be-block"></i>
+  <div class="offer-card-rc">
+    <%= render partial: 'shared/avatar_small', locals: {img: avatar}%>
+    <div class = "rc-infos">
+      <div class="rc-infos-fc">
+        <i class="fa-solid fa-map-pin"></i>
         <i class="fa-solid fa-calendar-days"></i>
         <i class="fa-solid fa-euro-sign"></i>
       </div>
-
-      <div class ="third-index-offer-info-second-container text-left">
+      <div class="rc-infos-sc">
         <p><%= location %></p>
         <p><%= date %></p>
         <p><%= salary %></p>
       </div>
-
     </div>
 
-    <%= link_to 'Details', offer_path(id), class: "my-btn-small" %>
-
+    <%= link_to 'Details', "#", class: "my-btn-small", data: {action: "click->offer-modal#show", id: id}%>
   </div>
 
 </div>

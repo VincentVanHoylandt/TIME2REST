@@ -1,28 +1,33 @@
 
-<div class="container mt-5">
-  <div>
-  <div>
-    <div>
-      <h2><%= @offer.job_title %></h2>
-      <h3> Owner : <%= @offer.user.first_name %> <%= @offer.user.last_name %></h3>
-      <h3> Localisation : "Added later with Mapbox install"</h3>
-      <%# TODO: implémenter une méthode def eu_date pour rendre la date au format européen : Date.strptime("%d/%m/%Y") %>
-      <h3> Duration : <%= @offer.start_time %> to <%= @offer.end_time %></h3>
-      <h3> Salary : <%= @offer.salary.round %> Euros/day</h3>
-      </p><%= @offer.description %></p>
-    </div>
-
-    <div>
-      <% if policy(@offer).edit? && @offer.user == current_user %>
-        <%= link_to "Edit this offer", edit_offer_path(@offer), class: "my-btn my-btn:hover" %>
-      <% end %>
-
-      <%= button_to "Destroy this offer", @offer, method: :delete if policy(@offer).destroy? %>
-       <%= link_to offers_path, class:"my-back-btn" do  %>
+<div class="show-main-container">
+    <div class="show-lc"> </div>
+    <div class="show-mc">
+      <%= link_to offers_path, class:"my-back-btn" do  %>
         <div class="back-container">
           <i class="fa-sharp fa-solid fa-arrow-left"></i>
         </div>
-      <%end%>
+      <% end %>
+
     </div>
+    <div class="show-rc">
+        <div class="show-infos-container">
+          <h2 class = "spec"><%= @offer.job_title %></h2>
+          <div class="show-offer-infos-container">
+            <h3> Owner : <%= @offer.user.first_name %> <%= @offer.user.last_name %></h3>
+            <h3> Localisation : "Added later with Mapbox install"</h3>
+            <%# TODO: implémenter une méthode def eu_date pour rendre la date au format européen : Date.strptime("%d/%m/%Y") %>
+            <h3> Duration : <%= @offer.start_time %> to <%= @offer.end_time %></h3>
+            <h3> Salary : <%= @offer.salary.round %> Euros/day</h3>
+          </div>
+          </p><%= @offer.description %></p>
+          <div>
+            <% if policy(@offer).edit? && @offer.user == current_user %>
+              <%= link_to "Edit this offer", edit_offer_path(@offer), class: "my-btn my-btn:hover" %>
+            <% end %>
+            <%= button_to "Destroy this offer", @offer, method: :delete if policy(@offer).destroy? %>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>

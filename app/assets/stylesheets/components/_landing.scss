@@ -50,6 +50,14 @@
   background-color: green;
 }
 
+.fixed {
+  position: sticky;
+  top: calc(-100vh + 90px);
+  left: 0;
+  width: 100%;
+
+}
+
 @keyframes bounce {
   0%, 30%, 60%, 100% {transform: translateY(0)}
   15% {transform: translateY(5px)}
@@ -66,14 +74,17 @@
   display: flex;
   justify-content: space-between;
   margin-top: 50px;
+  // position: relative;
 }
 
 .content {
   display:flex;
   flex-direction: column;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
-body .navbar{
-  display: none;
-}
+// .nav-container {
+//   display: none;
+// }

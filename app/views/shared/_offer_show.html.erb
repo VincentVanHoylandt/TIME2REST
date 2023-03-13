@@ -1,0 +1,43 @@
+<div class="offer-modal-main-container d-none" id=<%=id%> data-offer-modal-target= "index">
+  <div class="om-content">
+    <div class="show-main-container">
+      <div class="show-mc-lc">
+      </div>
+
+      <div class="show-mc-mc">
+        <%= link_to offers_path, class:"my-back-btn", data: {action: "click->offer-modal#dont_show"} do  %>
+          <div class="back-container">
+            <i class="fa-sharp fa-solid fa-arrow-left"></i>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="show-mc-rc">
+        <ul class="rc-infos-ul">
+          <li>
+            <h2><%= titre %></h2>
+          </li>
+          <li>
+            <div>
+              <h3>Owner: <%= owner %></h3>
+              <h3>Localité: <%= localité %></h3>
+              <h3>Date: <%= date %></h3>
+              <h3>Salaire: <%=salary%>€/jour</h3>
+            </div>
+          </li>
+          <li>
+            <div class="rc-description-container">
+              <p><%= description %></p>
+            </div>
+          </li>
+          <li>
+          <div class="rc-btn-container">
+            <%= link_to 'Apply', '#', class: "my-btn" %>
+            <%= link_to 'Apply', '#', class: "my-btn" %>
+          </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

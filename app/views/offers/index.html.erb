@@ -3,8 +3,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
-<div class='content'>
-  <div id="landing_illustation">
+<div class='content' data-controller="hero" data-action="scroll@window->hero#fixNavbar">
+  <div id="landing_illustation" data-hero-target= "image">
   <div id="landing_fader">
     <div class="landing_info">
       <h2> Find someone to take care of your buisness</h2>
@@ -20,16 +20,26 @@
     <div class='map_landing'></div>
       <div class='index-cards-column'>
         <% @offers.each do |offer| %>
-        <%= render partial: 'shared/offer_card', locals: {
-                                                          titre: offer.job_title,
-                                                          description: offer.description,
-                                                          avatar: 'item3.png',
-                                                          location: 'Lille',
-                                                          date: offer.start_time,
-                                                          salary: offer.salary,
-                                                          id: offer.id}
-        %>
-        <% end %>
+        <div data-controller="offer-modal">
+          <%= render partial: 'shared/offer_card', locals: {
+                                                            titre: offer.job_title,
+                                                            description: offer.description,
+                                                            avatar: 'item3.png',
+                                                            location: 'Lille',
+                                                            date: offer.start_time,
+                                                            salary: offer.salary,
+                                                            id: offer.id}
+          %>
+          <%= render partial: 'shared/offer_show', locals: { titre: offer.job_title,
+                                                      owner: offer.user.first_name + ' ' + offer.user.last_name,
+                                                      localité: 'Lille',
+                                                      date: offer.start_time,
+                                                      salary: offer.salary,
+                                                      description: offer.description,
+                                                      id: offer.id
+                                                  }%>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
