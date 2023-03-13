@@ -13,6 +13,7 @@ class OffersController < ApplicationController
     @offer.start_time = start_time
     @offer.end_time = end_time
     @offer.user = current_user
+    raise
     authorize @offer
     if @offer.save
       redirect_to offers_path(@offer)
