@@ -9,4 +9,7 @@ class Offer < ApplicationRecord
   validates :end_time, presence: true
   validates :salary, presence: true
   validates :job_title, presence: true
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end
