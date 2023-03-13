@@ -32,12 +32,12 @@
 
 
 .my-disc-btn  {
-  color: #60A3AB;
-  display: block;
-  width: 102px;
-  ul {
+    ul {
     padding: 0;
     margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 80px;
     color: #FFA50B;
     text-align: center;
@@ -49,8 +49,8 @@
     }
   }
   li {
-    display: inline-block;
     font-size: 32px;
+    list-style-type: none;
   }
   i {
     font-size: 32px;

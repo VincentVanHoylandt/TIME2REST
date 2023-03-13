@@ -4,6 +4,8 @@
 
 import { application } from "./application"
 
+import DashboardLinkController from "./dashboard_link_controller"
+application.register("dashboard-link", DashboardLinkController)
 import FlatpickrController from "./flatpickr_controller"
 application.register("flatpickr", FlatpickrController)
 
