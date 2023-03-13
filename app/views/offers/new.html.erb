@@ -1,5 +1,47 @@
-<h1>Offers#new</h1>
-<p>Find me in app/views/offers/new.html.erb</p>
+<div class= "container-global-new-page">
+  <div class= "container-advices-new-page">
+    <div class="advices-new-page">
+      <h2>Some advices</h2><br>
+      <p> Savez vous que 100 % des acceptations de postes dans la Creuse menent au suicide?</p> <br>
+      <p> Il ne faut pas respirer la compote, ca fait tousser</p><br>
+      <p> 1 + 1 = 2</p><br>
+      <p> le bleu et le rouge melange donnent du violet !</p><br>
+    </div>
+  </div>
+  <div class="container-form-new-page">
+    <h2>Create a new mission :</h2> <br>
+    <div>
+      <%= form_with model: @offer do |f| %>
+        <div>
+          <%= label_tag "Mission Title :"  %>
+          <%= f.text_area :Mission_Title, size: "100x2", class: "form-input-background-color" %>
+        </div>
+
+        <div>
+          <%= label_tag "Localisation :" %>
+          <%= f.text_area :Localisation, size: "100x2", class: "form-input-background-color" %>
+        </div>
+
+        <div>
+          <%= label_tag "Job_Title :" %>
+          <%= f.text_area :Job_Title, size: "100x2", class: "form-input-background-color" %>
+        </div>
+
+        <div>
+          <%= label_tag "Localisation :" %>
+          <%= f.text_area :Localisation, size: "100x2", class: "form-input-background-color" %>
+        </div>
+
+        <div>
+          <%= label_tag "Age :" %>
+          <%= f.text_area :Age, size: "10x2", class: "form-input-background-color" %>
+        </div>
+
+        <div>
+          <%= label_tag "Description :" %>
+          <%= f.text_area :Description, size: "100x8", class: "form-input-background-color-description" %>
+        </div>
+
 
 <div class="container mt-5 ">
   <h1 >Create a new mission</h1>
@@ -19,9 +61,11 @@
       <%= f.input :salary, input_html: { class: 'input' } %>
       <%# Absence de column 'require diploma' dans la table Offers %>
       <%# A régler : le sort de l'input 'ajouter une pièce jointe' %>
-      <%= f.button :submit, "Create"%>
+              <div class="container mt-5 text-center">
+        <%= f.submit :Soumettre, class: "my-btn-small", style: "margin-top : 5px"%>
+        </div>
     <% end %>
+
   </div>
 </div>
 
-<%# , id="myFlatpickr" %>

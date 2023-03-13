@@ -1,0 +1,27 @@
+.container-global-new-page{
+  display: flex;
+  margin-top: 100px;
+  width: 100%;
+}
+
+.container-advices-new-page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: 100vh;
+  width: 30%;
+  .advices-new-page {
+    padding-top: 30vh;
+    text-align: center;
+  }
+}
+
+.container-form-new-page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: 100vh;
+  width: 70%;
+}
