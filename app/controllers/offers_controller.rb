@@ -26,6 +26,14 @@ class OffersController < ApplicationController
     elsif params[:address].present?
       @offers = Offer.where("address ILIKE ?", "%#{params[:address]}%")
     end
+
+    @markers = @offers.geocoded.map do |offer|
+      {
+        lat: offer.latitude,
+        lng: offer.longitude
+
+      }
+    end
   end
 
   def show
