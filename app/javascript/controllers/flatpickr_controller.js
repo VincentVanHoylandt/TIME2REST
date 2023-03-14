@@ -8,8 +8,7 @@ export default class extends Controller {
       minDate: "today",
       inline: false,
       mode: "range",
-      // dateFormat: "Y-m-d",
-      // defaultDate: ["2016-10-10", "2016-10-20"]
+      dateFormat: "d-m-Y",
     });
   }
 }
