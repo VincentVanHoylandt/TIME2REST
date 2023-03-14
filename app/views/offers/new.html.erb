@@ -1,12 +1,12 @@
   <div class= "container-global-new-page">
   <div class= "container-advices-new-page">
-    <div class="advices-new-page">
+    <div class="advices-new-page"   data-controller="quote">
       <h2>Quelques conseils pour ameliorer votre annonce</h2><br>
-      <p><em> "Utilisez des mots clés <strong>pertinents</strong>  pour faciliter la recherche par des candidats qualifiés."</em></p><br>
-      <p><em> "Utilisez un langage<strong> clair et concis </strong>pour décrire les responsabilités et les exigences du poste." </em></p><br>
-      <p><em> "Faites en sorte que votre annonce d'emploi se distingue des autres avec <strong>un titre accrocheur."</strong></em></p><br>
-      <p><em> "Soyez transparent sur <strong>la rémunération et les avantages </strong>pour éviter les malentendus futurs." </em></p><br>
 
+      <div id= "contrainer-quotes">
+        <div id="outputQuotes" data-quote-target="outputQuotes">Suivez ces conseils pour avoir une annonce au top !</div>
+        <button id= "button-quotes" data-action= "click->quote#generateQuote">Press for a new quote</button>
+      </div>
     </div>
   </div>
   <div class="container-form-new-page">
