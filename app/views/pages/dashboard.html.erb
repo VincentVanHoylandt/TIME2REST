@@ -9,10 +9,10 @@
           <p data-action= "click->dashboard-link#switch_page" data-id ="canditature" data-dashboard-link-target="link">Mes canditatures</p>
         </li>
         <li>
-          <p class="active" data-action= "click->dashboard-link#switch_page" data-id ="offre" data-dashboard-link-target="link">Mes offres</p>
+          <p data-action= "click->dashboard-link#switch_page" data-id ="offre" data-dashboard-link-target="link">Mes offres</p>
         </li>
         <li>
-          <p data-action= "click->dashboard-link#switch_page" data-id ="edit" data-dashboard-link-target="link">Mon profil</p>
+          <p class="active" data-action= "click->dashboard-link#switch_page" data-id ="edit" data-dashboard-link-target="link">Mon profil</p>
         </li>
       </ul>
       <%= link_to "#", class:"my-disc-btn" do  %>
@@ -38,7 +38,7 @@
         <% end %>
 
     </div>
-    <div class="dmc-rc-offer" data-dashboard-link-target="offer" data-id ="ofr">
+    <div class="dmc-rc-offer d-none" data-dashboard-link-target="offer" data-id ="ofr">
       <% @offers.each do |offer| %>
 
         <%= render partial: 'shared/offer_card', locals: { offer: offer, user: @user } %>
@@ -57,8 +57,71 @@
       <% end %>
 
     </div>
-    <div class="dmc-rc-edit d-none" data-dashboard-link-target="edit" data-id ="edt">
-      <p>edit</p>
+    <div class="dmc-rc-edit " data-dashboard-link-target="edit" data-id ="edt">
+      <div class="lc">
+        <%= render partial: 'shared/avatar_large', locals: {img: 'item3.png'} %>
+        <div class="name-container">
+          <h3>John</h3>
+          <h3>Doe</h3>
+        </div>
+        <p>Bolideur sur ford sierra</p>
+        <p>rating : 5 Etoiles</p>
+        <ul>
+          <li>
+            <h3>Experiences</h3>
+          </li>
+          <li>
+            <h3>Diplomes</h3>
+          </li>
+          <li>
+            <h3>Reviews</h3>
+          </li>
+        </ul>
+        <%= link_to 'Edit', '#', class: "my-btn-small" %>
+      </div>
+      <div class="rc">
+        <div class="diplomas-container">
+          <div class="dc-lc"> </div>
+          <div class="dc-rc">
+            <h2>Expériences</h2>
+            <div class = "diplomas-infos">
+              <div class="name-location-date">
+                <h3>Etienne racing</h3>
+                <h3>Villejuif</h3>
+                <h3>04/03/2019 - 04/09/2019</h3>
+              </div>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda fuga quo blanditiis nobis
+                  maiores numquam at aliquam saepe autem ab! Iste amet non consequuntur sequi nisi minima similique, est itaque.</p>
+            </div>
+            <div class = "diplomas-infos">
+              <div class="name-location-date">
+                <h3>Villebrequin</h3>
+                <h3>Benzin</h3>
+                <h3>07/07/2020 - 10/10/2020</h3>
+              </div>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda fuga quo blanditiis nobis
+                  maiores numquam at aliquam saepe autem ab! Iste amet non consequuntur sequi nisi minima similique, est itaque.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="diplomas-container">
+          <div class="dc-lc"> </div>
+          <div class="dc-rc">
+            <h2>Diplomas</h2>
+            <div class = "diplomas-infos">
+              <h3>Master en bolidage</h3>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda fuga quo blanditiis nobis
+                  maiores numquam at aliquam saepe autem ab! Iste amet non consequuntur sequi nisi minima similique, est itaque.</p>
+            </div>
+            <div class = "diplomas-infos">
+              <h3>Licence en béquets</h3>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda fuga quo blanditiis nobis
+                  maiores numquam at aliquam saepe autem ab! Iste amet non consequuntur sequi nisi minima similique, est itaque.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
