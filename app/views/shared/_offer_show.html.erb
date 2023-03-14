@@ -1,4 +1,4 @@
-<div class="offer-modal-main-container d-none" id=<%=id.id%> data-offer-modal-target= "index">
+<div class="offer-modal-main-container d-none" id=<%=offer.id%> data-offer-modal-target= "index">
   <div class="om-content">
     <div class="show-main-container">
       <div class="show-mc-lc">
@@ -15,25 +15,25 @@
       <div class="show-mc-rc">
         <ul class="rc-infos-ul">
           <li>
-            <h2><%= titre %></h2>
+            <h2><%= offer.job_title %></h2>
           </li>
           <li>
             <div>
-              <h3>Owner: <%= owner %></h3>
-              <h3>Localité: <%= localité %></h3>
-              <h3>Date: <%= date %></h3>
-              <h3>Salaire: <%=salary%>€/jour</h3>
+              <h3>Owner: <%= offer.user.first_name + ' ' + offer.user.last_name %></h3>
+              <h3>Localité: Lille</h3>
+              <h3>Date: <%= offer.start_time %></h3>
+              <h3>Salaire: <%=offer.salary%>€/jour</h3>
             </div>
           </li>
           <li>
             <div class="rc-description-container">
-              <p><%= description %></p>
+              <p><%= offer.description %></p>
             </div>
           </li>
           <li>
           <div class="rc-btn-container">
-            <%= link_to 'Apply', offer_appliances_path(id), data: {turbo_method: :post} , class: "my-btn" %>
-            <%= link_to 'Apply', offer_appliances_path(id), data: {turbo_method: :post} , class: "my-btn" %>
+            <%= link_to 'Apply', offer_appliances_path(offer), data: {turbo_method: :post} , class: "my-btn" %>
+            <%= link_to 'Apply', offer_appliances_path(offer), data: {turbo_method: :post} , class: "my-btn" %>
           </div>
           </li>
         </ul>
