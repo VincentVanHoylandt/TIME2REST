@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  get 'chatrooms/create'
+  devise_for :users do
+    ressources :users, only: :create
+  end
   root to: "offers#index"
   get 'home', to: 'pages#home'
   get "dashboard", to: 'pages#dashboard', as: :dashboard

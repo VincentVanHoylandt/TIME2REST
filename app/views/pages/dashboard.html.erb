@@ -3,7 +3,7 @@
     <div class="lc-nav-container">
       <ul class = "nav">
         <li>
-          <p data-action= "click->dashboard-link#switch_page" data-id ="message" data-dashboard-link-target="link">Messageries</p>
+          <p class="active" data-action= "click->dashboard-link#switch_page" data-id ="message" data-dashboard-link-target="link">Messageries</p>
         </li>
         <li>
           <p data-action= "click->dashboard-link#switch_page" data-id ="canditature" data-dashboard-link-target="link">Mes canditatures</p>
@@ -12,7 +12,7 @@
           <p data-action= "click->dashboard-link#switch_page" data-id ="offre" data-dashboard-link-target="link">Mes offres</p>
         </li>
         <li>
-          <p class="active" data-action= "click->dashboard-link#switch_page" data-id ="edit" data-dashboard-link-target="link">Mon profil</p>
+          <p data-action= "click->dashboard-link#switch_page" data-id ="edit" data-dashboard-link-target="link">Mon profil</p>
         </li>
       </ul>
       <%= link_to "#", class:"my-disc-btn" do  %>
@@ -28,8 +28,35 @@
 
 
   <div class="dmc-rc">
-    <div class="dmc-rc-message d-none" data-dashboard-link-target="message" data-id ="msg">
-        <p>messsage</p>
+    <div class="dmc-rc-message" data-dashboard-link-target="message" data-id ="msg">
+        <div class="rc-message-lc">
+          <% 10.times do  %>
+            <%= render partial: 'shared/message_card', locals: {img: 'item3.png',
+                                                      first_name: 'John',
+                                                      last_name: 'Doe',
+                                                      time: '9h53',
+                                                      message: "What's up dude ?"} %>
+          <% end %>
+        </div>
+        <div class="rc-message-rc">
+          <div class="msg-rc-tc">
+            <div class="avatar-name-container">
+              <%= render partial: 'shared/avatar_small', locals: {img: 'item3.png'} %>
+              <div class="name-last-online">
+                <h3>John Doe</h3>
+                <p>Last time online: 20mn</p>
+              </div>
+            </div>
+            <i class="fa-solid fa-trash"></i>
+          </div>
+          <div class="msg-rc-mc"></div>
+          <div class="msg-rc-bc">
+            <form action="", class = msg-form>
+                <input type="text", class="msg-field">
+                <input type="submit", value="send nudes" class = "my-btn">
+            </form>
+          </div>
+        </div>
     </div>
     <div class="dmc-rc-apply d-none d-flex" data-dashboard-link-target="apply" data-id ="cnd">
 
@@ -47,7 +74,7 @@
           <div class="offers-appliance">
             <ul style = "display: flex;">
             <% offer.appliances.each do |appliance| %>
-              <li style = "display: inline-block"> <%= render partial: 'shared/apply_card', locals: {user: appliance.user} %></li>
+              <li style = "display: inline-block"> <%= render partial: 'shared/apply_card', locals: {user: appliance.user, appliance: appliance} %></li>
               <% end %>
             </ul>
           </div>
@@ -57,7 +84,7 @@
       <% end %>
 
     </div>
-    <div class="dmc-rc-edit " data-dashboard-link-target="edit" data-id ="edt">
+    <div class="dmc-rc-edit d-none" data-dashboard-link-target="edit" data-id ="edt">
       <div class="lc">
         <%= render partial: 'shared/avatar_large', locals: {img: 'item3.png'} %>
         <div class="name-container">
@@ -105,6 +132,23 @@
           </div>
         </div>
 
+
+        <div class="diplomas-container">
+          <div class="dc-lc"> </div>
+          <div class="dc-rc">
+            <h2>Diplomas</h2>
+            <div class = "diplomas-infos">
+              <h3>Master en bolidage</h3>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda fuga quo blanditiis nobis
+                  maiores numquam at aliquam saepe autem ab! Iste amet non consequuntur sequi nisi minima similique, est itaque.</p>
+            </div>
+            <div class = "diplomas-infos">
+              <h3>Licence en béquets</h3>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda fuga quo blanditiis nobis
+                  maiores numquam at aliquam saepe autem ab! Iste amet non consequuntur sequi nisi minima similique, est itaque.</p>
+            </div>
+          </div>
+        </div>
         <div class="diplomas-container">
           <div class="dc-lc"> </div>
           <div class="dc-rc">
