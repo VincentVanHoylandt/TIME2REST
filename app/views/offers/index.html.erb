@@ -24,11 +24,13 @@
     </div>
       <div class='index-cards-column'>
         <% @offers.each do |offer| %>
-        <div data-controller="offer-modal">
-          <%= render partial: 'shared/offer_card', locals: { offer: offer }%>
-          <%= render partial: 'shared/offer_show', locals: { offer: offer }%>
-          <% end %>
-        </div>
+          <div data-controller="offer-modal">
+            <% if @user != offer.user %>
+              <%= render partial: 'shared/offer_card', locals: { offer: offer, user: @user }%>
+              <%= render partial: 'shared/offer_show', locals: { offer: offer }%>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

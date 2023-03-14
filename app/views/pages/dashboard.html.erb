@@ -41,7 +41,7 @@
     <div class="dmc-rc-offer" data-dashboard-link-target="offer" data-id ="ofr">
       <% @offers.each do |offer| %>
 
-        <%= render partial: 'shared/offer_card', locals: { offer: offer } %>
+        <%= render partial: 'shared/offer_card', locals: { offer: offer, user: @user } %>
 
         <% if offer.appliances != [] %>
           <div class="offers-appliance">
