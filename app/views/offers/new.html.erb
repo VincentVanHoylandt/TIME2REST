@@ -28,13 +28,10 @@
         <%= f.text_area :description, size: "100x8", class: "form-input-background-color-description" %>
       </div>
 
-      <div>
-        <%= label_tag "Salaire :" %>
-        <%= f.text_area :salary, size: "10x2", class: "form-input-background-color" %>
-      </div>
-
-      <div>
-        <%= f.input :start_time, as: :string, placeholder: "Dates :", label: false, input_html: { data: { controller: "flatpickr" }, style: "width: 25vh;"} %>
+      <div class= "container-salary-and-dates-new-page">
+        <%= label_tag "Salaire journalier en euros :" %>
+        <%= f.text_area :salary, size: "25x2", class: "form-input-background-color" %>
+        <%= f.input :start_time, as: :string, placeholder: "Dates :", label: false, input_html: { data: { controller: "flatpickr" }, style: "width: 30vh; height: 4em;"} %>
       </div>
 
       <div class="container mt-5 text-center">
