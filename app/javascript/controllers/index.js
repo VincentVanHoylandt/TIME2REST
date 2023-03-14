@@ -17,6 +17,3 @@ application.register("hero", HeroController)
 
 import OfferModalController from "./offer_modal_controller"
 application.register("offer-modal", OfferModalController)
-
-import MapController from "./map_controller"
-application.register("map", MapController)
