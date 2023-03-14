@@ -23,6 +23,7 @@ class OffersController < ApplicationController
 
   def index
     @offers = policy_scope(Offer)
+    @user = current_user
     if params[:job_title].present? && params[:address].present?
       @offers = Offer.where("job_title ILIKE ?", "%#{params[:job_title]}%").where("address ILIKE ?", "%#{params[:address]}%")
     elsif params[:job_title].present?
