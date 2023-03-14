@@ -1,5 +1,5 @@
 <div class="offer-modal-main-container d-none" id=<%=offer.id%> data-offer-modal-target= "index">
-  <div class="om-content">
+  <div class="om-content" data-offer-modal-target= "content">
     <div class="show-main-container">
       <div class="show-mc-lc">
       </div>
@@ -7,7 +7,7 @@
       <div class="show-mc-mc">
         <%= link_to offers_path, class:"my-back-btn", data: {action: "click->offer-modal#dont_show"} do  %>
           <div class="back-container">
-            <i class="fa-sharp fa-solid fa-arrow-left"></i>
+            <i class="fa-sharp fa-solid fa-arrow-right"></i>
           </div>
         <% end %>
       </div>
@@ -32,7 +32,6 @@
           </li>
           <li>
           <div class="rc-btn-container">
-            <%= link_to 'Apply', offer_appliances_path(offer), data: {turbo_method: :post} , class: "my-btn" %>
             <%= link_to 'Apply', offer_appliances_path(offer), data: {turbo_method: :post} , class: "my-btn" %>
           </div>
           </li>

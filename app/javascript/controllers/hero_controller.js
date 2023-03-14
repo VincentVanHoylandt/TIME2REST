@@ -22,7 +22,7 @@ export default class extends Controller {
     const windowHeight = window.innerHeight;
     const imageHeight = this.imageTarget.clientHeight;
     const scrollPosition = window.scrollY || window.pageYOffset;
-    console.log(position)
+
 
     function fadeIn(element) {
       element.classList.remove('fade-out');
@@ -47,7 +47,6 @@ export default class extends Controller {
     // }
 
     function fade(element) {
-      console.log("fade activated");
       if (element.classList.contains('fade-out')) {
         fadeIn(element);
       } else {
@@ -56,7 +55,6 @@ export default class extends Controller {
     }
 
     if (scrollPosition > (imageHeight - 90)) {
-      console.log("on est en dessous")
         this.imageTarget.classList.add('fixed');
         this.mapTarget.setAttribute("id", "fixed-map");
         this.barTarget.classList.remove('d-none');
