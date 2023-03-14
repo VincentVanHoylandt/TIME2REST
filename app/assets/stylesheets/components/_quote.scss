@@ -1,0 +1,31 @@
+#contrainer-quotes{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(96, 163, 171, 0.2);
+  border: solid rgba(96, 163, 171, 0.8) 1px;
+  border-radius: 7px;
+  height: 275px;
+  width: 500px;
+  padding: 2em;
+}
+
+#button-quotes {
+  background-color: #FFA50B;
+  text-decoration: none;
+  text-align: center;
+  width: 50%;
+  color: white;
+  font-size: 16px;
+  padding: 4px 18px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 5px;
+}
+
+#output-quote {
+  margin: 20px;
+  background-color: beige;
+  font-size: 26px;
+}
