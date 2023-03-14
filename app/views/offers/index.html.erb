@@ -25,23 +25,8 @@
       <div class='index-cards-column'>
         <% @offers.each do |offer| %>
         <div data-controller="offer-modal">
-          <%= render partial: 'shared/offer_card', locals: {
-                                                            titre: offer.job_title,
-                                                            description: offer.description,
-                                                            avatar: 'item3.png',
-                                                            location: 'Lille',
-                                                            date: offer.start_time,
-                                                            salary: offer.salary,
-                                                            id: offer.id}
-          %>
-          <%= render partial: 'shared/offer_show', locals: { titre: offer.job_title,
-                                                      owner: offer.user.first_name + ' ' + offer.user.last_name,
-                                                      localité: 'Lille',
-                                                      date: offer.start_time,
-                                                      salary: offer.salary,
-                                                      description: offer.description,
-                                                      id: offer
-                                                  }%>
+          <%= render partial: 'shared/offer_card', locals: { offer: offer }%>
+          <%= render partial: 'shared/offer_show', locals: { offer: offer }%>
           <% end %>
         </div>
       </div>

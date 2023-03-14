@@ -1,14 +1,13 @@
 class AppliancesController < ApplicationController
 
   def create
-
     @appliance = Appliance.new(params[:appliance_params])
     @offer = Offer.find(params[:offer_id])
     @appliance.offer = @offer
     @appliance.user = current_user
     authorize @appliance
     if @appliance.save
-      redirect_to offer_path(@offer)
+      redirect_to offers_path
       flash[:notice] = "appliance saved successfully"
     else
       render "offers/show", status: :unprocessable_entity
