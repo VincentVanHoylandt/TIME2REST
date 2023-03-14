@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'home', to: 'pages#home'
   get "dashboard", to: 'pages#dashboard', as: :dashboard
 
+  resources :users, only: :show
   resources :chatrooms, only: %i[create show index]
   resources :diplomas, only: :create
   resources :messages, only: :create
