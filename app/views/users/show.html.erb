@@ -1,2 +1,72 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>Où est passée ma navbar ? Philiiiiiiiiip !!!!!!!</h1>
+
+
+<%# navbar %>
+<div class="container-global-new-page" style="border:1px solid green;">
+  <div class="container-advices-new-page" style="border:1px solid green;">
+    <%= render partial: 'shared/avatar_large', locals: {img: 'item3.png'} %>
+
+    <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+    <h2><%= @user.job_title %></h2>
+    <h2><%= @user.age %> ans</h2>
+    <p>"Céline est sérieuse et très professionnelle ..."</p>
+    <%# rating %>
+    <%# liens vers les  %>
+    <h3>Expériences</h3>
+    <h3>Diplômes</h3>
+    <h3>Avis</h3>
+  </div>
+
+  <div class ="offer-card-container" style="border:1px solid green;">
+  <%# div de droite %>
+    <div class ="offer-card-lc"></div>
+    <div class = "offer-card-mc" style="border:1px solid green;">
+      <h2>Expériences</h2>
+      <div style="border:1px solid green;">
+        <h3>Avis</h3>
+      </div>
+      <div style="border:1px solid green;">
+        <h3>Localisation</h3>
+      </div>
+      <div style="border:1px solid green;">
+        <%# @experience.start_time à <%= @experience.end_time %>
+        <p>description de l'expérience à passer en souple</p>
+      </div>
+      <%# div alignées %>
+      <div style="border:1px solid green;">
+      <%# <p> <%= @experience.description %>
+        <p>Description de l'expérience à compléter en dure</p>
+      </div>
+    </div>
+    <div style="border:1px solid green;">
+      <div class ="offer-card-lc"></div>
+      <h2>Diplômes</h2>
+      <div style="border:1px solid green;">
+        <h3>Certification de pilotage de cerf-volant</h3>
+          <p>Description du diplôme</p>
+      </div>
+      <div style="border:1px solid green;">
+        <h3>Expert en effeuillage de trèfles à 4 feuilles</h3>
+          <p>Description du diplôme</p>
+      </div>
+    </div>
+    <div style="border:1px solid green;">
+      <h2>Avis</h2>
+      <div class ="offer-card-lc"></div>
+      <div style="border:1px solid green;">
+        <%= render partial: 'shared/avatar_small', locals: {img: 'item3.png'} %>
+      </div>
+      <div style="border:1px solid green;">
+        <h3>Extrait de l'avis déposé</h3>
+      </div>
+      <div style="border:1px solid green;">
+        <h3>Rating et stars ?</h3>
+      </div>
+      <%# div alignées %>
+      <div style="border:1px solid green;">
+        <p>texte de l'avis in extenso</p>
+      </div>
+    </div>
+    <%# bouton : retour %>
+  </div>
+</div>
