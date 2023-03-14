@@ -110,14 +110,86 @@
 
   .rc {
     width: 75%;
-
+    overflow: auto;
   }
+}
+
+.dmc-rc-message {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  .rc-message-lc{
+    width: 25%;
+    height: 100%;
+    overflow: auto;
+    border: 1px solid black;
+  }
+  .rc-message-rc{
+    width: 75%;
+    height: 100%;
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .msg-rc-tc {
+    width: 95%;
+    height: 9%;
+    padding: 0 5%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .avatar-name-container{
+      display: flex;
+    }
+    i {
+      font-size: 32px;
+    }
+
+    .name-last-online{
+      margin-left: 15px;
+    }
+  }
+
+
+  .msg-rc-mc {
+    width: 95%;
+    height: 70%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
+
+  .msg-rc-bc {
+    width: 100%;
+    height: 15%;
+
+    .msg-form{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .msg-field {
+        padding: 0px 5px;
+        width: 70%;
+        height: 75%;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      }
+  }
+
+
 }
 
 .diplomas-container{
   width: 80%;
   margin: 15px auto;
   display: flex;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
 
   .dc-lc{
     width: 5%;

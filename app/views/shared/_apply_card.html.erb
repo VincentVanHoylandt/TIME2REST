@@ -7,6 +7,6 @@
   <div class="btn-container">
     <%= link_to 'Accept', '#',class: "my-btn-small" %>
     <%= link_to 'Deny', '#',class: "my-btn-small" %>
-    <%= link_to 'profil', '#',class: "my-btn-small" %>
+    <%= link_to 'message', participants_path(user: user.id ),class: "my-btn-small", data: {turbo_method: :post} %>
   </div>
 </div>
