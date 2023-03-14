@@ -9,6 +9,7 @@ export default class extends Controller {
 
   connect() {
     this.barTarget.classList.add('d-none');
+    this.barTarget.setAttribute("id", "no-background");
     // this.barTarget.classList.add('fade-out');
     // this.barTarget.classList.add('fade-in');
 
@@ -26,7 +27,7 @@ export default class extends Controller {
     function fadeIn(element) {
       element.classList.remove('fade-out');
       element.classList.add('fade-in');
-      setTimeout(() => { element.style.opacity = 0 }, 500);
+      // setTimeout(() => { element.style.opacity = 0 }, 500);
 
     }
 
@@ -55,24 +56,15 @@ export default class extends Controller {
     }
 
     if (scrollPosition > (imageHeight - 90)) {
-      if (position === "landing") {
-      this.imageTarget.classList.add('fixed');
-      // this.mapTarget.classList.add('fixed-map');
-      this.mapTarget.setAttribute("id", "fixed-map");
-      this.barTarget.classList.remove('d-none');
-      fade(this.barTarget);
-      }
-      position = "list";
-    }
-    else {
-      if (position === "list") {
+      console.log("on est en dessous")
+        this.imageTarget.classList.add('fixed');
+        this.mapTarget.setAttribute("id", "fixed-map");
+        this.barTarget.classList.remove('d-none');
+        fadeOut(this.barTarget);
+    } else {
         this.imageTarget.classList.remove('fixed');
-        // this.mapTarget.classList.remove('fixed-map');
         this.mapTarget.removeAttribute("id", "fixed-map");
-        fade(this.barTarget);
-        setTimeout(() => { this.barTarget.classList.add('d-none') }, 550);
-      }
-      position = 'landing';
+        fadeIn(this.barTarget);
     }
   }
 }
