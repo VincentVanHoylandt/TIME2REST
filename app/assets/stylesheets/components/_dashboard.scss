@@ -31,7 +31,6 @@
 
   display: block;
   text-align: start;
-  border: 1px solid black;
 
   li {
     font-size: 18px;
@@ -82,6 +81,7 @@
     height: 100%;
     overflow: auto;
     padding: 0 1%;
+
   }
   .rc-message-rc{
     width: 75%;
@@ -92,8 +92,6 @@
     justify-content: space-around;
     align-items: center;
   }
-
-
 
   .msg-rc-tc {
     width: 95%;
@@ -146,7 +144,6 @@
       }
   }
 
-
 }
 .dmc-rc-edit {
   width: 100%;
@@ -173,7 +170,6 @@
       list-style-type: none;
       text-align: start;
       width: fit-content;
-      border: 1px solid red;
       margin: 20px auto;
     }
 

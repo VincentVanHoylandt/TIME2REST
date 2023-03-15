@@ -138,5 +138,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_15_064632) do
   add_foreign_key "reviews", "users"
   add_foreign_key "seens", "offers"
   add_foreign_key "seens", "users"
-  add_foreign_key "users", "messages"
+  add_foreign_key "users", "messages", column: "messages_id"
 end

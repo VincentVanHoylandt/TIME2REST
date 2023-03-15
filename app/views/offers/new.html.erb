@@ -1,42 +1,81 @@
-  <div class= "container-global-new-page">
-  <div class= "container-advices-new-page">
-    <div class="advices-new-page"   data-controller="quote">
-      <h2>Quelques conseils pour ameliorer votre annonce</h2><br>
+<%= render "shared/navbar" %>
+<div class="container">
 
-      <div id= "contrainer-quotes">
-        <div id="outputQuotes" data-quote-target="outputQuotes">Suivez ces conseils pour avoir une annonce au top !</div>
-        <button id= "button-quotes" data-action= "click->quote#generateQuote">Press for a new quote</button>
+  <div class= "newoffer-main-container" style= "font-family: roboto">
+    <div class="dmc-lc", style="margin-top: 50px">
+      <%= link_to "Retour", dashboard_path(@offer), class: "my-back-btn" %>
+    </div>
+    <div class="dmc-rc" style= "height: 88px;">
+      <div>
+        <h1>Nouvelle annonce</h1>
       </div>
     </div>
   </div>
-  <div class="container-form-new-page">
-    <h2>Creer une nouvelle offre :</h2> <br>
-    <%= simple_form_for @offer, html: {class: 'testtest'} do |f| %>
 
-      <div>
-        <%= label_tag "Intitule de la mission :"  %>
-        <%= f.text_area :job_title, size: "100x2", class: "form-input-background-color" %>
-      </div>
+  <%# <div class= "container-very-global-newoffer">
 
-      <div>
-        <%= label_tag "Localisation :" %>
-        <%= f.text_area :address, size: "100x2", class: "form-input-background-color" %>
-      </div>
+  </div> %>
+  <div class= "container-global-newoffer">
 
-      <div>
-        <%= label_tag "Description :" %>
-        <%= f.text_area :description, size: "100x8", class: "form-input-background-color-description" %>
-      </div>
 
-      <div class= "container-salary-and-dates-new-page">
-        <%= label_tag "Salaire journalier en euros :" %>
-        <%= f.text_area :salary, size: "25x2", class: "form-input-background-color" %>
-        <%= f.input :start_time, as: :string, placeholder: "Dates :", label: false, input_html: { data: { controller: "flatpickr" }, style: "width: 30vh; height: 4em;"} %>
-      </div>
+<div class="conseilpy">
 
-      <div class="container mt-5 text-center">
-        <%= f.submit :Soumettre, class: "my-btn-small", style: "margin-top : 5px"%>
+    <div class= "container-advices-new-page", style="margin-top: 81px;">
+      <div class="advices-new-page"   data-controller="quote">
+        <h3>Quelques conseils pour améliorer votre annonce</h3><br>
+
+        <div id= "container-quotes">
+          <div id="outputQuotes" data-quote-target="outputQuotes">Suivez ces conseils pour avoir une annonce au top !</div>
+          <button id= "button-quotes" data-action= "click->quote#generateQuote">Nouveau conseil</button>
+        </div>
       </div>
-    <% end %>
+    </div>
+
+
+    </div>
+
+<div class="dontdothatpy"style="width: 100px"></div>
+
+
+    <div class="formpy">
+
+  <div class="container-form-newoffer">
+      <%= simple_form_for @offer, html: {class: 'form-style'} do |f| %>
+
+        <div>
+          <%= label_tag "Intitulé de la mission"  %>
+          <%= f.text_area :job_title, size: "100%", class: "form-input-background-color" %>
+        </div>
+
+        <div>
+          <%= label_tag "Localisation" %>
+          <%= f.text_area :address, size: "100%", class: "form-input-background-color" %>
+        </div>
+
+        <div>
+          <%= label_tag "Description" %>
+          <%= f.text_area :description, size: "100%", class: "form-input-background-color-description" %>
+        </div>
+
+        <div style = "display: flex; justify-content: space-between;">
+          <%= label_tag "Salaire journalier en €" %>
+          <%= f.text_area :salary, size: "25x2", class: "form-input-background-color" %>
+          <div style="margin-right: -8px;"><%= f.input :start_time, as: :string, placeholder: "Dates", label: false, input_html: {
+            data: { controller: "flatpickr" }, style: "width: 30vh; height: 4em;"
+            } %>
+          </div>
+        </div>
+
+        <div class="dmc-rc-buttons" style="margin-left: 10px;">
+          <%= f.submit :Soumettre, class: "my-btn" %>
+        </div>
+      <% end %>
+    </div>
   </div>
+
+
+
+</div>
+
+
 </div>

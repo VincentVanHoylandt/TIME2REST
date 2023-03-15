@@ -7,6 +7,7 @@
   padding-top: 2em;
   padding-left: 1em;
   height: 4em;
+  margin-top: 6px;
   margin-left: 1%;
 }
 .form-input-background-color-description {
@@ -16,7 +17,8 @@
   border-radius: 7px;
   padding-top: 2em;
   padding-left: 1em;
-  height: 20em;
+  height: 13em;
+  margin-top: 6px;
   margin-left: 1%;
 }
 
@@ -25,6 +27,7 @@ label {
   padding: 5px;
   font-weight: normal;
   width: 70;
+  margin-top: 6px;
   margin-left: 1%;
 }
 
@@ -36,6 +39,7 @@ label {
   padding-top: 1em;
   padding-bottom: 1em;
   height: 2em;
+  margin-top: 6px;
   margin-left: 1%;
 }
 
@@ -51,6 +55,7 @@ label {
   border-radius: 61px;
 
   .my-search-form-lc {
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,6 +64,15 @@ label {
 
      i{
       margin-right: 5px;
+     }
+
+     #job_title{
+      color: white;
+     }
+
+     #job_title::placeholder{
+      color: white;
+      opacity: 0.5;
      }
    }
 
@@ -76,6 +90,16 @@ label {
       border-left: 1px solid white;
       border-radius: 0px;
     }
+
+    #address{
+      color: white;
+     }
+
+     #address::placeholder{
+      color: white;
+      opacity: 0.5;
+     }
+
    }
    .no-border {
     background-color: transparent;
@@ -88,3 +112,9 @@ label {
 
   }
 }
+
+// .form-style{
+//   width: auto;
+
+
+// }

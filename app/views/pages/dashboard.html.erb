@@ -120,80 +120,47 @@
       <div class="lc">
         <%= render partial: 'shared/avatar_large', locals: {img: 'item3.png'} %>
         <div class="name-container">
-          <h3>John</h3>
-          <h3>Doe</h3>
+
+          <h3> <%=current_user.first_name %> <%=current_user.last_name  %></h3>
         </div>
-        <p>Bolideur sur ford sierra</p>
-        <p>rating : 5 Etoiles</p>
+        <p> <%=current_user.job_title%></p>
+        <p> Note : 5 Etoiles</p>
         <ul>
           <li>
-            <h3>Experiences</h3>
+            <h3>- Expérience(s)</h3>
           </li>
           <li>
-            <h3>Diplomes</h3>
-          </li>
-          <li>
-            <h3>Reviews</h3>
+            <h3>- Diplôme(s)</h3>
           </li>
         </ul>
-        <%= link_to 'Edit', '#', class: "my-btn-small" %>
+        <%= link_to 'Editer', '#', class: "my-btn-small" %>
       </div>
       <div class="rc">
         <div class="diplomas-container">
           <div class="dc-lc"> </div>
           <div class="dc-rc">
-            <h2>Expériences</h2>
+            <h2>Expérience(s)</h2>
             <div class = "diplomas-infos">
               <div class="name-location-date">
-                <h3>Etienne racing</h3>
-                <h3>Villejuif</h3>
-                <h3>04/03/2019 - 04/09/2019</h3>
+                <% current_user.diplomas.each do |diploma| %>
+                <h3><%= diploma.title  %></h3>
+                <h3>Du <%= diploma.start_time  %> au <%= diploma.end_time  %> </h3>
               </div>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda fuga quo blanditiis nobis
-                  maiores numquam at aliquam saepe autem ab! Iste amet non consequuntur sequi nisi minima similique, est itaque.</p>
+              <p>  <%=diploma.description  %></p>
             </div>
-            <div class = "diplomas-infos">
-              <div class="name-location-date">
-                <h3>Villebrequin</h3>
-                <h3>Benzin</h3>
-                <h3>07/07/2020 - 10/10/2020</h3>
-              </div>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda fuga quo blanditiis nobis
-                  maiores numquam at aliquam saepe autem ab! Iste amet non consequuntur sequi nisi minima similique, est itaque.</p>
-            </div>
+            <% end %>
           </div>
         </div>
-
 
         <div class="diplomas-container">
           <div class="dc-lc"> </div>
           <div class="dc-rc">
-            <h2>Diplomas</h2>
+            <h2>Diplôme(s)</h2>
             <div class = "diplomas-infos">
-              <h3>Master en bolidage</h3>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda fuga quo blanditiis nobis
-                  maiores numquam at aliquam saepe autem ab! Iste amet non consequuntur sequi nisi minima similique, est itaque.</p>
-            </div>
-            <div class = "diplomas-infos">
-              <h3>Licence en béquets</h3>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda fuga quo blanditiis nobis
-                  maiores numquam at aliquam saepe autem ab! Iste amet non consequuntur sequi nisi minima similique, est itaque.</p>
-            </div>
-          </div>
-        </div>
-        <div class="diplomas-container">
-          <div class="dc-lc"> </div>
-          <div class="dc-rc">
-            <h2>Diplomas</h2>
-            <div class = "diplomas-infos">
-              <h3>Master en bolidage</h3>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda fuga quo blanditiis nobis
-                  maiores numquam at aliquam saepe autem ab! Iste amet non consequuntur sequi nisi minima similique, est itaque.</p>
-            </div>
-            <div class = "diplomas-infos">
-              <h3>Licence en béquets</h3>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda fuga quo blanditiis nobis
-                  maiores numquam at aliquam saepe autem ab! Iste amet non consequuntur sequi nisi minima similique, est itaque.</p>
+              <% current_user.experiences.each do |experience| %>
+              <h3> <%=experience.title  %></h3>
+              <p><%=experience.description  %></p>
+                  <% end %>
             </div>
           </div>
         </div>

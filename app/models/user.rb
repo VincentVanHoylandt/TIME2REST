@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :appliances, dependent: :destroy
   has_many :participants
   has_many :messages
-  has_many :diplomas
+  has_many :diplomas, dependent: :destroy
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
