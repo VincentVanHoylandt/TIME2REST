@@ -8,25 +8,25 @@
       <div class="landing_info">
         <h2> Find someone to take care of your buisness</h2>
         <h1 id="landing_logo">Time2Rest</h1>
-            <div class='arrow_bounce'>
-              <a href=#scroll_down style="display:block;width:100%;height:100%;">
+            <div class='arrow_bounce' data-action="click->hero#scroll">
+
                 <div class="arrow_anim">
                   <i class="fa-solid fa-chevron-down"></i>
                 </div>
-              </a>
+
             </div>
       </div>
     </div>
   </div>
 
-  <div class='landing_container' id='scroll_down'>
+  <div class='landing_container'>
     <div data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
       class='map_landing'
       data-hero-target= "map">
     </div>
-      <div class='index-cards-column'>
+      <div class='index-cards-column' id='scroll_down'>
         <% @offers.each do |offer| %>
           <div data-controller="offer-modal">
             <% if @user != offer.user %>
