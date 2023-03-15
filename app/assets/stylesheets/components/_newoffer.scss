@@ -1,0 +1,57 @@
+.newoffer-main-container {
+  width: 100%;
+  margin-top: 90px;
+  display: flex;
+  justify-content: center;
+
+  .dmc-lc{
+    width: 33%;
+
+  }
+
+  .dmc-rc{
+    width: 66%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+  }
+
+  .lc-nav-container {
+    padding-top: 45%;
+    padding-bottom: 20%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+}
+
+.container-global-newoffer{
+  display: flex;
+}
+
+.container-very-global-newoffer{
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-form-newoffer{
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+    h3 {
+      font-size: medium;
+    }
+
+}
+
+.dmc-rc-buttons{
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  align-items: end;
+}

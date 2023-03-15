@@ -1,4 +1,4 @@
-#contrainer-quotes{
+#container-quotes{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -7,7 +7,9 @@
   border: solid rgba(96, 163, 171, 0.8) 1px;
   border-radius: 7px;
   height: 275px;
-  width: 500px;
+  // width: 500px;
+  max-width: 330px;
+
   padding: 2em;
 }
 
