@@ -65,4 +65,12 @@ export default class extends Controller {
         fadeIn(this.barTarget);
     }
   }
+
+  scroll() {
+    console.log('ca marche')
+    window.scrollBy({
+      top: (window.innerHeight-90),
+      behavior: 'smooth'
+    });
+  }
 }

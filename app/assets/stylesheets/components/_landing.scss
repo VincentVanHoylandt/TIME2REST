@@ -48,6 +48,7 @@
   justify-content: center;
   align-items: center;
   animation: bounce 2s ease infinite;
+  cursor: pointer;
 
   a {
     color: white;
@@ -127,6 +128,7 @@ body {
   position: relative;
   z-index: 1;
   scroll-behavior: smooth;
+  overscroll-behavior: auto;
 
 }
 
