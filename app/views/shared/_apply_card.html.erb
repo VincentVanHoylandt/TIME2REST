@@ -1,12 +1,19 @@
 <div class="appliance-card-container">
   <%= render partial: 'shared/avatar_small', locals: {img: 'item3.png'} %>
   <div class= "name-container">
-    <h3><%= user.first_name %></h3>
-    <h3><%= user.last_name %></h3>
+    <%= link_to user_path(user.id), class: 'name-profil-link' do  %>
+      <h3><%= user.first_name + ' ' + user.last_name%></h3>
+    <% end %>
   </div>
   <div class="btn-container">
-    <%= link_to 'Accept', '#',class: "my-btn-small" %>
-    <%= link_to 'Deny', '#',class: "my-btn-small" %>
-    <%= link_to 'message', participants_path(user: user.id ),class: "my-btn-small", data: {turbo_method: :post} %>
+    <%= link_to offer_appliance_path(offer.id, appliance.id), data: {turbo_method: :patch} do %>
+      <i class="fa-solid fa-check" style='color: green; font-size: 32px;'></i>
+    <% end  %>
+    <%= link_to offer_appliance_path(offer.id, appliance.id), data: {turbo_method: :delete} do %>
+      <i class="fa-solid fa-xmark" style='color: red; font-size: 32px;'></i>
+    <%end %>
+    <%= link_to participants_path(user: user.id ), data: {turbo_method: :post} do %>
+      <i class="fa-solid fa-message" style='color: orange; font-size: 24px;'></i>
+    <%end%>
   </div>
 </div>

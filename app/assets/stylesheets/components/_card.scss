@@ -72,9 +72,7 @@
   padding: 0% 2%;
   margin: 3% 0%;
 
-  &:focus{
-    background-color: #60a3ab;;
-  }
+
   .msg-card-lc {
     width: 30%;
   }
@@ -93,6 +91,9 @@
   }
 }
 
+.activated{
+    background-color: #60a3ab;;
+  }
 
 .appliance-card-container {
   width: 300px;
@@ -103,9 +104,24 @@
   margin-right: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 
+  .name-profil-link{
+    color: black;
+    h3{
+      font-size: 24px;
+      transition: 0.5s ease-in;
+      text-decoration: none;
+    }
+
+    &:hover{
+      h3{
+        font-size: 32px;
+        transition: 0.5s ease-in;
+        text-decoration: underline;
+      }
+
+    }
+  }
   .name-container{
-    display: flex;
-    justify-content: space-around;
     margin: 10px 0px;
   }
   .btn-container{
@@ -116,10 +132,9 @@
 }
 
 .my-apply-container {
-  width: 300px;
+  width: 25%;
   display: flex;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 2%;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 
   .ac-lc{

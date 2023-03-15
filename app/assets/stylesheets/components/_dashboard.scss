@@ -71,6 +71,7 @@
   margin: 0 auto;
   overflow: auto;
 }
+
 .dmc-rc-message {
   width: 100%;
   height: 100%;
@@ -104,6 +105,7 @@
 
     .avatar-name-container{
       display: flex;
+      align-items: center;
     }
     i {
       font-size: 32px;
@@ -145,6 +147,13 @@
   }
 
 }
+
+.dmc-rc-apply {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+}
+
 .dmc-rc-edit {
   width: 100%;
   height: 100%;
@@ -183,7 +192,6 @@
     overflow: auto;
   }
 }
-
 
 .msg-rc-mc {
   overflow: auto;
