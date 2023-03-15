@@ -15,7 +15,7 @@
           <p data-action= "click->dashboard-link#switch_page" data-id ="edit" data-dashboard-link-target="link">Mon profil</p>
         </li>
       </ul>
-      <%= link_to "#", class:"my-disc-btn" do  %>
+      <%= link_to destroy_user_session_path, class:"my-disc-btn", data: {turbo_method: :delete} do  %>
         <ul>
           <i class="fa-solid fa-power-off"></i>
           <li>
@@ -28,36 +28,63 @@
 
 
   <div class="dmc-rc">
-    <div class="dmc-rc-message" data-dashboard-link-target="message" data-id ="msg">
-        <div class="rc-message-lc">
-          <% 10.times do  %>
-            <%= render partial: 'shared/message_card', locals: {img: 'item3.png',
-                                                      first_name: 'John',
-                                                      last_name: 'Doe',
-                                                      time: '9h53',
-                                                      message: "What's up dude ?"} %>
-          <% end %>
-        </div>
-        <div class="rc-message-rc">
+
+    <%# --------------------------- %>
+    <div class="dmc-rc-message" data-controller="message" data-id ="msg">
+      <div class="rc-message-lc">
+        <% @participants.each do |participant| %>
+          <%= render partial: 'shared/message_card', locals: {img: 'item3.png',
+                                                              user: User.find(participant.user_2),
+                                                              participant: participant} %>
+        <% end %>
+      </div>
+
+      <% @participants.each do |participant| %>
+        <% user_2 = User.find(participant.user_2) %>
+        <div class="rc-message-rc d-none" data-id= <%=participant.id%>  data-message-target="message">
           <div class="msg-rc-tc">
-            <div class="avatar-name-container">
-              <%= render partial: 'shared/avatar_small', locals: {img: 'item3.png'} %>
-              <div class="name-last-online">
-                <h3>John Doe</h3>
-                <p>Last time online: 20mn</p>
+              <div class="avatar-name-container">
+                <%= render partial: 'shared/avatar_small', locals: {img: 'item3.png'} %>
+                <div class="name-last-online">
+                  <h3><%= user_2.first_name + ' ' +user_2.last_name%></h3>
+                  <p>Last time online: 20mn</p>
+                </div>
+              </div>
+              <i class="fa-solid fa-trash"></i>
+          </div>
+
+          <div class="msg-rc-mc">
+            <div class="my-msg-container">
+              <div class="my-msg-lc">
+              </div>
+              <div class="my-msg-rc">
+                <p><strong>You :</strong></p>
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque animi eius est, placeat consequuntur
+                    eos sed aspernatur ad neque incidunt? Fugit nihil sit ipsa aperiam alias voluptatibus error sapiente ut.</p>
               </div>
             </div>
-            <i class="fa-solid fa-trash"></i>
           </div>
-          <div class="msg-rc-mc"></div>
+
           <div class="msg-rc-bc">
-            <form action="", class = msg-form>
-                <input type="text", class="msg-field">
-                <input type="submit", value="send nudes" class = "my-btn">
-            </form>
+              <%= form_with model: @message, class: "msg-form"  do |f| %>
+                <%= f.text_field :name, class: "msg-field" %>
+                <%= f.submit class: "msg-btn" %>
+              <% end %>
+
           </div>
+
         </div>
-    </div>
+
+      <% end %>
+
+
+
+
+
+
+
+
+    <%# --------------------------- %>
     <div class="dmc-rc-apply d-none d-flex" data-dashboard-link-target="apply" data-id ="cnd">
 
         <% @user.appliances.each do |appliance| %>

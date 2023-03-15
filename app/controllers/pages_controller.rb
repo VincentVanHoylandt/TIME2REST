@@ -6,7 +6,9 @@ class PagesController < ApplicationController
 
   def dashboard
     @user = current_user
+    @participants = @user.participants
     @offers = @user.offers
+    @message = Message.new()
   end
 
 end

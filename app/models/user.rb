@@ -5,6 +5,9 @@ class User < ApplicationRecord
   has_many :experiences, dependent: :destroy
   has_many :seens, dependent: :destroy
   has_many :appliances, dependent: :destroy
+  has_many :participants
+  has_many :messages
+  has_many :diplomas
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
