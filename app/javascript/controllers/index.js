@@ -19,6 +19,9 @@ application.register("hero", HeroController)
 import MapController from "./map_controller"
 application.register("map", MapController)
 
+import MessageController from "./message_controller"
+application.register("message", MessageController)
+
 import OfferModalController from "./offer_modal_controller"
 application.register("offer-modal", OfferModalController)
 
