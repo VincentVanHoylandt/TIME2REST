@@ -38,14 +38,13 @@ export default class extends Controller {
         this.offerTarget.classList.add('d-none')
         this.editTarget.classList.add('d-none')
         this.applyTarget.classList.add('d-none')
-        console.log('3')
+        console.log('1')
         break;
       case "canditature":
         this.applyTarget.classList.remove('d-none')
         this.offerTarget.classList.add('d-none')
         this.messageTarget.classList.add('d-none')
         this.editTarget.classList.add('d-none')
-        console.log('4')
         break;
       default:
         break;

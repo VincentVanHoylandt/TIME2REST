@@ -1,0 +1,19 @@
+<div class="my-apply-container">
+
+  <div class="ac-lc"> </div>
+
+  <div class="ac-rc">
+    <h3><%= offer.job_title %></h3>
+    <div class="name-container">
+      <p><%= user.first_name %></p>
+      <p><%= user.last_name %></p>
+    </div>
+    <p>Salary: <%= offer.salary %></p>
+    <div class="date-container">
+      <p>Du <%= offer.start_time %></p>
+      <p> au <%= offer.end_time %></p>
+    </div>
+    <p style="margin-bottom: 10px">Ville: lille</p>
+    <%= link_to 'Annuler', '#', class: "my-btn-small" %>
+  </div>
+</div>

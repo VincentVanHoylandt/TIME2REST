@@ -3,12 +3,12 @@
   <div class="offer-card-lc"></div>
 
   <div class="offer-card-mc">
-    <h2><%= titre %></h2>
-    <p> <%= description.truncate(300, separator: ' ') %> </p>
+    <h2><%= offer.job_title %></h2>
+    <p> <%= offer.description.truncate(300, separator: ' ') %> </p>
   </div>
 
   <div class="offer-card-rc">
-    <%= render partial: 'shared/avatar_small', locals: {img: avatar}%>
+    <%= render partial: 'shared/avatar_small', locals: {img: 'item3.png'}%>
     <div class = "rc-infos">
       <div class="rc-infos-fc">
         <i class="fa-solid fa-map-pin"></i>
@@ -16,13 +16,18 @@
         <i class="fa-solid fa-euro-sign"></i>
       </div>
       <div class="rc-infos-sc">
-        <p><%= location %></p>
-        <p><%= date %></p>
-        <p><%= salary %></p>
+        <p>Lille</p>
+        <p><%= offer.start_time %></p>
+        <p><%= offer.salary %></p>
       </div>
     </div>
 
-    <%= link_to 'Details', "#", class: "my-btn-small", data: {action: "click->offer-modal#show", id: id}%>
+    <% if user == offer.user %>
+      <%= link_to 'Edit', edit_offer_path(offer), class: "my-btn-small"%>
+    <% else %>
+      <%= link_to 'Details', "#", class: "my-btn-small", data: {action: "click->offer-modal#show", id: offer.id}%>
+    <% end %>
+
   </div>
 
 </div>

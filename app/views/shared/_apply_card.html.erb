@@ -1,0 +1,12 @@
+<div class="appliance-card-container">
+  <%= render partial: 'shared/avatar_small', locals: {img: 'item3.png'} %>
+  <div class= "name-container">
+    <h3><%= user.first_name %></h3>
+    <h3><%= user.last_name %></h3>
+  </div>
+  <div class="btn-container">
+    <%= link_to 'Accept', '#',class: "my-btn-small" %>
+    <%= link_to 'Deny', '#',class: "my-btn-small" %>
+    <%= link_to 'message', participants_path(user: user.id ),class: "my-btn-small", data: {turbo_method: :post} %>
+  </div>
+</div>

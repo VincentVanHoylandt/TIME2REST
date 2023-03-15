@@ -1,3 +1,34 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Codespaces
+Marketplace
+Explore
+
+@Akleodorion
+VincentVanHoylandt
+/
+TIME2REST
+Public
+Fork your own copy of VincentVanHoylandt/TIME2REST
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+TIME2REST/db/seeds.rb /
+@Kherset
+Kherset Seeds misent a jour
+Latest commit 3565749 14 hours ago
+ History
+ 3 contributors
+@VincentVanHoylandt@Kherset@Philippe-Gllrt
+228 lines (226 sloc)  29.4 KB
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -13,61 +44,131 @@ puts "Done!"
 
 puts "Creating users..."
 user1 = User.create({ first_name: "Vincent", last_name: "Vanhoylandt", age: 27, email: "vincent@lewagon.fr",
-                      password: "lewagon", job_title: "Développeur Web" })
+                      password: "lewagon", job_title: "Développeur Web", diplomas: "Master en Informatique Appliquée",
+                      experiences: "3 ans en tant que développeur full-stack chez une start-up specialisee en sextoy,
+                      1 an en tant que développeur back-end chez Google",
+                      Address: "22 Rue du Faubourg Saint-Antoine, Paris, 75011, France" })
 user2 = User.create({ first_name: "Christian", last_name: "Bondzie", age: 44, email: "christian@lewagon.fr",
-                      password: "lewagon", job_title: "Architecte d'intérieur" })
+                      password: "lewagon", job_title: "Architecte d'intérieur", diplomas: "Diplôme
+                      d'architecte d'intérieur", experiences: "2 ans en tant qu'architecte
+                      d'intérieur chez design & family, 3 ans en tant que freelance",
+                      Address: "15 Rue de la République, Lyon, 69001, France" })
 user3 = User.create({ first_name: "Philippe", last_name: "Goulliard", age: 49, email: "philippe@lewagon.fr",
-                      password: "lewagon", job_title: "Infirmier à domicile" })
+                      password: "lewagon", job_title: "Infirmier à domicile",
+                      diplomas: "Diplôme d'état d'infirmier", experiences: "10 ans en tant
+                      qu'infirmier a l'hopital St Maurice, 3 ans en tant qu'infirmier à domicile",
+                      Address: "2 Rue de la Paix, Nice, 06000, France" })
 user4 = User.create({ first_name: "Jeremy", last_name: "Twardowski", age: 36, email: "jeremy@lewagon.fr",
-                      password: "lewagon", job_title: "Electricien" })
+                      password: "lewagon", job_title: "Electricien",
+                      diplomas: "CAP Electricien", experiences: "5 ans en tant qu'apprenti chez un artisan
+                      électricien, 6 ans en tant qu'électricien chez Building factory",
+                      Address: "7 Rue de la Pompe, Marseille, 13008, France" })
 user5 = User.create({ first_name: "Sophie", last_name: "Koch", age: 52, email: "sophie@lewagon.fr",
-                      password: "lewagon", job_title: "Psychologue clinicien" })
+                      password: "lewagon", job_title: "Psychologue clinicien", diplomas: "Doctorat en Psychologie",
+                      experiences: "8 ans en tant que psychologue clinicienne dans un hôpital,
+                      4 ans en tant que psychothérapeute en libéral",
+                      Address: "10 Rue du Général Leclerc, Toulouse, 31000, France" })
 user6 = User.create({ first_name: "Maximilian", last_name: "Bauer", age: 22, email: "maximilian@lewagon.fr",
-                      password: "lewagon", job_title: "Chef de projet informatique" })
+                      password: "lewagon", job_title: "Chef de projet informatique", diplomas: "Master en Ingénierie
+                      Informatique", experiences: "1 an en tant que développeur chez une Tzi-Dzi,
+                      1 an en tant que chef de projet chez Info Conseil",
+                      Address: "22 Rue de la Roquette, Nantes, 44000, France" })
 user7 = User.create({ first_name: "Maria", last_name: "Schmidt", age: 39, email: "maria@lewagon.fr",
-                      password: "lewagon", job_title: "Traducteur" })
+                      password: "lewagon", job_title: "Traducteur", diplomas: "Diplôme de traducteur international",
+                      experiences: "Stage de 7 mois pour le gourvernement du Venezuella",
+                      Address: "12 Rue de la Mairie, Strasbourg, 67000, France" })
 user8 = User.create({ first_name: "Alexander", last_name: "Meyer", age: 28, email: "alexander@lewagon.fr",
-                      password: "lewagon", job_title: "Infirmier à domicile" })
+                      password: "lewagon", job_title: "Infirmier à domicile", diplomas: "Diplôme d'État d'infirmier",
+                      experiences: "Infirmier à domicile chez X Soins pendant 3 ans",
+                      Address: "8 Rue des Capucins, Lille, 59000, France" })
 user9 = User.create({ first_name: "Laura", last_name: "Wagner", age: 32, email: "laura@lewagon.fr",
-                      password: "lewagon", job_title: "Consultant en marketing" })
+                      password: "lewagon", job_title: "Consultant en marketing", diplomas: "Master en marketing et
+                      communication", experiences: "Consultant en marketing chez Y Agency pendant 4 ans",
+                      Address: "35 Rue des Martyrs, Bordeaux, 33000, France" })
 user10 = User.create({ first_name: "Felix", last_name: "Becker", age: 43, email: "felix@lewagon.fr",
-                       password: "lewagon", job_title: "Graphiste" })
+                       password: "lewagon", job_title: "Graphiste", diplomas: "Diplôme en design graphique",
+                       experiences: "Graphiste chez Z Agency pendant 5 ans",
+                       Address: "9 Rue de la Liberté, Rennes, 35000, France" })
 user11 = User.create({ first_name: "Nina", last_name: "Hofmann", age: 29, email: "nina@lewagon.fr",
-                       password: "lewagon", job_title: "Mécanicien automobile" })
+                       password: "lewagon", job_title: "Mécanicien automobile", diplomas: "Brevet de technicien
+                       automobile", experiences: "1 an d'expérience chez BMW",
+                       Address: "14 Rue Saint-Honoré, Montpellier, 34000, France" })
 user12 = User.create({ first_name: "Jürgen", last_name: "Schulz", age: 50, email: "jurgen@lewagon.fr",
-                       password: "lewagon", job_title: "Consultant en ressources humaines" })
+                       password: "lewagon", job_title: "Consultant en ressources humaines", diplomas: "Master en gestion
+                       des ressources humaines", experiences: "3 ans d'expérience chez PwC",
+                       Address: "18 Rue de la Fontaine, Caen, 14000, France" })
 user13 = User.create({ first_name: "Maja", last_name: "Krüger", age: 34, email: "maja@lewagon.fr",
-                       password: "lewagon", job_title: "Photographe" })
+                       password: "lewagon", job_title: "Photographe", diplomas: "BTS Photographie",
+                       experiences: "2 ans d'expérience en freelance",
+                       Address: "11 Rue de la République, Rouen, 76000, France" })
 user14 = User.create({ first_name: "Jan", last_name: "Werner", age: 25, email: "jan@lewagon.fr",
-                       password: "lewagon", job_title: "Chercheur scientifique" })
+                       password: "lewagon", job_title: "Chercheur scientifique", diplomas: "Doctorat en biologie
+                       moléculaire", experiences: "3 ans de recherche postdoctorale à l'INSERM",
+                       Address: "1 Rue du 8 Mai 1945, Grenoble, 38000, France" })
 user15 = User.create({ first_name: "Caroline", last_name: "Hermann", age: 46, email: "caroline@lewagon.fr",
-                       password: "lewagon", job_title: "Journaliste" })
+                       password: "lewagon", job_title: "Journaliste", diplomas: "Master en journalisme",
+                       experiences: "10 ans d'expérience en tant que correspondante à l'étranger",
+                       Address: "6 Rue des Jacobins, Orléans, 45000, France" })
 user16 = User.create({ first_name: "Fritz", last_name: "Peters", age: 38, email: "fritz@lewagon.fr",
-                       password: "lewagon", job_title: "Analyste financier" })
+                       password: "lewagon", job_title: "Analyste financier", diplomas: "Master en finance",
+                       experiences: "2 ans chez Goldman Sachs",
+                       Address: "3 Rue des Champs Elysées, Dijon, 21000, France" })
 user17 = User.create({ first_name: "Antonia", last_name: "Schröder", age: 27, email: "antonia@lewagon.fr",
-                       password: "lewagon", job_title: "Analyste financier" })
+                       password: "lewagon", job_title: "Analyste financier", diplomas: "Master en Finance Quantitative",
+                       experiences: "Expérience en banque d'investissement et en analyse de données de marché",
+                       Address: "17 Rue de la Gare, Poitiers, 86000, France" })
 user18 = User.create({ first_name: "Eric", last_name: "Neumann", age: 31, email: "eric@lewagon.fr",
-                       password: "lewagon", job_title: "Monteur vidéo" })
+                       password: "lewagon", job_title: "Monteur vidéo", diplomas: "Licence en Cinématographie",
+                       experiences: "Expérience en montage vidéo pour la publicité et le cinéma indépendant",
+                       Address: "23 Rue de la Victoire, Lorient, 56100, France" })
 user19 = User.create({ first_name: "Lucas", last_name: "Meyer", age: 41, email: "lucas@lewagon.fr",
-                       password: "lewagon", job_title: "Psychiatre" })
+                       password: "lewagon", job_title: "Psychiatre", diplomas: "Doctorat en psychiatrie clinique",
+                       experiences: "Psychiatre 6 ans a l'hopital du dernier espoir et en pratique privée",
+                       Address: "5 Rue de la Concorde, Annecy, 74000, France" })
 user20 = User.create({ first_name: "Gertrude", last_name: "Dubois", age: 28, email: "gertrude@lewagon.fr",
-                       password: "lewagon", job_title: "Analyste de données" })
+                       password: "lewagon", job_title: "Analyste de données", diplomas: "Master en Science des données",
+                       experiences: "Expérience en analyse de données pour une entreprise de
+                       technologie et une entreprise de vente au détail",
+                       Address: "16 Rue de la Clef, Lille, 59000, France" })
 user21 = User.create({ first_name: "Pierre", last_name: "Lacroix", age: 45, email: "pierre@lewagon.fr",
-                       password: "lewagon", job_title: "Décorateur d'évènements" })
+                       password: "lewagon", job_title: "Décorateur d'évènements",
+                       diplomas: "BTS Design d'espace", experiences: "J'ai travaillé
+                       pendant 2 ans pour une agence d'événementiel en tant que décorateur
+                       et j'ai également travaillé en freelance pour différents clients.",
+                       Address: "13 Rue des Ecoles, Aix-en-Provence, 13100, France" })
 user22 = User.create({ first_name: "Emma", last_name: "Martin", age: 37, email: "emma@lewagon.fr",
-                       password: "lewagon", job_title: "Infirmier à domicile" })
+                       password: "lewagon", job_title: "Infirmiere à domicile",
+                       diplomas: "Diplôme d'Etat d'Infirmière", experiences: "J'ai travaillé pendant 5 ans dans
+                       différents services hospitaliers avant de me spécialiser dans les soins à domicile.",
+                       Address: "21 Rue du Vieux Marché, Rouen, 76000, France" })
 user23 = User.create({ first_name: "Antoine", last_name: "Rousseau", age: 30, email: "antoine@lewagon.fr",
-                       password: "lewagon", job_title: "Electricien" })
+                       password: "lewagon", job_title: "Electricien", diplomas: "CAP Électricien",
+                       experiences: "J'ai travaillé pendant 3 ans dans une entreprise d'électricité avant de me mettre
+                       à mon compte.",
+                       Address: "4 Rue du Commerce, Dijon, 21000, France" })
 user24 = User.create({ first_name: "Julie", last_name: "Lefèvre", age: 32, email: "julie@lewagon.fr",
-                       password: "lewagon", job_title: "Infirmier à domicile" })
+                       password: "lewagon", job_title: "Infirmiere à domicile",
+                       diplomas: "Diplôme d'Etat d'Infirmière", experiences: "J'ai travaillé pendant
+                       6 ans dans un hôpital avant de me lancer dans les soins à domicile.",
+                       Address: "28 Rue des Augustins, Montpellier, 34000, France" })
 user25 = User.create({ first_name: "Victor", last_name: "Bouchard", age: 48, email: "victor@lewagon.fr",
-                       password: "lewagon", job_title: "Infirmier à domicile" })
+                       password: "lewagon", job_title: "Infirmier à domicile", diplomas: "Diplôme d'Etat d'Infirmier",
+                       experiences: "J'ai travaillé pendant 8 ans dans différents services hospitaliers avant
+                       de me spécialiser dans les soins à domicile.",
+                       Address: "19 Rue de la Croix Nivert, Paris, 75015, France" })
 user26 = User.create({ first_name: "Berangere", last_name: "Picard", age: 22, email: "berangere@lewagon.fr",
-                       password: "lewagon", job_title: "Infirmier à domicile" })
+                       password: "lewagon", job_title: "Infirmiere à domicile",
+                       diplomas: "Baccalauréat professionnel de soins infirmiers",
+                       experiences: "Infirmière à domicile chez Particuliers & Associés pendant 2 ans",
+                       Address: "30 Rue du Faubourg du Temple, Lille, 59000, France" })
 user27 = User.create({ first_name: "Maxime", last_name: "Bergeron", age: 36, email: "maxime@lewagon.fr",
-                       password: "lewagon", job_title: "Infirmier à domicile" })
+                       password: "lewagon", job_title: "Infirmier à domicile", diplomas: "Master en soins infirmiers",
+                       experiences: "Infirmier à domicile chez Assistance & Soins pendant 3 ans et demi",
+                       Address: "26 Rue de la République, Nice, 06000, France" })
 user28 = User.create({ first_name: "Céline", last_name: "Renaud", age: 29, email: "celine@lewagon.fr",
-                       password: "lewagon", job_title: "Infirmier à domicile" })
+                       password: "lewagon", job_title: "Infirmiere à domicile", diplomas: "Brevet professionnel de
+                       soins infirmiers", experiences: "Infirmière à domicile chez Soin & Confiance pendant 1 an",
+                       Address: "31 Rue du Vieux Port, Marseille, 13001, France" })
 puts "users created"
 
 puts "Creating offers..."

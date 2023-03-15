@@ -1,6 +1,7 @@
 #landing_illustation {
   background-image: url('slider-one.jpg');
   background-size: cover;
+  background-position: left bottom;
   width: 100%;
   height: 100vh;
   z-index: 0;
@@ -47,7 +48,7 @@
 .map_landing{
   height: 500px;
   width: 300px;
-  background-color: green;
+
 }
 
 .fixed {
@@ -89,18 +90,52 @@
 
   margin-right: 20px;
   width: 80%;
-  height: 450px
+  height: calc(75vh);
 
 
 }
-// .nav-container {
-//   display: none;
-// }
-
-.display_none {
-  display: none;
+.fade-in {
+  opacity: 1;
+  animation: fadetwo 0.5s ease-in-out forwards;
+  transition: opacity 1s;
+  // transform: translateY(20%);
 }
 
-body > .nav-ccontainer {
-  display: none
+.fade-out {
+  opacity: 0;
+  animation: fade 0.5s ease-in-out forwards;
+  transition: opacity 1s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadetwo {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+  }
+}
+
+#fixed-map {
+  position: sticky;
+  top: 130px;
+  left: 5%;
+}
+
+#no-background {
+  background-image: none;
 }

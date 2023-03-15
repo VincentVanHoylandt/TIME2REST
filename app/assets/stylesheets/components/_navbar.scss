@@ -10,21 +10,21 @@
   padding: 0 15px;
   margin-bottom: 100px;
   z-index: 10;
+  transition: 1s;
+  background-image: url('slider-one.jpg');
+  background-size: left cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
 
   .nav-btn-dshb-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     min-width: 13%;
-    border: 1px solid black;
+    // border: 1px solid black;
   }
   .my-dashboard-btn i{
     margin: 0 9px;
   }
 
-  // .diplay_none {
-  //   display: none;
-  // }
-
-  //to delete
 }

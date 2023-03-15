@@ -3,19 +3,19 @@
     <div class="lc-nav-container">
       <ul class = "nav">
         <li>
-          <p data-action= "click->dashboard-link#switch_page" data-id ="message" data-dashboard-link-target="link">Messageries</p>
+          <p class="active" data-action= "click->dashboard-link#switch_page" data-id ="message" data-dashboard-link-target="link">Messageries</p>
         </li>
         <li>
           <p data-action= "click->dashboard-link#switch_page" data-id ="canditature" data-dashboard-link-target="link">Mes canditatures</p>
         </li>
         <li>
-          <p class="active" data-action= "click->dashboard-link#switch_page" data-id ="offre" data-dashboard-link-target="link">Mes offres</p>
+          <p data-action= "click->dashboard-link#switch_page" data-id ="offre" data-dashboard-link-target="link">Mes offres</p>
         </li>
         <li>
-          <p data-action= "click->dashboard-link#switch_page" data-id ="edit" data-dashboard-link-target="link">Editer mon offre</p>
+          <p data-action= "click->dashboard-link#switch_page" data-id ="edit" data-dashboard-link-target="link">Mon profil</p>
         </li>
       </ul>
-      <%= link_to "#", class:"my-disc-btn" do  %>
+      <%= link_to destroy_user_session_path, class:"my-disc-btn", data: {turbo_method: :delete} do  %>
         <ul>
           <i class="fa-solid fa-power-off"></i>
           <li>
@@ -28,28 +28,171 @@
 
 
   <div class="dmc-rc">
-    <div class="dmc-rc-message d-none" data-dashboard-link-target="message" data-id ="msg">
-        <p>messsage</p>
+
+    <%# --------------------------- %>
+    <div class="dmc-rc-message" data-controller="message" data-id ="msg">
+      <div class="rc-message-lc">
+        <% @participants.each do |participant| %>
+          <%= render partial: 'shared/message_card', locals: {img: 'item3.png',
+                                                              user: User.find(participant.user_2),
+                                                              participant: participant} %>
+        <% end %>
+      </div>
+
+      <% @participants.each do |participant| %>
+        <% user_2 = User.find(participant.user_2) %>
+        <div class="rc-message-rc d-none" data-id= <%=participant.id%>  data-message-target="message">
+          <div class="msg-rc-tc">
+              <div class="avatar-name-container">
+                <%= render partial: 'shared/avatar_small', locals: {img: 'item3.png'} %>
+                <div class="name-last-online">
+                  <h3><%= user_2.first_name + ' ' +user_2.last_name%></h3>
+                  <p>Last time online: 20mn</p>
+                </div>
+              </div>
+              <i class="fa-solid fa-trash"></i>
+          </div>
+
+          <div class="msg-rc-mc">
+            <div class="my-msg-container">
+              <div class="my-msg-lc">
+              </div>
+              <div class="my-msg-rc">
+                <p><strong>You :</strong></p>
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque animi eius est, placeat consequuntur
+                    eos sed aspernatur ad neque incidunt? Fugit nihil sit ipsa aperiam alias voluptatibus error sapiente ut.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="msg-rc-bc">
+              <%= form_with model: @message, class: "msg-form"  do |f| %>
+                <%= f.text_field :name, class: "msg-field" %>
+                <%= f.submit class: "msg-btn" %>
+              <% end %>
+
+          </div>
+
+        </div>
+
+      <% end %>
+
+
+
+
+
+
+
+
+    <%# --------------------------- %>
+    <div class="dmc-rc-apply d-none d-flex" data-dashboard-link-target="apply" data-id ="cnd">
+
+        <% @user.appliances.each do |appliance| %>
+          <%= render partial: 'shared/my_apply_card', locals: {offer: appliance.offer, user: appliance.offer.user} %>
+        <% end %>
+
     </div>
-    <div class="dmc-rc-apply d-none" data-dashboard-link-target="apply" data-id ="cnd">
-      <p>apply</p>
-    </div>
-    <div class="dmc-rc-offer" data-dashboard-link-target="offer" data-id ="ofr">
+    <div class="dmc-rc-offer d-none" data-dashboard-link-target="offer" data-id ="ofr">
       <% @offers.each do |offer| %>
-        <%= render partial: 'shared/offer_card', locals: {
-                                                           titre: offer.job_title,
-                                                           description: offer.description,
-                                                           avatar: 'item3.png',
-                                                           location: 'Lille',
-                                                           date: offer.start_time,
-                                                           salary: offer.salary,
-                                                           id: offer.id}
-        %>
+
+        <%= render partial: 'shared/offer_card', locals: { offer: offer, user: @user } %>
+
+        <% if offer.appliances != [] %>
+          <div class="offers-appliance">
+            <ul style = "display: flex;">
+            <% offer.appliances.each do |appliance| %>
+              <li style = "display: inline-block"> <%= render partial: 'shared/apply_card', locals: {user: appliance.user, appliance: appliance} %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+
       <% end %>
 
     </div>
     <div class="dmc-rc-edit d-none" data-dashboard-link-target="edit" data-id ="edt">
-      <p>edit</p>
+      <div class="lc">
+        <%= render partial: 'shared/avatar_large', locals: {img: 'item3.png'} %>
+        <div class="name-container">
+          <h3>John</h3>
+          <h3>Doe</h3>
+        </div>
+        <p>Bolideur sur ford sierra</p>
+        <p>rating : 5 Etoiles</p>
+        <ul>
+          <li>
+            <h3>Experiences</h3>
+          </li>
+          <li>
+            <h3>Diplomes</h3>
+          </li>
+          <li>
+            <h3>Reviews</h3>
+          </li>
+        </ul>
+        <%= link_to 'Edit', '#', class: "my-btn-small" %>
+      </div>
+      <div class="rc">
+        <div class="diplomas-container">
+          <div class="dc-lc"> </div>
+          <div class="dc-rc">
+            <h2>Expériences</h2>
+            <div class = "diplomas-infos">
+              <div class="name-location-date">
+                <h3>Etienne racing</h3>
+                <h3>Villejuif</h3>
+                <h3>04/03/2019 - 04/09/2019</h3>
+              </div>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda fuga quo blanditiis nobis
+                  maiores numquam at aliquam saepe autem ab! Iste amet non consequuntur sequi nisi minima similique, est itaque.</p>
+            </div>
+            <div class = "diplomas-infos">
+              <div class="name-location-date">
+                <h3>Villebrequin</h3>
+                <h3>Benzin</h3>
+                <h3>07/07/2020 - 10/10/2020</h3>
+              </div>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda fuga quo blanditiis nobis
+                  maiores numquam at aliquam saepe autem ab! Iste amet non consequuntur sequi nisi minima similique, est itaque.</p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="diplomas-container">
+          <div class="dc-lc"> </div>
+          <div class="dc-rc">
+            <h2>Diplomas</h2>
+            <div class = "diplomas-infos">
+              <h3>Master en bolidage</h3>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda fuga quo blanditiis nobis
+                  maiores numquam at aliquam saepe autem ab! Iste amet non consequuntur sequi nisi minima similique, est itaque.</p>
+            </div>
+            <div class = "diplomas-infos">
+              <h3>Licence en béquets</h3>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda fuga quo blanditiis nobis
+                  maiores numquam at aliquam saepe autem ab! Iste amet non consequuntur sequi nisi minima similique, est itaque.</p>
+            </div>
+          </div>
+        </div>
+        <div class="diplomas-container">
+          <div class="dc-lc"> </div>
+          <div class="dc-rc">
+            <h2>Diplomas</h2>
+            <div class = "diplomas-infos">
+              <h3>Master en bolidage</h3>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda fuga quo blanditiis nobis
+                  maiores numquam at aliquam saepe autem ab! Iste amet non consequuntur sequi nisi minima similique, est itaque.</p>
+            </div>
+            <div class = "diplomas-infos">
+              <h3>Licence en béquets</h3>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda fuga quo blanditiis nobis
+                  maiores numquam at aliquam saepe autem ab! Iste amet non consequuntur sequi nisi minima similique, est itaque.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
