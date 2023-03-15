@@ -5,9 +5,10 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-
 puts "Cleaning database..."
 Offer.destroy_all
+puts "offer deleted"
+Diploma.destroy_all
 puts "offer deleted"
 User.destroy_all
 puts "Done!"
