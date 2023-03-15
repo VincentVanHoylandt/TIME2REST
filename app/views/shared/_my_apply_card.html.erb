@@ -14,6 +14,6 @@
       <p> au <%= offer.end_time %></p>
     </div>
     <p style="margin-bottom: 10px">Ville: lille</p>
-    <%= link_to 'Annuler', '#', class: "my-btn-small" %>
+    <%= link_to 'Annuler', offer_appliance_path(offer.id, appliance.id), data:{turbo_method: :delete}, class: "my-btn-small" %>
   </div>
 </div>
