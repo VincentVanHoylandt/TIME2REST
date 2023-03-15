@@ -51,6 +51,7 @@ label {
   border-radius: 61px;
 
   .my-search-form-lc {
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,6 +60,15 @@ label {
 
      i{
       margin-right: 5px;
+     }
+
+     #job_title{
+      color: white;
+     }
+
+     #job_title::placeholder{
+      color: white;
+      opacity: 0.5;
      }
    }
 
@@ -76,6 +86,16 @@ label {
       border-left: 1px solid white;
       border-radius: 0px;
     }
+
+    #address{
+      color: white;
+     }
+
+     #address::placeholder{
+      color: white;
+      opacity: 0.5;
+     }
+
    }
    .no-border {
     background-color: transparent;
