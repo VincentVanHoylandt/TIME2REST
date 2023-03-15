@@ -16,7 +16,6 @@ export default class extends Controller {
 
   event.preventDefault();
   this.contentTarget.classList.add('right-shift');
-  console.log('avant la fonction');
   this.contentTarget.addEventListener('animationend', () => {
     this.indexTarget.classList.add('d-none');
   }, { once: true });
