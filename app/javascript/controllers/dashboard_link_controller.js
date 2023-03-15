@@ -27,7 +27,7 @@ export default class extends Controller {
         this.messageTarget.classList.add('d-none')
         this.applyTarget.classList.add('d-none')
         break;
-      case "offre":
+      case "offer":
         this.offerTarget.classList.remove('d-none')
         this.editTarget.classList.add('d-none')
         this.messageTarget.classList.add('d-none')
@@ -38,9 +38,8 @@ export default class extends Controller {
         this.offerTarget.classList.add('d-none')
         this.editTarget.classList.add('d-none')
         this.applyTarget.classList.add('d-none')
-        console.log('1')
         break;
-      case "canditature":
+      case "apply":
         this.applyTarget.classList.remove('d-none')
         this.offerTarget.classList.add('d-none')
         this.messageTarget.classList.add('d-none')

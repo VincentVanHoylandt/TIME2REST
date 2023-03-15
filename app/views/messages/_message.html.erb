@@ -1,0 +1,19 @@
+<% if message.user_id == current_user.id %>
+  <div class="my-msg-container right">
+    <div class="my-msg-lc">
+    </div>
+    <div class="my-msg-rc" >
+      <p><strong>You :</strong></p>
+      <p> <%= message.content %></p>
+    </div>
+  </div>
+<% else %>
+  <div class="my-msg-container">
+    <div class="my-msg-lc">
+    </div>
+    <div class="my-msg-rc">
+      <p><strong>You :</strong></p>
+      <p> <%= message.content %></p>
+    </div>
+  </div>
+<% end %>
