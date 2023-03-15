@@ -31,7 +31,6 @@
 
   display: block;
   text-align: start;
-  border: 1px solid black;
 
   li {
     font-size: 18px;
@@ -81,20 +80,18 @@
     width: 25%;
     height: 100%;
     overflow: auto;
-    border: 1px solid black;
+    padding: 0 1%;
+
   }
   .rc-message-rc{
     width: 75%;
     height: 100%;
-    border: 1px solid red;
     display: flex;
     position: relative;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
   }
-
-
 
   .msg-rc-tc {
     width: 95%;
@@ -121,8 +118,10 @@
   .msg-rc-mc {
     width: 95%;
     height: 70%;
+    padding: 2% 2%;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     display: flex;
+    flex-direction: column;
   }
 
   .msg-rc-bc {
@@ -144,7 +143,6 @@
         box-shadow: 0 0 10px rgba(0,0,0,0.2);
       }
   }
-
 
 }
 .dmc-rc-edit {
@@ -172,7 +170,6 @@
       list-style-type: none;
       text-align: start;
       width: fit-content;
-      border: 1px solid red;
       margin: 20px auto;
     }
 
@@ -189,14 +186,17 @@
 
 
 .msg-rc-mc {
-
+  overflow: auto;
 
   .my-msg-container {
     display: flex;
     height: fit-content;
+    margin: 1% 0%;
     width: 50%;
-    margin-left: 2%;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
+  .right{
+    align-self: end;
   }
   .my-msg-lc{
     width: 5%;
