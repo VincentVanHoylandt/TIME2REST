@@ -1,11 +1,19 @@
 class MessagesController < ApplicationController
 
   def create
-    raise
-    @message = Message.new(message_params)
+    @chatroom = Chatroom.find(params[:chatroom])
+    @message = Message.new(content: params[:message][:name])
     @message.user = current_user
-    @message.save
+    @message.chatroom = @chatroom
+    if @message.save
+      ChatroomChannel.broadcast_to(
+        @chatroom,
+        render_to_string(partial: "message", locals: {message: @message})
+      )
+      head :ok
+    end
     # SendMessageJob.perform_later(@message)
+    authorize @message
   end
 
   private

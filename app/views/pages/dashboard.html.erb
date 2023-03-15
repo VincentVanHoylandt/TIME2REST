@@ -7,10 +7,10 @@
           <p class="active" data-action= "click->dashboard-link#switch_page" data-id ="message" data-dashboard-link-target="link">Messageries</p>
         </li>
         <li>
-          <p data-action= "click->dashboard-link#switch_page" data-id ="canditature" data-dashboard-link-target="link">Mes canditatures</p>
+          <p data-action= "click->dashboard-link#switch_page" data-id ="apply" data-dashboard-link-target="link">Mes canditatures</p>
         </li>
         <li>
-          <p data-action= "click->dashboard-link#switch_page" data-id ="offre" data-dashboard-link-target="link">Mes offres</p>
+          <p data-action= "click->dashboard-link#switch_page" data-id ="offer" data-dashboard-link-target="link">Mes offres</p>
         </li>
         <li>
           <p data-action= "click->dashboard-link#switch_page" data-id ="edit" data-dashboard-link-target="link">Mon profil</p>
@@ -31,60 +31,64 @@
   <div class="dmc-rc">
 
     <%# --------------------------- %>
-    <div class="dmc-rc-message" data-controller="message" data-id ="msg">
+    <div class="dmc-rc-message" data-dashboard-link-target="message" data-controller="message" data-id ="msg">
       <div class="rc-message-lc">
-        <% @participants.each do |participant| %>
-          <%= render partial: 'shared/message_card', locals: {img: 'item3.png',
-                                                              user: User.find(participant.user_2),
-                                                              participant: participant} %>
+
+        <% if @chatrooms != [] %>
+          <% @chatrooms.each do |chatroom| %>
+          <% chatroom.participants[0].user_id == current_user.id ? user_2 = User.find(chatroom.participants[0].user_2) : user_2 = User.find(chatroom.participants[0].user_id) %>
+            <%= render partial: 'shared/message_card', locals: {img: 'item3.png',
+                                                              user: user_2,
+                                                              chatroom: chatroom,
+                                                              participant: @chatrooms[0].participants[0]} %>
+          <% end %>
         <% end %>
       </div>
 
-      <% @participants.each do |participant| %>
-        <% user_2 = User.find(participant.user_2) %>
-        <div class="rc-message-rc d-none" data-id= <%=participant.id%>  data-message-target="message">
-          <div class="msg-rc-tc">
-              <div class="avatar-name-container">
-                <%= render partial: 'shared/avatar_small', locals: {img: 'item3.png'} %>
-                <div class="name-last-online">
-                  <h3><%= user_2.first_name + ' ' +user_2.last_name%></h3>
-                  <p>Last time online: 20mn</p>
+
+
+      <% if @chatrooms != [] %>
+        <% @chatrooms.each do |chatroom| %>
+          <% chatroom.participants[0].user_id == current_user.id ? user_2 = User.find(chatroom.participants[0].user_2) : user_2 = User.find(chatroom.participants[0].user_id) %>
+          <div class="rc-message-rc d-none" data-id= <%=chatroom.participants[0].id%>  data-controller="chatroom-subscription"
+                data-chatroom-subscription-chatroom-id-value="<%= chatroom.id %>"
+                data-message-target="message"
+          >
+            <div class="msg-rc-tc">
+                <div class="avatar-name-container">
+                  <%= render partial: 'shared/avatar_small', locals: {img: 'item3.png'} %>
+                  <div class="name-last-online">
+                    <h3><%= user_2.first_name + ' ' + user_2.last_name%></h3>
+                    <p>Last time online: 20mn</p>
+
+                  </div>
                 </div>
-              </div>
-              <i class="fa-solid fa-trash"></i>
-          </div>
-
-          <div class="msg-rc-mc">
-            <div class="my-msg-container">
-              <div class="my-msg-lc">
-              </div>
-              <div class="my-msg-rc">
-                <p><strong>You :</strong></p>
-                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque animi eius est, placeat consequuntur
-                    eos sed aspernatur ad neque incidunt? Fugit nihil sit ipsa aperiam alias voluptatibus error sapiente ut.</p>
-              </div>
+                <i class="fa-solid fa-trash"></i>
             </div>
+
+            <div class="msg-rc-mc" data-chatroom-subscription-target="messages">
+            <% chatroom.messages.each do |message| %>
+              <%= render partial: 'messages/message', locals: { message: message} %>
+            <% end %>
+
+            </div>
+
+            <div class="msg-rc-bc">
+                <%= form_with model: @message, class: "msg-form"  do |f| %>
+                  <%= f.text_field :name, class: "msg-field" %>
+                  <%= hidden_field_tag 'chatroom', chatroom.id  %>
+                  <%= f.submit class: "msg-btn" %>
+                <% end %>
+
+            </div>
+
           </div>
 
-          <div class="msg-rc-bc">
-              <%= form_with model: @message, class: "msg-form"  do |f| %>
-                <%= f.text_field :name, class: "msg-field" %>
-                <%= f.submit class: "msg-btn" %>
-              <% end %>
-
-          </div>
-
-        </div>
+        <% end %>
 
       <% end %>
 
-
-
-
-
-
-
-
+    </div>
     <%# --------------------------- %>
     <div class="dmc-rc-apply d-none d-flex" data-dashboard-link-target="apply" data-id ="cnd">
 
