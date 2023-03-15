@@ -8,8 +8,9 @@
   </div>
 
   <div class="offer-card-rc">
-    <%= render partial: 'shared/avatar_small', locals: {img: 'item3.png'}%>
-    <div class = "rc-infos">
+    <%= image_tag offer.user.photo_url, class: "avatar-card-index" %>
+    <%#= render partial: 'shared/avatar_small', locals: {img: 'item3.png'}, class: "d-none%>
+    <div class = "rc-infos pt-5">
       <div class="rc-infos-fc">
         <i class="fa-solid fa-map-pin"></i>
         <i class="fa-solid fa-calendar-days"></i>
