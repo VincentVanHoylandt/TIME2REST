@@ -37,7 +37,7 @@
         <% if @chatrooms != [] %>
           <% @chatrooms.each do |chatroom| %>
           <% chatroom.participants[0].user_id == current_user.id ? user_2 = User.find(chatroom.participants[0].user_2) : user_2 = User.find(chatroom.participants[0].user_id) %>
-            <%= render partial: 'shared/message_card', locals: {img: 'item3.png',
+            <%= render partial: 'shared/message_card', locals: {img: user_2.picture_url,
                                                               user: user_2,
                                                               chatroom: chatroom,
                                                               participant: @chatrooms[0].participants[0]} %>
@@ -57,7 +57,7 @@
           >
             <div class="msg-rc-tc">
                 <div class="avatar-name-container">
-                  <%= render partial: 'shared/avatar_small', locals: {img: 'item3.png'} %>
+                  <%= render partial: 'shared/avatar_small', locals: {img: user_2.picture_url} %>
                   <div class="name-last-online">
                     <h3><%= user_2.first_name + ' ' + user_2.last_name%></h3>
                   </div>
@@ -69,14 +69,14 @@
 
             <div class="msg-rc-mc" data-chatroom-subscription-target="messages">
               <% chatroom.messages.each do |message| %>
-                  <div class="<%= message.user_id == current_user.id ? 'my-msg-container right': 'my-msg-container' %>">
+                  <div class="<%= message.user_id == current_user.id ? 'my-msg-container right': 'not-my-msg-container' %>">
                     <%= render partial: 'messages/message', locals: { message: message} %>
                   </div>
                 <% end %>
             </div>
 
             <div class="msg-rc-bc">
-                <%= form_with model: @message, class: "msg-form"  do |f| %>
+                <%= form_with model: @message,html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" } ,class: "msg-form"}  do |f| %>
                   <%= f.text_field :name, class: "msg-field" %>
                   <%= hidden_field_tag 'chatroom', chatroom.id  %>
                   <%= f.submit class: "my-btn", value: "Send" %>
@@ -120,7 +120,7 @@
     </div>
     <div class="dmc-rc-edit <%= params[:where] == 'edit' ? ' ' : 'd-none'%>" data-dashboard-link-target="edit" data-id ="edt">
       <div class="lc">
-        <%= render partial: 'shared/avatar_large', locals: {img: 'item3.png'} %>
+        <%= render partial: 'shared/avatar_large', locals: {img: @current_user.picture_url} %>
         <div class="name-container">
 
           <h3> <%=current_user.first_name %> <%=current_user.last_name  %></h3>
@@ -141,15 +141,15 @@
         <div class="diplomas-container">
           <div class="dc-lc"> </div>
           <div class="dc-rc">
-            <h2>Expérience(s)</h2>
-            <div class = "diplomas-infos">
-              <div class="name-location-date">
-                <% current_user.diplomas.each do |diploma| %>
-                <h3><%= diploma.title  %></h3>
-                <h3>Du <%= diploma.start_time  %> au <%= diploma.end_time  %> </h3>
+            <h2>Diplôme(s)</h2>
+            <% current_user.diplomas.each do |diploma| %>
+              <div class = "diplomas-infos">
+                <div class="name-location-date">
+                  <h3><%= diploma.title  %></h3>
+                  <h3>Du <%= diploma.start_time  %> au <%= diploma.end_time  %> </h3>
+                </div>
+                <p style="margin-top: 3%">  <%=diploma.description  %></p>
               </div>
-              <p>  <%=diploma.description  %></p>
-            </div>
             <% end %>
           </div>
         </div>
@@ -157,11 +157,13 @@
         <div class="diplomas-container">
           <div class="dc-lc"> </div>
           <div class="dc-rc">
-            <h2>Diplôme(s)</h2>
+            <h2>Experience(s)</h2>
             <div class = "diplomas-infos">
               <% current_user.experiences.each do |experience| %>
-              <h3> <%=experience.title  %></h3>
-              <p><%=experience.description  %></p>
+              <div class="spacing" style="margin-bottom: 4%;">
+                <h3> <%=experience.title  %></h3>
+                <p><%=experience.description  %></p>
+              </div>
                   <% end %>
             </div>
           </div>
