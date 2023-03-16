@@ -169,6 +169,7 @@
 }
 
 .dmc-rc-edit {
+  margin-top: 150px;
   width: 100%;
   height: 100%;
   display: flex;
@@ -177,17 +178,15 @@
     text-align: center;
 
     .name-container {
+      margin: 20px 0px;
       display: flex;
       justify-content: center;
+      flex-direction: column;
+      gap: 6px;
+
     }
 
-    h3 {
-      margin: 15px 5px;
-    }
 
-    p {
-      margin: 20px 0px;
-    }
 
     ul {
       list-style-type: none;
@@ -256,7 +255,7 @@
 
 .diplomas-container{
   width: 80%;
-  margin: 15px auto;
+  margin: 0px auto 40px auto;
   display: flex;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 
