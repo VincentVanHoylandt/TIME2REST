@@ -7,7 +7,7 @@ class AppliancesController < ApplicationController
     @appliance.user = current_user
     authorize @appliance
     if @appliance.save
-      redirect_to dashboard_path
+      redirect_to dashboard_path(where: 'apply')
       flash[:notice] = "appliance saved successfully"
     else
       render "offers/show", status: :unprocessable_entity
@@ -38,7 +38,7 @@ class AppliancesController < ApplicationController
     @appliance.destroy
     authorize @appliance
 
-    redirect_to dashboard_path
+    redirect_to dashboard_path(where: 'apply')
   end
 
   def update

@@ -4,16 +4,16 @@
     <div class="lc-nav-container">
       <ul class = "nav">
         <li>
-          <p data-action= "click->dashboard-link#switch_page" data-id ="message" data-dashboard-link-target="link">Ma messagerie</p>
+          <p class= <%= params[:where] == "msg" ? "active" : "empty"%> data-action= "click->dashboard-link#switch_page" data-id ="message" data-dashboard-link-target="link">Ma messagerie</p>
         </li>
         <li>
-          <p data-action= "click->dashboard-link#switch_page" data-id ="apply" data-dashboard-link-target="link">Mes canditatures</p>
+          <p class= <%= params[:where] == "apply" ? "active" : "empty"%> data-action= "click->dashboard-link#switch_page" data-id ="apply" data-dashboard-link-target="link">Mes canditatures</p>
         </li>
         <li>
-          <p data-action= "click->dashboard-link#switch_page" data-id ="offer" data-dashboard-link-target="link">Mes offres</p>
+          <p class= <%= params[:where] == "offer" ? "active" : "empty"%> data-action= "click->dashboard-link#switch_page" data-id ="offer" data-dashboard-link-target="link">Mes offres</p>
         </li>
         <li>
-          <p class="active" data-action= "click->dashboard-link#switch_page" data-id ="edit" data-dashboard-link-target="link">Mon profil</p>
+          <p class= <%= params[:where] == "edit" ? "active" : "empty"%> data-action= "click->dashboard-link#switch_page" data-id ="edit" data-dashboard-link-target="link">Mon profil</p>
         </li>
       </ul>
       <%= link_to destroy_user_session_path, class:"my-disc-btn", data: {turbo_method: :delete} do  %>
@@ -31,7 +31,7 @@
   <div class="dmc-rc">
 
     <%# --------------------------- %>
-    <div class="dmc-rc-message d-none" data-dashboard-link-target="message" data-controller="message" data-id ="msg">
+    <div class="dmc-rc-message <%= params[:where] == 'msg' ? ' ' : 'd-none'%>" data-dashboard-link-target="message" data-controller="message" data-id ="msg">
       <div class="rc-message-lc">
 
         <% if @chatrooms != [] %>
@@ -92,14 +92,14 @@
 
     </div>
     <%# --------------------------- %>
-    <div class="dmc-rc-apply d-none d-flex" data-dashboard-link-target="apply" data-id ="cnd">
+    <div class="dmc-rc-apply <%= params[:where] == 'apply' ? ' ' : 'd-none'%> d-flex" data-dashboard-link-target="apply" data-id ="cnd">
 
         <% @user.appliances.each do |appliance| %>
           <%= render partial: 'shared/my_apply_card', locals: {offer: appliance.offer, user: appliance.offer.user, appliance: appliance} %>
         <% end %>
 
     </div>
-    <div class="dmc-rc-offer d-none" data-dashboard-link-target="offer" data-id ="ofr">
+    <div class="dmc-rc-offer <%= params[:where] == 'offer' ? ' ' : 'd-none'%>" data-dashboard-link-target="offer" data-id ="ofr">
       <% @offers.each do |offer| %>
 
         <%= render partial: 'shared/offer_card', locals: { offer: offer, user: @user } %>
@@ -118,7 +118,7 @@
       <% end %>
 
     </div>
-    <div class="dmc-rc-edit " data-dashboard-link-target="edit" data-id ="edt">
+    <div class="dmc-rc-edit <%= params[:where] == 'edit' ? ' ' : 'd-none'%>" data-dashboard-link-target="edit" data-id ="edt">
       <div class="lc">
         <%= render partial: 'shared/avatar_large', locals: {img: 'item3.png'} %>
         <div class="name-container">
