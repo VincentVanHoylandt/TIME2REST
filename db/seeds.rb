@@ -1,10 +1,5 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
 
 require 'faker'
 require 'date'
@@ -30,7 +25,7 @@ user2 = User.create({ first_name: "Christian", last_name: "Bondzie", age: 44, em
 diplomas2 = Diploma.create(user: user2, start_time: "01-09-2019", end_time: "30-06-2020", title: "Diplôme en Architecture d'Intérieur", description: "Formation en design d'intérieur, dessin technique et gestion de projet.")
 experiences2 = Experience.create(user: user2, start_time: "01-07-2021", end_time: "30-01-2023", title: "Architecte d'Intérieur chez ABC Design", description: "Conception de plans d'aménagement et de design intérieur pour des projets résidentiels et commerciaux.")
 
-user3 = User.create({ first_name: "Philippe", last_name: "Goulliard", age: 49, email: "philippe@lewagon.fr",
+user3 = User.create({ first_name: "Philippe", last_name: "Goulliart", age: 49, email: "philippe@lewagon.fr",
                       password: "lewagon", job_title: "Infirmier à domicile" })
 diplomas3 = Diploma.create(user: user3, start_time: "01-09-2016", end_time: "30-06-2019", title: "Diplôme d'État d'Infirmier", description: "Formation en soins infirmiers, pharmacologie et hygiène hospitalière.")
 experiences3 = Experience.create(user: user3, start_time: "01-07-2019", end_time: "30-06-2021", title: "Infirmier à domicile chez ABC Santé", description: "Soins infirmiers à domicile pour des patients atteints de maladies chroniques.")
@@ -132,8 +127,8 @@ url = URI("https://randomuser.me/api/?nat=fr")
     #  password
     password = "lewagon"
     #  job_title
-    job_list_male = ['Developper Web', "Infirmier à domicile", "Coiffeur", "Coach Sportif", "Sophrologue", "Dresseur", "Professeur d'Anglais Particulier"]
-    job_list_female = ['Developpeuse Web', "Infirmière à domicile", "Coiffeuse", "Coach Sportif", "Sophrologue", "Dresseuse", "Professeure d'Anglais Particulier"]
+    job_list_male = ['Développeur Web', "Infirmier à domicile", "Coiffeur", "Coach Sportif", "Sophrologue", "Dresseur", "Professeur particulier d'Anglais"]
+    job_list_female = ['Développeuse Web', "Infirmière à domicile", "Coiffeuse", "Coach Sportif", "Sophrologue", "Dresseuse", "Professeure Particulière d'Anglais"]
     if gender == 'male'
       job_title = job_list_male.sample
     else
@@ -149,10 +144,10 @@ url = URI("https://randomuser.me/api/?nat=fr")
       password: password, job_title: job_title, picture_url: picture_url })
 
     #creation d'un diplôme
-    diploma = Diploma.create(user: user, start_time: "01-09-2022", end_time: "29-02-2023", title: "Licence", description: "Formation approfondie sur les techniques et méthode actuelles.")
+    diploma = Diploma.create(user: user, start_time: "01-09-2022", end_time: "29-02-2023", title: "Licence", description: "Formation approfondie sur les techniques et méthodes actuelles.")
     #creation de deux experiences
-    experience1 = Experience.create(user: user, start_time: "01-07-2015", end_time: "30-06-2017", title: "#{job_title} junior", description: "J'ai évolué en tant que #{job_title} junior. Cela m'apporté les connaissances du métier que je voulais avant de me lancer à mon compte")
-    experience2 = Experience.create(user: user, start_time: experience1[:end_time], end_time: "still active", title: "#{job_title} salarié", description: "Je me suis lancé comme #{job_title} il y a 6ans. Je gère une vaste clientèle en utilisant des techniques actuelles et m'assure de leur pleine satisfaction.")
+    experience1 = Experience.create(user: user, start_time: "01-07-2015", end_time: "30-06-2017", title: "#{job_title} junior", description: "J'ai évolué en tant que #{job_title} junior. Cette expérience m'a apportée les connaissances nécessaires pour me lancer à mon compte.")
+    experience2 = Experience.create(user: user, start_time: experience1[:end_time], end_time: "still active", title: "#{job_title} salarié", description: "Je me suis lancé comme #{job_title} il y a 6ans. Je gère une vaste clientèle en utilisant des techniques actuelles et m'assure de leur entière satisfaction.")
 
     #salaire
     salary = rand(100..500)
@@ -171,14 +166,14 @@ url = URI("https://randomuser.me/api/?nat=fr")
 
     address = address_hash = data["results"][0]["location"]["city"]
 
-    description_array = ["Je suis #{job_title.downcase} et je recherche un remplaçant pour gérer mon activité pendant que je prends une pause prolongée. Le candidat idéal doit être expérimenté, compétent et capable de travailler de manière autonome. Si vous êtes intéressé, veuillez me contacter avec votre CV.",
-      "Je suis à la recherche d'un travailleur indépendant pour me remplacer pendant que je travaille sur un projet spécifique. Le candidat retenu sera responsable de gérer ma clientèle et de fournir des services de qualité. Si vous êtes intéressé, veuillez m'envoyer votre CV.",
-      "Je suis un travailleur indépendant et je recherche un remplaçant pour m'aider à gérer un surcroît d'activité. Le candidat idéal doit être capable de travailler de manière indépendante, de fournir des services de qualité et de maintenir une communication claire avec mes clients. Si vous êtes intéressé, veuillez m'envoyer votre CV.",
+    description_array = ["Je suis #{job_title.downcase} et je recherche un remplaçant pour gérer mon activité pendant que je prends une pause prolongée. Le candidat idéal doit être expérimenté, compétent et capable de travailler de manière autonome. Si vous êtes intéressés, veuillez me contacter avec votre CV.",
+      "Je suis à la recherche d'un travailleur indépendant pour me remplacer pendant que je travaille sur un projet spécifique. Le candidat retenu sera responsable de gérer ma clientèle et de fournir des services de qualité. Si vous êtes intéressés, veuillez m'envoyer votre CV.",
+      "Je suis un travailleur indépendant et je recherche un remplaçant pour m'aider à gérer un surcroît d'activité. Le candidat idéal doit être capable de travailler de manière indépendante, de fournir des services de qualité et de maintenir une communication claire avec mes clients. Si vous êtes intéressés, veuillez m'envoyer votre CV.",
       "Je suis à la recherche d'un travailleur indépendant pour me remplacer pendant que je prends un congé de maladie. Le candidat retenu sera responsable de gérer mes clients et de fournir des services de qualité. Si vous êtes intéressé, veuillez me contacter avec votre CV.",
       "Cherche remplant pour pouvoir suivre une formation",
       "je recherche un remplaçant pour me remplacer pendant que je prends un congé sabbatique. Le candidat idéal doit être autonome, compétent et capable de travailler de manière indépendante.",
-      "Je suis à la recherche d'un travailleur indépendant pour me remplacer pendant que je suis en congé annuel. Le candidat retenu sera responsable de gérer mes clients et de fournir des services de qualité. Si vous êtes intéressé, veuillez me contacter avec votre CV.",
-      "Je suis #{job_title.downcase} et je recherche un remplaçant pour gérer mon activité pendant que je suis absent pour des raisons personnelles. Le candidat idéal doit être expérimenté, compétent et capable de travailler de manière indépendante. Si vous êtes intéressé, veuillez m'envoyer votre CV.",
+      "Je suis à la recherche d'un travailleur indépendant pour me remplacer pendant que je suis en congé annuel. Le candidat retenu sera responsable de gérer mes clients et de fournir des services de qualité. Si vous êtes intéressés, veuillez me contacter avec votre CV.",
+      "Je suis #{job_title.downcase} et je recherche un remplaçant pour gérer mon activité pendant que je suis absent pour des raisons personnelles. Le candidat idéal doit être expérimenté, compétent et capable de travailler de manière indépendante. Si vous êtes intéressés, veuillez m'envoyer votre CV.",
       "Je suis à la recherche d'un travailleur indépendant pour me remplacer pendant que je travaille sur un projet à long terme."
 ]
 
