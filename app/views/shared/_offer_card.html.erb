@@ -19,7 +19,7 @@
       </div>
       <div class="rc-infos-sc">
         <p><%= offer.address %></p>
-        <p><%= offer.start_time %></p>
+        <p><%= offer.start_time.strftime("%d/%m/%Y") %></p>
         <p><%= offer.salary.round %></p>
       </div>
     </div>

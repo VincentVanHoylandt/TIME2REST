@@ -10,8 +10,8 @@
     </div>
     <p>Rémunération : <%= offer.salary %></p>
     <div class="date-container">
-      <p>Du <%= offer.start_time %></p>
-      <p> au <%= offer.end_time %></p>
+      <p>Du <%= offer.start_time.strftime("%d/%m/%Y") %></p>
+      <p> au <%= offer.end_time.strftime("%d/%m/%Y") %></p>
     </div>
     <p style="margin-bottom: 10px">Ville : lille</p>
     <%= link_to 'Annuler', offer_appliance_path(offer.id, appliance.id), data:{turbo_method: :delete}, class: "my-btn-small" %>

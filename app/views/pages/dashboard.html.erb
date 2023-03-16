@@ -141,12 +141,18 @@
         <div class="diplomas-container">
           <div class="dc-lc"> </div>
           <div class="dc-rc">
+            <h2>Expérience(s)</h2>
+            <div class = "diplomas-infos">
+              <div class="name-location-date">
+                <% current_user.diplomas.each do |diploma| %>
+                <h3><%= diploma.title  %></h3>
+                <h3>Du <%= diploma.start_time.strftime("%d/%m/%Y")  %> au <%= diploma.end_time.strftime("%d/%m/%Y")  %> </h3>              
             <h2>Diplôme(s)</h2>
             <% current_user.diplomas.each do |diploma| %>
               <div class = "diplomas-infos">
                 <div class="name-location-date">
                   <h3><%= diploma.title  %></h3>
-                  <h3>Du <%= diploma.start_time  %> au <%= diploma.end_time  %> </h3>
+                  <h3>Du <%= diploma.start_time.strftime("%d/%m/%Y")  %> au <%= diploma.end_time.strftime("%d/%m/%Y")  %> </h3>
                 </div>
                 <p style="margin-top: 3%">  <%=diploma.description  %></p>
               </div>
