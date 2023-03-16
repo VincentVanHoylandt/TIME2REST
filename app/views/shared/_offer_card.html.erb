@@ -8,7 +8,9 @@
   </div>
 
   <div class="offer-card-rc">
-    <%= render partial: 'shared/avatar_small', locals: {img: offer.user.picture_url}%>
+    <div style="margin-top: 12px;">
+      <%= render partial: 'shared/avatar_small', locals: {img: offer.user.picture_url}%>
+    </div>
     <div class = "rc-infos">
       <div class="rc-infos-fc">
         <i class="fa-solid fa-map-pin"></i>
@@ -31,3 +33,5 @@
   </div>
 
 </div>
+
+<%# , style="margin-top: 20px;" %>
