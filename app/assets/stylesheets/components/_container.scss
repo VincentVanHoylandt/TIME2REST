@@ -2,9 +2,10 @@
   display: flex;
   margin-top: 100px;
   width: 100%;
+  justify-content: centers;
 }
 
-.container-advices-new-page{
+.conseilpy{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,6 +13,15 @@
   margin-left: 2%;
   .advices-new-page {
     text-align: center;
+  }
+}
+
+
+.advices-new-page {
+  text-align: center;
+  h3 {
+    font-size: 32px;
+    font-weight: 500;
   }
 }
 
