@@ -9,7 +9,7 @@
     <% if user_signed_in? %>
 
       <%= link_to 'Nouvelle offre', new_offer_path, class: "my-btn" %>
-      <%= link_to dashboard_path, class:"my-dashboard-btn" do  %>
+      <%= link_to dashboard_path(where: 'edit'), class:"my-dashboard-btn" do  %>
         <i class="fa-solid fa-table-columns"></i>
       <%end%>
 
