@@ -16,6 +16,9 @@ export default class extends Controller {
     )
     console.log(`Subscribe to the chatroom with the id ${this.chatroomIdValue}.`)
   }
+  resetForm(event) {
+    event.target.reset()
+  }
 
   #insertMessageAndScrollDown(data) {
     // Logic to know if the sender is the current_user
