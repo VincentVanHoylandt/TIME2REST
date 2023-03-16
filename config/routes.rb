@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   resources :diplomas, only: :create
   resources :messages, only: :create
-  resources :offers do
+  resources :offers, except: :index do
     resources :appliances, only: %i[index create destroy update]
   end
   resources :participants, only: %i[create destroy] do
