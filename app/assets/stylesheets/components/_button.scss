@@ -106,7 +106,19 @@
 .my-dashboard-btn{
 
   i{
-    color: white;
+    color: rgb(192, 189, 189);
     font-size: 32px;
+    transition: 1s ease-in;
+    transform: rotate(-90deg);
+
+
+    &:hover {
+      color: white;
+      // animation: 0.5s ease-in;
+      transition: 1s ease-in;
+      transform: rotate(90deg);
+    }
   }
+
+
 }
