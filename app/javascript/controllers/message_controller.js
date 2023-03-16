@@ -5,6 +5,7 @@ export default class extends Controller {
   static targets = ['message','card']
   connect() {
   }
+
   switch_chatroom () {
 
     this.cardTargets.forEach(card => {

@@ -10,7 +10,6 @@
     <h2><%= @user.first_name %> <%= @user.last_name %></h2>
     <h3><%= @user.job_title %></h3>
     <h3><%= @user.age %> ans</h3>
-    <p>"Céline est sérieuse et très professionnelle ..."</p>
     <%# générer un troncate de @review.containt %>
     <p>rating : 5 Etoiles</p>
     <%# générer un troncate de @review.rating %>
@@ -29,118 +28,23 @@
   </div>
 
 
-  <div class ="rc">
-    <div class="diplomas-container"  style = "box-shadow: 0 0 10px rgba(0,0,0,0.2);">
-      <div class="dc-lc">
-      </div>
-      <div class = "dc-rc">
-        <h2>Expériences</h2>
-          <div class="info-user">
+  <div class="rc">
 
+        <div class="diplomas-container">
+          <div class="dc-lc"> </div>
+          <div class="dc-rc">
+            <h2>Diplôme(s)</h2>
             <div class = "diplomas-infos">
-              <h3>Ixpé de ouf</h3>
-            </div>
-            <div class = "diplomas-infos">
-              <h3>Kwalalumpur</h3>
-            </div>
-            <div class = "diplomas-infos">
-              <h3>2020-05-23 à 2021-05-23</h3>
-              <%# @experience.start_time à <%= @experience.end_time %>
-            </div>
-
-          </div>
-          <div class="name-location-date">
-            <%# <p> <%= @experience.description %>
-            <p>Saintes fesses de ciarge de cibole de géritole de câlisse de cibouleau de verrat de câliboire de crucifix de gériboire de calvince d'astie de crime de caltor de Jésus Marie Joseph de sapristi de saint-ciarge de colon de sacristi de p'tit Jésus de christie d'ostie de plâtre de saint-cimonaque de calvaire de ciboire.</p>
-          </div>
-
-          <div class="info-user">
-
-            <div class = "diplomas-infos">
-              <h3>Kakapikimau</h3>
-            </div>
-            <div class = "diplomas-infos">
-              <h3>Taumatawhakatangihangako</h3>
-            </div>
-            <div class = "diplomas-infos">
-              <h3>2021-05-23 à 2022-05-23</h3>
-              <%# @experience.start_time à <%= @experience.end_time %>
-            </div>
-
-          </div>
-          <div class="name-location-date">
-            <%# <p> <%= @experience.description %>
-            <p>Saintes fesses de ciarge de cibole de géritole de câlisse de cibouleau de verrat de câliboire de crucifix de gériboire de calvince d'astie de crime de caltor de Jésus Marie Joseph de sapristi de saint-ciarge de colon de sacristi de p'tit Jésus de christie d'ostie de plâtre de saint-cimonaque de calvaire de ciboire.</p>
-          </div>
-      </div>
-    </div>
-
-
-    <div class="diplomas-container" style = "box-shadow: 0 0 10px rgba(0,0,0,0.2);">
-      <div class="dc-lc">
-      </div>
-      <div class = "dc-rc">
-        <h2>Diplômes</h2>
-          <div class="name-location-date">
-            <div style="margin-top: 8px;">
-             <h3>Licence de québéquois</h3>
-              <p style="margin-top: 8px;">Saintes fesses de ciarge de cibole de géritole de câlisse de cibouleau de verrat de câliboire de crucifix de gériboire de calvince d'astie de crime de caltor de Jésus Marie Joseph de sapristi de saint-ciarge de colon de sacristi de p'tit Jésus de christie d'ostie de plâtre de saint-cimonaque de calvaire de ciboire.</p>
-            </div>
-          </div>
-            <%# <p> <%= @experience.description %>
-          <div class="name-location-date">
-            <div style="margin-top: 8px;">
-             <h3>Master de langues autoctones</h3>
-              <p style="margin-top: 8px;">Saintes fesses de ciarge de cibole de géritole de câlisse de cibouleau de verrat de câliboire de crucifix de gériboire de calvince d'astie de crime de caltor de Jésus Marie Joseph de sapristi de saint-ciarge de colon de sacristi de p'tit Jésus de christie d'ostie de plâtre de saint-cimonaque de calvaire de ciboire.</p>
-            </div>
-          </div>
-      </div>
-    </div>
-
-
-
-
-      <div class="diplomas-container" style = "box-shadow: 0 0 10px rgba(0,0,0,0.2);">
-        <div class="dc-lc">
-        </div>
-        <div class="dc-rc">
-          <h2>Avis</h2>
-          <div class="info-user" style="align-items: center;">
-              <div class ="diplomas-infos">
-                <div style="border:1px solid green; border-radius: 50%;">
-                  <%= render partial: 'shared/avatar_small', locals: {img: 'item3.png'} %>
-                </div>
-              </div>
-              <div class ="diplomas-infos">
-                <p>"Céline est sérieuse et très professionnelle ..."</p>
-              </div>
-              <div class ="diplomas-infos">
-                <h3>Rating : 5 étoiles</h3>
-              </div>
-          </div>
-            <%# div alignées %>
-            <div class ="diplomas-infos">
-              <p>Ostifie de torrieux de cibolac de cimonaque de cochonnerie d'étole de torvisse de charrue de bâtard de mosus de tabarnane d'enfant d'chienne de saintes fesses de ciarge de cibole de géritole de câlisse de cibouleau de verrat de câliboire de crucifix de gériboire de calvince d'astie de crime de caltor de Jésus Marie Joseph de sapristi de saint-ciarge de colon de sacristi de p'tit Jésus de christie d'ostie de viarge de Jésus de plâtre de saint-cimonaque de calvaire de ciboire.</p>
-            </div>
-            <div class="info-user" style="align-items: center;">
-              <div class ="diplomas-infos">
-                <div style="border:1px solid green; border-radius: 50%;">
-                  <%= render partial: 'shared/avatar_small', locals: {img: 'item3.png'} %>
-                </div>
-              </div>
-              <div class ="diplomas-infos">
-                <p>"Céline s'est un peu foutue de la gueule de ma belle mère ..."</p>
-              </div>
-              <div class ="diplomas-infos">
-                <h3>Rating : 4 étoiles</h3>
-              </div>
-          </div>
-            <%# div alignées %>
-            <div class ="diplomas-infos">
-              <p>Ostifie de torrieux de cibolac de cimonaque de cochonnerie d'étole de torvisse de charrue de bâtard de mosus de tabarnane d'enfant d'chienne de saintes fesses de ciarge de cibole de géritole de câlisse de cibouleau de verrat de câliboire de crucifix de gériboire de calvince d'astie de crime de caltor de Jésus Marie Joseph de sapristi de saint-ciarge de colon de sacristi de p'tit Jésus de christie d'ostie de viarge de Jésus de plâtre de saint-cimonaque de calvaire de ciboire.</p>
+              <% @user.experiences.each do |experience| %>
+              <h3> <%=experience.title  %></h3>
+              <p><%=experience.description  %></p>
+                  <% end %>
             </div>
           </div>
         </div>
+
+
+
       </div>
   </div>
 </div>
