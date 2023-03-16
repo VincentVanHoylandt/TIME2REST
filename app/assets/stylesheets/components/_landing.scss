@@ -185,3 +185,16 @@ body {
 #no-background {
   background-image: none;
 }
+
+.filters-picto {
+  padding: 0 32px;
+  font-size: 40px;
+  color: green;
+  &:hover {
+    color: red;
+  }
+}
+
+.landing-filters {
+  display: flex;
+}

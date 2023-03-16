@@ -19,7 +19,40 @@
     </div>
   </div>
 
-  <div class='landing_container'>
+
+
+  <%# ====================== FILTRES PY ===========================%>
+  <%# ---- filtres par category ---- %>
+  <%# ==== Attention, rajouter une ancre ======%>
+  <div class="container">
+    <div class="landing-filters text-center mt-5" id='scroll-filter'>
+      <%= link_to root_path(anchor: "scroll-filter", params: {job_title: "infirmier"}) do %>
+        <div>
+          <i class="fa-solid fa-notes-medical filters-picto"></i>
+          <p>infirmier</p>
+        </div>
+      <% end %>
+
+      <%= link_to root_path(params: {job_title: "informatique"}) do %>
+        <div>
+          <i class="fa-solid fa-computer filters-picto"></i>
+          <p>informatique</p>
+        </div>
+      <% end %>
+
+      <%= link_to root_path(params: {job_title: "développeur"}) do %>
+        <div>
+          <i class="fa-solid fa-house filters-picto"></i>
+          <p>etc...</p>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+  <%# ================= FIN FILTRES PY ===========================%>
+
+
+  <div class='landing_container' >
     <div data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"

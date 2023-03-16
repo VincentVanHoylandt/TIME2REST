@@ -4,8 +4,10 @@
   max-width: 1200px;
   min-width: 700px;
   display: flex;
-  margin-bottom: 2vh;
+  margin-bottom: 4vh;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  position: relative;
+  z-index: -1;
 
   .offer-card-lc {
    width: 3%;
@@ -14,6 +16,7 @@
    .offer-card-mc {
    width: 75%;
    height: 100%;
+   z-index: 5;
    }
    .offer-card-rc {
     text-align: center;
