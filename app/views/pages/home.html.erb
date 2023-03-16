@@ -31,11 +31,9 @@
     <i class="fa-solid fa-bars"></i>
 <%end%>
 
-<%# partial pour faire mettre un avatar taille petit%>
-<%= render partial: 'shared/avatar_small', locals: {img: 'item3.png'} %>
 
 <%# partial pour faire mettre un avatar taille large%>
-<%= render partial: 'shared/avatar_large', locals: {img: 'item3.png'} %>
+<%= render partial: 'shared/avatar_large', locals: {img: current_user.picture_url} %>
 
 
 <%# partial pour les tuiles pour la messagerie %>

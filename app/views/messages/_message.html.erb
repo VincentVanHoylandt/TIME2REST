@@ -1,6 +1,17 @@
+
+    <% if message.user_id == current_user.id %>
     <div class="my-msg-lc" data-chatroom-subscription-target = "send">
     </div>
     <div class="my-msg-rc" >
-      <p><strong>You :</strong></p>
+      <p><strong>Vous :</strong></p>
       <p> <%= message.content %></p>
     </div>
+    <% else %>
+
+    <div class="my-msg-rc" >
+      <p><strong> <%= message.user.first_name %> :</strong></p>
+      <p> <%= message.content %></p>
+    </div>
+    <div class="my-msg-lc" data-chatroom-subscription-target = "send">
+    </div>
+    <% end %>
