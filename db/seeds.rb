@@ -1,6 +1,6 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-
+require "i18n"
 require 'faker'
 require 'date'
 
@@ -123,7 +123,10 @@ url = URI("https://randomuser.me/api/?nat=fr")
     # age
     age = data["results"][0]["dob"]["age"]
     #  email
-    email = "#{first_name.downcase}@lewagon.fr"
+    email = "#{first_name.downcase}.#{last_name.downcase}@lewagon.fr"
+
+   email = I18n.transliterate(email).gsub(/\s+/, "")
+    p email
     #  password
     password = "lewagon"
     #  job_title
@@ -140,14 +143,14 @@ url = URI("https://randomuser.me/api/?nat=fr")
 
     #creation de l'user
 
-    user = User.create({first_name: first_name, last_name: last_name, age: age, email: email,
+    user = User.create!({first_name: first_name, last_name: last_name, age: age, email: email,
       password: password, job_title: job_title, picture_url: picture_url })
 
     #creation d'un diplôme
     diploma = Diploma.create(user: user, start_time: "01-09-2022", end_time: "29-02-2023", title: "Licence", description: "Formation approfondie sur les techniques et méthodes actuelles.")
     #creation de deux experiences
-    experience1 = Experience.create(user: user, start_time: "01-07-2015", end_time: "30-06-2017", title: "#{job_title} junior", description: "J'ai évolué en tant que #{job_title} junior. Cette expérience m'a apportée les connaissances nécessaires pour me lancer à mon compte.")
-    experience2 = Experience.create(user: user, start_time: experience1[:end_time], end_time: "still active", title: "#{job_title} salarié", description: "Je me suis lancé comme #{job_title} il y a 6ans. Je gère une vaste clientèle en utilisant des techniques actuelles et m'assure de leur entière satisfaction.")
+    experience1 = Experience.create!(user: user, start_time: "01-07-2015", end_time: "30-06-2017", title: "#{job_title} junior", description: "J'ai évolué en tant que #{job_title} junior. Cette expérience m'a apportée les connaissances nécessaires pour me lancer à mon compte.")
+    experience2 = Experience.create!(user: user, start_time: experience1[:end_time], end_time: "still active", title: "#{job_title} salarié", description: "Je me suis lancé comme #{job_title} il y a 6ans. Je gère une vaste clientèle en utilisant des techniques actuelles et m'assure de leur entière satisfaction.")
 
     #salaire
     salary = rand(100..500)
