@@ -30,3 +30,6 @@ application.register("offer-modal", OfferModalController)
 
 import QuoteController from "./quote_controller"
 application.register("quote", QuoteController)
+
+// import MapController from "./map_controller"
+// application.register("map", MapController)

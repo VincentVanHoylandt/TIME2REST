@@ -12,6 +12,7 @@
 @import "navbar";
 @import "quote";
 @import "newoffer";
+@import "map_style";
 
 
 
@@ -29,6 +30,7 @@
   text-align: inherit;
   text-decoration: none;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 a {
