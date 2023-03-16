@@ -12,14 +12,15 @@
     padding: 10px;
     width: 15%;
     text-align: center;
+    margin-top: 5%;
   }
   .show-mc-rc{
     padding: 30px 5px;
     width: 77%;
     margin-bottom: 20px;
+    margin-top: 5%;
 
     .link-name-profil{
-
 
         font-size: 24px;
         color: black;
@@ -35,25 +36,49 @@
     .rc-infos-ul {
       list-style-type: none;
 
-      h3{
-        margin: 5 0px;
-        padding: 0;
-        font-size: 24px;
-        font-weight: 300;
-        font-family: 'Roboto', sans-serif;
+      .container-titre-localisation-photo{
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .user-photo-offer {
+        margin-right: 15%;
+      }
+
+      i{
+        font-size: 34px;
+        color: #60A3AB;
       }
 
       h2{
         margin: 0;
         padding: 0;
-        font-size: 32px;
+        font-size: 48px;
         font-weight: 400;
         font-family: 'Roboto', sans-serif;
       }
+
+      h3{
+        margin: 5 0px;
+        padding: 10px 15px 10px 0;
+        font-size: 32px;
+        font-weight: 300;
+        font-family: 'Roboto', sans-serif;
+      }
+
+      h4{
+        margin: 5 0px;
+        padding: 32px;
+        font-size: 32px;
+        font-weight: 300;
+        font-family: 'Roboto', sans-serif;
+      }
+
+
       p{
         margin: 0;
         padding: 0;
-        font-size: 16px;
+        font-size: 24px;
         font-weight: 100;
         font-family: 'Roboto', sans-serif;
       }
