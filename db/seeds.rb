@@ -149,7 +149,9 @@ url = URI("https://randomuser.me/api/?nat=fr")
       puts ('avant diploma')
 
     #creation d'un diplôme
+
     diploma = Diploma.create!(user: user, start_time: "01-09-2022", end_time: "02-02-2023", title: "Licence", description: "Formation approfondie sur les techniques et méthodes actuelles.")
+
     #creation de deux experiences
     puts ('avant experience')
     experience1 = Experience.create!(user: user, start_time: "01-07-2015", end_time: "30-06-2017", title: "#{job_title} junior", description: "J'ai évolué en tant que #{job_title} junior. Cette expérience m'a apportée les connaissances nécessaires pour me lancer à mon compte.")

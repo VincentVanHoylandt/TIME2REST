@@ -16,7 +16,7 @@
             <h3> Demandeur : <%= @offer.user.first_name %> <%= @offer.user.last_name %></h3>
             <h3> Localisation : "Added later with Mapbox install"</h3>
             <%# TODO: implémenter une méthode def eu_date pour rendre la date au format européen : Date.strptime("%d/%m/%Y") %>
-            <h3> Durée : <%= @offer.start_time %> to <%= @offer.end_time %></h3>
+            <h3> Durée : <%= @offer.start_time.strftime("%d/%m/%Y") %> to <%= @offer.end_time.strftime("%d/%m/%Y") %></h3>
             <h3> Rémunération : <%= @offer.salary.round %> Euros/day</h3>
           </div>
           </p><%= @offer.description %></p>

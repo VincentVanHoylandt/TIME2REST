@@ -8,7 +8,9 @@
   </div>
 
   <div class="offer-card-rc">
-    <%= render partial: 'shared/avatar_small', locals: {img: offer.user.picture_url}%>
+    <div style="margin-top: 12px;">
+      <%= render partial: 'shared/avatar_small', locals: {img: offer.user.picture_url}%>
+    </div>
     <div class = "rc-infos">
       <div class="rc-infos-fc">
         <i class="fa-solid fa-map-pin"></i>
@@ -17,7 +19,7 @@
       </div>
       <div class="rc-infos-sc">
         <p><%= offer.address %></p>
-        <p><%= offer.start_time %></p>
+        <p><%= offer.start_time.strftime("%d/%m/%Y") %></p>
         <p><%= offer.salary.round %></p>
       </div>
     </div>
@@ -31,3 +33,5 @@
   </div>
 
 </div>
+
+<%# , style="margin-top: 20px;" %>

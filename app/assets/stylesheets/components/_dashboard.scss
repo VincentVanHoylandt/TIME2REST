@@ -216,11 +216,8 @@
     margin: 1% 0%;
     width: 50%;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  }
-  .right{
-    align-self: end;
-  }
-  .my-msg-lc{
+
+    .my-msg-lc{
     width: 5%;
     background-color: #60A3AB;
   }
@@ -229,6 +226,32 @@
     width: 95%;
     background-color: rgba($color: #60A3AB, $alpha: 0.15);
   }
+  }
+  .right{
+    align-self: end;
+  }
+
+  .not-my-msg-container {
+    display: flex;
+    height: fit-content;
+    margin: 1% 0%;
+    width: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+
+    .my-msg-rc{
+    width: 95%;
+    background-color: rgba($color: #60A3AB, $alpha: 0.15);
+    }
+    .my-msg-lc{
+    padding: 5px 10px;
+    width: 5%;
+    background-color: rgba($color: #032633, $alpha: 1);
+    }
+  }
+
+
+
+
 }
 
 .diplomas-container{
