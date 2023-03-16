@@ -9,6 +9,9 @@ gem "geocoder"
 
 gem "flatpickr"
 
+#fork de la gem faker en francais
+gem 'faker'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.2"
 
