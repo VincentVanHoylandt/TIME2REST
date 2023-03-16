@@ -146,7 +146,7 @@
               <div class="name-location-date">
                 <% current_user.diplomas.each do |diploma| %>
                 <h3><%= diploma.title  %></h3>
-                <h3>Du <%= diploma.start_time  %> au <%= diploma.end_time  %> </h3>
+                <h3>Du <%= diploma.start_time.strftime("%d/%m/%Y")  %> au <%= diploma.end_time.strftime("%d/%m/%Y")  %> </h3>
               </div>
               <p>  <%=diploma.description  %></p>
             </div>
