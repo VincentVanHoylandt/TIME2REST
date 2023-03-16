@@ -2,6 +2,7 @@
 <div class="dashboard-main-container" data-controller="dashboard-link">
   <div class="dmc-lc">
     <div class="lc-nav-container">
+      <h3> Bonjour, <%=current_user.first_name %></h3>
       <ul class = "nav">
         <li>
           <p class= <%= params[:where] == "msg" ? "active" : "empty"%> data-action= "click->dashboard-link#switch_page" data-id ="message" data-dashboard-link-target="link">Ma messagerie</p>
