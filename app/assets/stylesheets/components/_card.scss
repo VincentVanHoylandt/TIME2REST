@@ -4,7 +4,7 @@
   max-width: 1200px;
   min-width: 700px;
   display: flex;
-  margin-bottom: 3vh;
+  margin-bottom: 5vh;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 
   .offer-card-lc {
@@ -12,13 +12,14 @@
    background-color: #60A3AB;
    }
    .offer-card-mc {
-   width: 75%;
+   width: 70%;
    height: 100%;
    }
    .offer-card-rc {
     text-align: center;
     padding-bottom: 10px;
-    width: 22%;
+    padding-top: 10px;
+    width: 27%;
     background-color: rgba($color: #60A3AB, $alpha: 0.15);
    }
    h2 {

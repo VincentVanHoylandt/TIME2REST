@@ -1,5 +1,5 @@
 <div class="appliance-card-container">
-  <%= render partial: 'shared/avatar_small', locals: {img: 'item3.png'} %>
+  <%= render partial: 'shared/avatar_small', locals: {img: user.picture_url} %>
   <div class= "name-container">
     <%= link_to user_path(user.id), class: 'name-profil-link' do  %>
       <h3><%= user.first_name + ' ' + user.last_name%></h3>
