@@ -13,7 +13,10 @@ export default class extends Controller {
     // this.barTarget.classList.add('fade-out');
     // this.barTarget.classList.add('fade-in');
 
-    console.log("connected")
+    if(window.location.search){
+      setTimeout(this.scroll, 0)
+    }
+
   };
 
   // let position = "landing";
@@ -69,7 +72,7 @@ export default class extends Controller {
   scroll() {
     console.log('ca marche')
     window.scrollBy({
-      top: (window.innerHeight-90),
+      top: (window.innerHeight-80),
       behavior: 'smooth'
     });
   }
