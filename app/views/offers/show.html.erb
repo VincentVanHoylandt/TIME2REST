@@ -13,18 +13,18 @@
         <div class="show-infos-container">
           <h2 class = "spec"><%= @offer.job_title %></h2>
           <div class="show-offer-infos-container">
-            <h3> Owner : <%= @offer.user.first_name %> <%= @offer.user.last_name %></h3>
+            <h3> Demandeur : <%= @offer.user.first_name %> <%= @offer.user.last_name %></h3>
             <h3> Localisation : "Added later with Mapbox install"</h3>
             <%# TODO: implémenter une méthode def eu_date pour rendre la date au format européen : Date.strptime("%d/%m/%Y") %>
-            <h3> Duration : <%= @offer.start_time %> to <%= @offer.end_time %></h3>
-            <h3> Salary : <%= @offer.salary.round %> Euros/day</h3>
+            <h3> Durée : <%= @offer.start_time %> to <%= @offer.end_time %></h3>
+            <h3> Rémunération : <%= @offer.salary.round %> Euros/day</h3>
           </div>
           </p><%= @offer.description %></p>
           <div>
             <% if policy(@offer).edit? && @offer.user == current_user %>
-              <%= link_to "Edit this offer", edit_offer_path(@offer), class: "my-btn my-btn:hover" %>
+              <%= link_to "Editer", edit_offer_path(@offer), class: "my-btn my-btn:hover" %>
             <% end %>
-            <%= button_to "Destroy this offer", @offer, method: :delete if policy(@offer).destroy? %>
+            <%= button_to "Supprimer", @offer, method: :delete if policy(@offer).destroy? %>
         </div>
       </div>
     </div>

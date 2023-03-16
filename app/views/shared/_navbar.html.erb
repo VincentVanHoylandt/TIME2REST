@@ -8,7 +8,7 @@
 
     <% if user_signed_in? %>
 
-      <%= link_to 'New Offer', new_offer_path, class: "my-btn" %>
+      <%= link_to 'Nouvelle offre', new_offer_path, class: "my-btn" %>
       <%= link_to dashboard_path, class:"my-dashboard-btn" do  %>
         <i class="fa-solid fa-table-columns"></i>
       <%end%>
@@ -16,7 +16,7 @@
 
 
     <% else %>
-      <%= link_to 'New Offer', new_user_session_path, class: "my-btn" %>
+      <%= link_to 'Nouvelle offre', new_user_session_path, class: "my-btn" %>
       <%= link_to new_user_session_path, class:"my-dashboard-btn" do  %>
         <i class="fa-solid fa-table-columns"></i>
       <%end%>

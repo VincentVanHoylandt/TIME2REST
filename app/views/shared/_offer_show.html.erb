@@ -19,14 +19,14 @@
           </li>
           <li>
             <div>
-              <h3>Owner:
+              <h3>Demandeur :
                 <%= link_to user_path(offer.user.id), class: 'link-name-profil' do %>
                   <%= offer.user.first_name + ' ' + offer.user.last_name %>
                 <%end%>
               </h3>
-              <h3>Localité: Lille</h3>
-              <h3>Date: <%= offer.start_time %></h3>
-              <h3>Salaire: <%=offer.salary%>€/jour</h3>
+              <h3>Localisation : Lille</h3>
+              <h3>Dates : <%= offer.start_time %></h3>
+              <h3>Rémunération : <%=offer.salary%> €/jour</h3>
             </div>
           </li>
           <li>

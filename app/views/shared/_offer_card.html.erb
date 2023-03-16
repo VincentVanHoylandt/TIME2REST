@@ -23,9 +23,9 @@
     </div>
 
     <% if user == offer.user %>
-      <%= link_to 'Edit', edit_offer_path(offer), class: "my-btn-small"%>
+      <%= link_to 'Editer', edit_offer_path(offer), class: "my-btn-small"%>
     <% else %>
-      <%= link_to 'Details', "#", class: "my-btn-small", data: {action: "click->offer-modal#show", id: offer.id}%>
+      <%= link_to 'Détails', "#", class: "my-btn-small", data: {action: "click->offer-modal#show", id: offer.id}%>
     <% end %>
 
   </div>
