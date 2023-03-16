@@ -19,14 +19,22 @@
           </li>
           <li>
             <div>
-              <h3>Demandeur :
-                <%= link_to user_path(offer.user.id), class: 'link-name-profil' do %>
-                  <%= offer.user.first_name + ' ' + offer.user.last_name %>
-                <%end%>
-              </h3>
-              <h3>Localisation : Lille</h3>
-              <h3>Dates : <%= offer.start_time %></h3>
-              <h3>Rémunération : <%=offer.salary.round%> €/jour</h3>
+              <div class= "container-titre-localisation-photo">
+                <div>
+                  <h3><i class="fa-solid fa-user-tie"></i></i> :
+                    <%= link_to user_path(offer.user.id), class: 'link-name-profil' do %>
+                      <%= offer.user.first_name + ' ' + offer.user.last_name %>
+                    <%end%>
+                  </h3>
+                  <h3><i class="fa-solid fa-map-pin"></i> : Lille</h3>
+                  <h3><i class="fa-solid fa-calendar-days"></i> : Du <%= offer.start_time %> au <%= offer.end_time %></h3>
+                  <h3><i class="fa-solid fa-euro-sign"></i> : <%=offer.salary.round%> €/jour</h3>
+                </div>
+                <div class= "user-photo-offer">
+                  <%= render partial: 'shared/avatar_large', locals: {img: offer.user.picture_url} %>
+                </div>
+               </div>
+
             </div>
           </li>
           <li>
