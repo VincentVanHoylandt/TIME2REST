@@ -141,34 +141,27 @@
         <div class="diplomas-container">
           <div class="dc-lc"> </div>
           <div class="dc-rc">
-            <h2>Expérience(s)</h2>
-            <div class = "diplomas-infos">
-              <div class="name-location-date">
-                <% current_user.diplomas.each do |diploma| %>
-                <h3><%= diploma.title  %></h3>
-                <h3>Du <%= diploma.start_time.strftime("%d/%m/%Y")  %> au <%= diploma.end_time.strftime("%d/%m/%Y")  %> </h3>              
-            <h2>Diplôme(s)</h2>
-            <% current_user.diplomas.each do |diploma| %>
-              <div class = "diplomas-infos">
-                <div class="name-location-date">
-                  <h3><%= diploma.title  %></h3>
-                  <h3>Du <%= diploma.start_time.strftime("%d/%m/%Y")  %> au <%= diploma.end_time.strftime("%d/%m/%Y")  %> </h3>
-                </div>
-                <p style="margin-top: 3%">  <%=diploma.description  %></p>
-              </div>
-            <% end %>
-          </div>
-        </div>
-
-        <div class="diplomas-container">
-          <div class="dc-lc"> </div>
-          <div class="dc-rc">
             <h2>Experience(s)</h2>
             <div class = "diplomas-infos">
               <% current_user.experiences.each do |experience| %>
               <div class="spacing" style="margin-bottom: 4%;">
                 <h3> <%=experience.title  %></h3>
                 <p><%=experience.description  %></p>
+              </div>
+                  <% end %>
+            </div>
+          </div>
+        </div>
+
+        <div class="diplomas-container">
+          <div class="dc-lc"> </div>
+          <div class="dc-rc">
+            <h2>Diplôme(s)</h2>
+            <div class = "diplomas-infos">
+              <% current_user.diplomas.each do |diploma| %>
+              <div class="spacing" style="margin-bottom: 4%;">
+                <h3> <%=diploma.title  %></h3>
+                <p><%=diploma.description  %></p>
               </div>
                   <% end %>
             </div>
