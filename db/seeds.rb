@@ -30,7 +30,7 @@ user2 = User.create({ first_name: "Christian", last_name: "Bondzie", age: 44, em
 diplomas2 = Diploma.create(user: user2, start_time: "01-09-2019", end_time: "30-06-2020", title: "Diplôme en Architecture d'Intérieur", description: "Formation en design d'intérieur, dessin technique et gestion de projet.")
 experiences2 = Experience.create(user: user2, start_time: "01-07-2021", end_time: "30-01-2023", title: "Architecte d'Intérieur chez ABC Design", description: "Conception de plans d'aménagement et de design intérieur pour des projets résidentiels et commerciaux.")
 
-user3 = User.create({ first_name: "Philippe", last_name: "Goulliard", age: 49, email: "philippe@lewagon.fr",
+user3 = User.create({ first_name: "Philippe", last_name: "Goulliart", age: 49, email: "philippe@lewagon.fr",
                       password: "lewagon", job_title: "Infirmier à domicile" })
 diplomas3 = Diploma.create(user: user3, start_time: "01-09-2016", end_time: "30-06-2019", title: "Diplôme d'État d'Infirmier", description: "Formation en soins infirmiers, pharmacologie et hygiène hospitalière.")
 experiences3 = Experience.create(user: user3, start_time: "01-07-2019", end_time: "30-06-2021", title: "Infirmier à domicile chez ABC Santé", description: "Soins infirmiers à domicile pour des patients atteints de maladies chroniques.")

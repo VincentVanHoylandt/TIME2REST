@@ -1,5 +1,5 @@
 
-<div class="offer-card-container">
+<div class="offer-card-container" id=<%=offer.id%>>
   <div class="offer-card-lc"></div>
 
   <div class="offer-card-mc">
@@ -8,7 +8,7 @@
   </div>
 
   <div class="offer-card-rc">
-    <%= render partial: 'shared/avatar_small', locals: {img: 'item3.png'}%>
+    <%= render partial: 'shared/avatar_small', locals: {img: offer.user.picture_url}%>
     <div class = "rc-infos">
       <div class="rc-infos-fc">
         <i class="fa-solid fa-map-pin"></i>
