@@ -1,4 +1,4 @@
-<div class="appliance-card-container">
+<div class="appliance-card-container <%= appliance.status == true ? "accepted" : "pending"%>">
   <%= render partial: 'shared/avatar_small', locals: {img: user.picture_url} %>
   <div class= "name-container">
     <%= link_to user_path(user.id), class: 'name-profil-link' do  %>
