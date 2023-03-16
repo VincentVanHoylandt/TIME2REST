@@ -1,5 +1,5 @@
 
-<div class="msg-card" data-action="click->message#switch_chatroom" id="<%= chatroom.id %>" data-chatroom-id="<%= chatroom.id %>" data-id = <%=chatroom.id%>>
+<div class="msg-card" data-message-target="card" data-action="click->message#switch_chatroom" id="<%= chatroom.id %>" data-chatroom-id="<%= chatroom.id %>" data-id = <%=chatroom.id%>>
 
     <div class="msg-card-lc">
       <%= render partial: 'shared/avatar_small', locals: {img: img} %>
@@ -11,12 +11,10 @@
         <h3><%= user.first_name + ' '+ user.last_name %></h3>
 
         <%# Il faudra ici utiliser le created time du message et le comparer au date time.now pour trouver un moyen de l'afficher %>
-        <p> 9:53</p>
       </div>
       <div class="msg-card-rc-bc">
         <%# Il faudra mettre une condition ici si l'auteur du dernier message est cirrent user alors you : message %>
         <%# Sinon prénom: message %>
-        <p> You: what's up </p>
       </div>
     </div>
 

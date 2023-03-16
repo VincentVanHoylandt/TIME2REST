@@ -4,7 +4,7 @@
     <div class="lc-nav-container">
       <ul class = "nav">
         <li>
-          <p class="active" data-action= "click->dashboard-link#switch_page" data-id ="message" data-dashboard-link-target="link">Messageries</p>
+          <p data-action= "click->dashboard-link#switch_page" data-id ="message" data-dashboard-link-target="link">Messageries</p>
         </li>
         <li>
           <p data-action= "click->dashboard-link#switch_page" data-id ="apply" data-dashboard-link-target="link">Mes canditatures</p>
@@ -13,7 +13,7 @@
           <p data-action= "click->dashboard-link#switch_page" data-id ="offer" data-dashboard-link-target="link">Mes offres</p>
         </li>
         <li>
-          <p data-action= "click->dashboard-link#switch_page" data-id ="edit" data-dashboard-link-target="link">Mon profil</p>
+          <p class="active" data-action= "click->dashboard-link#switch_page" data-id ="edit" data-dashboard-link-target="link">Mon profil</p>
         </li>
       </ul>
       <%= link_to destroy_user_session_path, class:"my-disc-btn", data: {turbo_method: :delete} do  %>
@@ -31,7 +31,7 @@
   <div class="dmc-rc">
 
     <%# --------------------------- %>
-    <div class="dmc-rc-message" data-dashboard-link-target="message" data-controller="message" data-id ="msg">
+    <div class="dmc-rc-message d-none" data-dashboard-link-target="message" data-controller="message" data-id ="msg">
       <div class="rc-message-lc">
 
         <% if @chatrooms != [] %>
@@ -59,25 +59,24 @@
                   <%= render partial: 'shared/avatar_small', locals: {img: 'item3.png'} %>
                   <div class="name-last-online">
                     <h3><%= user_2.first_name + ' ' + user_2.last_name%></h3>
-                    <p>Last time online: 20mn</p>
-
                   </div>
                 </div>
-                <i class="fa-solid fa-trash"></i>
+                <%= link_to participant_chatroom_path(chatroom.participants[0].id, chatroom.id), data: {turbo_method: :delete} do  %>
+                  <i class="fa-solid fa-trash" style = "color: black;"></i>
+                <%end %>
             </div>
 
             <div class="msg-rc-mc" data-chatroom-subscription-target="messages">
-            <% chatroom.messages.each do |message| %>
-              <%= render partial: 'messages/message', locals: { message: message} %>
-            <% end %>
-
+              <% chatroom.messages.each do |message| %>
+                <%= render partial: 'messages/message', locals: { message: message} %>
+              <% end %>
             </div>
 
             <div class="msg-rc-bc">
                 <%= form_with model: @message, class: "msg-form"  do |f| %>
                   <%= f.text_field :name, class: "msg-field" %>
                   <%= hidden_field_tag 'chatroom', chatroom.id  %>
-                  <%= f.submit class: "msg-btn" %>
+                  <%= f.submit class: "my-btn", value: "Send" %>
                 <% end %>
 
             </div>
@@ -93,7 +92,7 @@
     <div class="dmc-rc-apply d-none d-flex" data-dashboard-link-target="apply" data-id ="cnd">
 
         <% @user.appliances.each do |appliance| %>
-          <%= render partial: 'shared/my_apply_card', locals: {offer: appliance.offer, user: appliance.offer.user} %>
+          <%= render partial: 'shared/my_apply_card', locals: {offer: appliance.offer, user: appliance.offer.user, appliance: appliance} %>
         <% end %>
 
     </div>
@@ -106,7 +105,7 @@
           <div class="offers-appliance">
             <ul style = "display: flex;">
             <% offer.appliances.each do |appliance| %>
-              <li style = "display: inline-block"> <%= render partial: 'shared/apply_card', locals: {user: appliance.user, appliance: appliance} %></li>
+              <li style = "display: inline-block"> <%= render partial: 'shared/apply_card', locals: {user: appliance.user, appliance: appliance, offer: offer} %></li>
               <% end %>
             </ul>
           </div>
@@ -116,7 +115,7 @@
       <% end %>
 
     </div>
-    <div class="dmc-rc-edit d-none" data-dashboard-link-target="edit" data-id ="edt">
+    <div class="dmc-rc-edit " data-dashboard-link-target="edit" data-id ="edt">
       <div class="lc">
         <%= render partial: 'shared/avatar_large', locals: {img: 'item3.png'} %>
         <div class="name-container">
