@@ -7,7 +7,6 @@ export default class extends Controller {
   static targets = ["messages","send"]
 
   connect() {
-    console.log(this.sendTarget.dataset.id)
     this.channel = createConsumer().subscriptions.create(
       { channel: "ChatroomChannel", id: this.chatroomIdValue },
       { received: data => {
