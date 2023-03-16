@@ -146,9 +146,12 @@ url = URI("https://randomuser.me/api/?nat=fr")
     user = User.create!({first_name: first_name, last_name: last_name, age: age, email: email,
       password: password, job_title: job_title, picture_url: picture_url })
 
+      puts ('avant diploma')
+
     #creation d'un diplôme
-    diploma = Diploma.create(user: user, start_time: "01-09-2022", end_time: "29-02-2023", title: "Licence", description: "Formation approfondie sur les techniques et méthodes actuelles.")
+    diploma = Diploma.create!(user: user, start_time: "01-09-2022", end_time: "02-02-2023", title: "Licence", description: "Formation approfondie sur les techniques et méthodes actuelles.")
     #creation de deux experiences
+    puts ('avant experience')
     experience1 = Experience.create!(user: user, start_time: "01-07-2015", end_time: "30-06-2017", title: "#{job_title} junior", description: "J'ai évolué en tant que #{job_title} junior. Cette expérience m'a apportée les connaissances nécessaires pour me lancer à mon compte.")
     experience2 = Experience.create!(user: user, start_time: experience1[:end_time], end_time: "still active", title: "#{job_title} salarié", description: "Je me suis lancé comme #{job_title} il y a 6ans. Je gère une vaste clientèle en utilisant des techniques actuelles et m'assure de leur entière satisfaction.")
 
@@ -163,6 +166,7 @@ url = URI("https://randomuser.me/api/?nat=fr")
     start_date = random_date_1.to_time.to_i
     end_date = (Date.today + 30).to_time.to_i
     random_date_2 = Time.at(rand(start_date..end_date)).to_date
+    puts ( "voila la date #{random_date_2}")
 
     # address_hash = data["results"][0]["location"]
     # address = "#{address_hash["street"]["number"]}, #{address_hash["street"]["name"]}, #{address_hash["city"]}, #{address_hash["postcode"]}, France"

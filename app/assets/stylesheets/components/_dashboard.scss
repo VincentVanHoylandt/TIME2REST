@@ -5,8 +5,11 @@
   display: flex;
 
   .dmc-lc{
+    margin-top: 20px;
+    margin-bottom: 20px;
     width: 20%;
-    background-color: rgba($color: #60A3AB, $alpha: 0.5)
+    // background-color: rgba($color: #60A3AB, $alpha: 0.5)
+    border-right: solid 1px rgba(0, 0, 0, 0.126) ;
   }
 
   .dmc-rc{
@@ -15,15 +18,18 @@
   }
 
   .lc-nav-container {
-    padding-top: 45%;
-    padding-bottom: 20%;
+    height: 100%;
+    margin-top: 15;
+    margin-bottom: 15;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 100%;
+
+    padding-left: 15px;
   }
+
 
 }
 
@@ -31,12 +37,19 @@
 
   display: block;
   text-align: start;
+  width: 100%;
+
 
   li {
+
+    font-weight: 250;
+    position: sticky;
     font-size: 18px;
     margin-bottom: 5%;
-    ::before{
-      content: "• ";
+    padding-bottom: 30px;
+    cursor: pointer;
+    &:hover {
+      color: #FFA50B;
     }
   }
 
@@ -49,17 +62,18 @@
   }
 
   .active {
-    background-color: rgba($color: #3F664E, $alpha: 1.0);
-    padding: 10px 15px;
+    // background-color: rgba($color: #8ec9e639, $alpha: 1.0);
+    // border: 2px solid rgba(31, 70, 102, 0.4);
+    // padding: 10px 15px;
     border-radius: 15px;
-    font-size: 24px;
-    color: rgba($color: #FFA50B, $alpha: 1.0);
-    ::before {
-      color: #FFA50B;
-    }
-    &:hover {
-      color: #FFA50B;
-    }
+    transform: scale(1.5);
+    font-weight: 350;
+    transform-origin: left;
+    transition: 0.5s;
+    opacity: 1;
+    color: rgb(22, 78, 90);
+    cursor: pointer;
+
   }
 }
 

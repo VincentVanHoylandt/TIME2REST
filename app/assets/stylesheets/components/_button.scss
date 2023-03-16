@@ -33,27 +33,32 @@
 
 .my-disc-btn  {
     ul {
-    padding: 0;
     margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 80px;
-    color: #FFA50B;
+    // border-radius: 80px;
     text-align: center;
-    width: 250px;
-    border: 1px solid transparent;
+    width: 100%;
+    padding: 10px;
+    transition: 0.5s;
+    color: rgba(0, 0, 0, 0.704);
+
+
 
     &:hover {
-      border: 1px solid #FFA50B;
+    transform: scale(1.2);
+    color: white;
+    background-color: #1d2f52;
+      // border: 1px solid #FFA50B;
     }
   }
   li {
-    font-size: 32px;
+    font-size: 16px;
     list-style-type: none;
   }
   i {
-    font-size: 32px;
+    font-size: 16px;
   }
 }
 
