@@ -4,7 +4,6 @@ import { Controller, fetch } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ['message','card']
   connect() {
-    console.log('hello')
   }
   switch_chatroom () {
 

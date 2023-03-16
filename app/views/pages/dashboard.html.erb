@@ -53,6 +53,7 @@
           <div class="rc-message-rc d-none" data-id= <%=chatroom.participants[0].id%>  data-controller="chatroom-subscription"
                 data-chatroom-subscription-chatroom-id-value="<%= chatroom.id %>"
                 data-message-target="message"
+                data-chatroom-subscription-current-user-id-value="<%= current_user.id %>"
           >
             <div class="msg-rc-tc">
                 <div class="avatar-name-container">
@@ -68,8 +69,10 @@
 
             <div class="msg-rc-mc" data-chatroom-subscription-target="messages">
               <% chatroom.messages.each do |message| %>
-                <%= render partial: 'messages/message', locals: { message: message} %>
-              <% end %>
+                  <div class="<%= message.user_id == current_user.id ? 'my-msg-container right': 'my-msg-container' %>">
+                    <%= render partial: 'messages/message', locals: { message: message} %>
+                  </div>
+                <% end %>
             </div>
 
             <div class="msg-rc-bc">

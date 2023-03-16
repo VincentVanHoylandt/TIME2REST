@@ -1,4 +1,6 @@
 class ChatroomsController < ApplicationController
+  skip_after_action :verify_authorized, only: :destroy
+
 
   def create
     @user = current_user
@@ -6,7 +8,6 @@ class ChatroomsController < ApplicationController
 
   def destroy
     @chatroom = Chatroom.find(params[:id])
-    authorize @chatroom
     if @chatroom.destroy
       redirect_to dashboard_path
     else
