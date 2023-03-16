@@ -38,14 +38,18 @@ class AppliancesController < ApplicationController
     @appliance.destroy
     authorize @appliance
 
-    redirect_to dashboard_path(where: 'apply')
+    redirect_to dashboard_path(where: 'offer')
   end
 
   def update
     @appliance = Appliance.find(params[:id])
     @appliance.status = true
     authorize @appliance
-    @appliance.save
+    if @appliance.save
+      redirect_to dashboard_path(where: 'offer')
+    else
+      redirect_to dashboard_path(where: 'offer'), status: :unprocessable_entity
+    end
   end
 
   private
