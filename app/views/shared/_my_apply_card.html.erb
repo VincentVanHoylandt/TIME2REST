@@ -8,12 +8,12 @@
       <p><%= user.first_name %></p>
       <p><%= user.last_name %></p>
     </div>
-    <p>Salary: <%= offer.salary %></p>
+    <p>Rémunération : <%= offer.salary %></p>
     <div class="date-container">
       <p>Du <%= offer.start_time %></p>
       <p> au <%= offer.end_time %></p>
     </div>
-    <p style="margin-bottom: 10px">Ville: lille</p>
+    <p style="margin-bottom: 10px">Ville : lille</p>
     <%= link_to 'Annuler', offer_appliance_path(offer.id, appliance.id), data:{turbo_method: :delete}, class: "my-btn-small" %>
   </div>
 </div>
