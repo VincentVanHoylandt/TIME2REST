@@ -5,15 +5,23 @@ class MessagesController < ApplicationController
     @message = Message.new(content: params[:message][:name])
     @message.user = current_user
     @message.chatroom = @chatroom
+    authorize @message
     if @message.save
+      # ChatroomChannel.broadcast_to(
+      #   @chatroom,
+      #   render_to_string(partial: "message", locals: {message: @message, sender_id: @message.user_id})
+      # )
+      # head :ok
+
       ChatroomChannel.broadcast_to(
         @chatroom,
-        render_to_string(partial: "message", locals: {message: @message})
+        message: render_to_string(partial: "message", locals: { message: @message }),
+        sender_id: @message.user.id, content: @message.content
       )
       head :ok
+
     end
     # SendMessageJob.perform_later(@message)
-    authorize @message
   end
 
   private
