@@ -7,7 +7,6 @@ export default class extends Controller {
   static targets = ["messages","send"]
 
   connect() {
-    console.log(this.sendTarget.dataset.id)
     this.channel = createConsumer().subscriptions.create(
       { channel: "ChatroomChannel", id: this.chatroomIdValue },
       { received: data => {
@@ -23,17 +22,19 @@ export default class extends Controller {
   #insertMessageAndScrollDown(data) {
     // Logic to know if the sender is the current_user
     const currentUserIsSender = this.currentUserIdValue === data.sender_id
+    console.log(data)
     // [...]
     // Creating the whole message from the `data.message` String
     console.log(data.content)
-    const messageElement = this.#buildMessageElement(currentUserIsSender, data.content)
+    const messageElement = this.#buildMessageElement(currentUserIsSender, data.content,data.sender_name)
     // Inserting the `message` in the DOM
     this.messagesTarget.insertAdjacentHTML("beforeend", messageElement)
     this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
   }
 
-  #buildMessageElement(currentUserIsSender, message) {
-    return `
+  #buildMessageElement(currentUserIsSender, message, first_name) {
+    if(currentUserIsSender) {
+      return `
       <div class="${this.#justifyClass(currentUserIsSender)}">
         <div class="my-msg-lc">
         </div>
@@ -45,11 +46,27 @@ export default class extends Controller {
         </div>
       </div>
     `
+    }
+    else {
+      return `
+      <div class="${this.#justifyClass(currentUserIsSender)}">
+      <div class="my-msg-rc" >
+      <p><strong>${first_name} :</strong></p>
+      <p> ${message} </p>
+      </div>
+
+      <div class="my-msg-lc">
+      </div>
+        </div>
+      </div>
+    `
+    }
+
 
   }
 
   #justifyClass(currentUserIsSender) {
-    return currentUserIsSender ? "my-msg-container right" : "my-msg-container"
+    return currentUserIsSender ? "my-msg-container right" : "not-my-msg-container"
   }
 
   #userStyleClass(currentUserIsSender) {
