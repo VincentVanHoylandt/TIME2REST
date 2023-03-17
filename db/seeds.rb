@@ -48,7 +48,7 @@ experiences4 = Experience.create(user: user4, start_time: "01-07-2019", end_time
 
 
   offer2 = Offer.create!({ user_id: user4.id, job_title: user4.job_title, description: "Je suis à la recherche d'un travailleur indépendant pour me remplacer pendant que je suis en congé annuel. Le candidat retenu sera responsable de gérer mes clients et de fournir des services de qualité. Si vous êtes intéressés, veuillez me contacter avec votre CV.",
-    salary: 150, start_time: (Date.now + 3), end_time: (Date.now + 13), address: "lille" })
+    salary: 150, start_time: (Date.today + 3), end_time: (Date.today + 13), address: "lille" })
 
 
 # user5 = User.create({ first_name: "Sophie", last_name: "Koch", age: 52, email: "sophie@lewagon.fr",
