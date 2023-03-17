@@ -4,6 +4,14 @@ require "i18n"
 require 'faker'
 require 'date'
 
+start_date = Date.today
+    end_date = (Date.today + 14).to_time.to_i
+    random_date_1 = Time.at(rand(start_date.to_time.to_i..end_date)).to_date
+
+    start_date = random_date_1.to_time.to_i
+    end_date = (Date.today + 30).to_time.to_i
+    random_date_2 = Time.at(rand(start_date..end_date)).to_date
+
 puts "Cleaning database..."
 Offer.destroy_all
 puts "offer deleted"
@@ -30,10 +38,18 @@ user3 = User.create({ picture_url: "https://avatars.githubusercontent.com/u/1227
 diplomas3 = Diploma.create(user: user3, start_time: "01-09-2016", end_time: "30-06-2019", title: "Diplôme d'État d'Infirmier", description: "Formation en soins infirmiers, pharmacologie et hygiène hospitalière.")
 experiences3 = Experience.create(user: user3, start_time: "01-07-2019", end_time: "30-06-2021", title: "Infirmier à domicile chez ABC Santé", description: "Soins infirmiers à domicile pour des patients atteints de maladies chroniques.")
 
+offer1 = Offer.create!({ user_id: user3.id, job_title: user3.job_title, description: "Je suis à la recherche d'un travailleur indépendant pour me remplacer pendant que je suis en congé annuel. Le candidat retenu sera responsable de gérer mes clients et de fournir des services de qualité. Si vous êtes intéressés, veuillez me contacter avec votre CV.",
+                         salary: 150, start_time: random_date_1, end_time: random_date_2, address: "lille" })
+
 user4 = User.create({ picture_url: "https://avatars.githubusercontent.com/u/62162162?v=4", first_name: "Jeremy", last_name: "Twardowski", age: 36, email: "jeremy@lewagon.fr",
-                      password: "lewagon", job_title: "Electricien" })
-diplomas4 = Diploma.create!(user: user4, start_time: "30-06-2013", end_time: "30-06-2016", title: "BEP Électrotechnique", description: "Formation en installation électrique, maintenance et dépannage des équipements électriques." )
-experiences4 = Experience.create(user: user4, start_time: "01-07-2016", end_time: "30-06-2020", title: "Électricien chez DEF Électricité", description: "Installation, maintenance et réparation des équipements électriques pour les clients résidentiels et commerciaux.")
+                      password: "lewagon", job_title: "Infirmier à domicile" })
+diplomas4 = Diploma.create(user: user4, start_time: "01-09-2016", end_time: "30-06-2019", title: "Diplôme d'État d'Infirmier", description: "Formation en soins infirmiers, pharmacologie et hygiène hospitalière.")
+experiences4 = Experience.create(user: user4, start_time: "01-07-2019", end_time: "30-06-2021", title: "Infirmier à domicile chez ABC Santé", description: "Soins infirmiers à domicile pour des patients atteints de maladies chroniques.")
+
+
+  offer2 = Offer.create!({ user_id: user4.id, job_title: user4.job_title, description: "Je suis à la recherche d'un travailleur indépendant pour me remplacer pendant que je suis en congé annuel. Le candidat retenu sera responsable de gérer mes clients et de fournir des services de qualité. Si vous êtes intéressés, veuillez me contacter avec votre CV.",
+    salary: 150, start_time: (Date.now + 3), end_time: (Date.now + 13), address: "lille" })
+
 
 # user5 = User.create({ first_name: "Sophie", last_name: "Koch", age: 52, email: "sophie@lewagon.fr",
 #                       password: "lewagon", job_title: "Psychologue clinicien" })
@@ -111,7 +127,7 @@ experiences4 = Experience.create(user: user4, start_time: "01-07-2016", end_time
 
 puts "seeding..."
 url = URI("https://randomuser.me/api/?nat=fr")
-  25.times do
+  100.times do
     response = Net::HTTP.get(url)
     data = JSON.parse(response)
 
