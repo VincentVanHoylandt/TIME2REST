@@ -49,7 +49,7 @@ user4 = User.create({ picture_url: "https://avatars.githubusercontent.com/u/6216
     salary: 150, start_time: (Date.today + 3), end_time: (Date.today + 13), address: "lille" })
 
     offer1 = Offer.create!({ user_id: user4.id, job_title: user4.job_title, description: "Je suis à la recherche d'un travailleur indépendant pour me remplacer pendant que je suis en congé annuel. Le candidat retenu sera responsable de gérer mes clients et de fournir des services de qualité. Si vous êtes intéressés, veuillez me contacter avec votre CV.",
-                             salary: 150, start_time: random_date_1, end_time: random_date_2, address: "lille" })
+                             salary: 150, start_time: random_date_1, end_time: random_date_2, address: "Valenciennes" })
 
 # user5 = User.create({ first_name: "Sophie", last_name: "Koch", age: 52, email: "sophie@lewagon.fr",
 #                       password: "lewagon", job_title: "Psychologue clinicien" })
