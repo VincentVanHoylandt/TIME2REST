@@ -20,17 +20,17 @@ diplomas1 = Diploma.create(user: user1, start_time: "01-09-2022", end_time: "29/
 experiences1 = Experience.create(user: user1, start_time: "01-07-2020", end_time: "30-06-2022", title: "Développeur Front-end chez ABC Company", description: "Création et maintenance de sites web réactifs et optimisés pour les mobiles.")
 
 
-user2 = User.create({ picture_url: "https://avatars.githubusercontent.com/u/73429254?v=4", address: "Vannes" , first_name: "Christian", last_name: "Bondzie", age: 44, email: "christian@lewagon.fr",
+user2 = User.create({ picture_url: "https://avatars.githubusercontent.com/u/73429254?v=4", first_name: "Christian", last_name: "Bondzie", age: 44, email: "christian@lewagon.fr",
                       password: "lewagon", job_title: "Architecte d'intérieur" })
 diplomas2 = Diploma.create(user: user2, start_time: "01-09-2019", end_time: "30-06-2020", title: "Diplôme en Architecture d'Intérieur", description: "Formation en design d'intérieur, dessin technique et gestion de projet.")
 experiences2 = Experience.create(user: user2, start_time: "01-07-2021", end_time: "30-01-2023", title: "Architecte d'Intérieur chez ABC Design", description: "Conception de plans d'aménagement et de design intérieur pour des projets résidentiels et commerciaux.")
 
-user3 = User.create({ picture_url: "https://avatars.githubusercontent.com/u/122784805?v=4", address: "Nantes" , first_name: "Philippe", last_name: "Goulliart", age: 49, email: "philippe@lewagon.fr",
+user3 = User.create({ picture_url: "https://avatars.githubusercontent.com/u/122784805?v=4", first_name: "Philippe", last_name: "Goulliart", age: 49, email: "philippe@lewagon.fr",
                       password: "lewagon", job_title: "Infirmier à domicile" })
 diplomas3 = Diploma.create(user: user3, start_time: "01-09-2016", end_time: "30-06-2019", title: "Diplôme d'État d'Infirmier", description: "Formation en soins infirmiers, pharmacologie et hygiène hospitalière.")
 experiences3 = Experience.create(user: user3, start_time: "01-07-2019", end_time: "30-06-2021", title: "Infirmier à domicile chez ABC Santé", description: "Soins infirmiers à domicile pour des patients atteints de maladies chroniques.")
 
-user4 = User.create({ picture_url: "https://avatars.githubusercontent.com/u/62162162?v=4", address: "Angers" , first_name: "Jeremy", last_name: "Twardowski", age: 36, email: "jeremy@lewagon.fr",
+user4 = User.create({ picture_url: "https://avatars.githubusercontent.com/u/62162162?v=4", first_name: "Jeremy", last_name: "Twardowski", age: 36, email: "jeremy@lewagon.fr",
                       password: "lewagon", job_title: "Electricien" })
 diplomas4 = Diploma.create!(user: user4, start_time: "30-06-2013", end_time: "30-06-2016", title: "BEP Électrotechnique", description: "Formation en installation électrique, maintenance et dépannage des équipements électriques." )
 experiences4 = Experience.create(user: user4, start_time: "01-07-2016", end_time: "30-06-2020", title: "Électricien chez DEF Électricité", description: "Installation, maintenance et réparation des équipements électriques pour les clients résidentiels et commerciaux.")
