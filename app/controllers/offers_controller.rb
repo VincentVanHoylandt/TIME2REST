@@ -33,13 +33,11 @@ class OffersController < ApplicationController
     end
 
     @markers = @offers.geocoded.map do |offer|
-      if offer.user != current_user
       {
         lat: offer.latitude,
         lng: offer.longitude,
         info_window_html: render_to_string(partial: "shared/info_pinpoint", locals: {offer: offer})
       }
-    end
   end
   end
 
