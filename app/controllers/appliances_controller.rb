@@ -5,6 +5,7 @@ class AppliancesController < ApplicationController
     @offer = Offer.find(params[:offer_id])
     @appliance.offer = @offer
     @appliance.user = current_user
+    @appliance.status = false
     authorize @appliance
     if @appliance.save
       redirect_to dashboard_path(where: 'apply')
