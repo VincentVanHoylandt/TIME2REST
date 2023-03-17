@@ -10,7 +10,7 @@
       <h2><%= @user.first_name %> <%= @user.last_name %></h2>
       <h3><%= @user.job_title %></h3>
       <h3><%= @user.age %> ans</h3>
-      <p>"Céline est sérieuse et très professionnelle ..."</p>
+      <p>"<%= @user.first_name %> est sérieux et très professionnel ..."</p>
       <%# générer un troncate de @review.containt %>
       <p>rating : 5 Etoiles</p>
     </div>
