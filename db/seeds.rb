@@ -15,7 +15,7 @@ puts "Done!"
 # puts "Creating users..."
 
 user1 = User.create({ picture_url: "https://avatars.githubusercontent.com/u/122786724?v=4", first_name: "Vincent", last_name: "Vanhoylandt", age: 27, email: "vincent@lewagon.fr",
-                      password: "lewagon", job_title: "Développeur Web", address: "Lille" })
+                      password: "lewagon", job_title: "Développeur Web" })
 diplomas1 = Diploma.create(user: user1, start_time: "01-09-2022", end_time: "29/02/2023", title: "Diplôme d'Ingénieur en Développement Web", description: "Formation approfondie sur les technologies web, l'architecture logicielle et la sécurité.")
 experiences1 = Experience.create(user: user1, start_time: "01-07-2020", end_time: "30-06-2022", title: "Développeur Front-end chez ABC Company", description: "Création et maintenance de sites web réactifs et optimisés pour les mobiles.")
 
