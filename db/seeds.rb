@@ -30,26 +30,26 @@ experiences1 = Experience.create(user: user1, start_time: "01-07-2020", end_time
 
 user2 = User.create({ picture_url: "https://avatars.githubusercontent.com/u/73429254?v=4", first_name: "Christian", last_name: "Bondzie", age: 44, email: "christian@lewagon.fr",
                       password: "lewagon", job_title: "Architecte d'intérieur" })
-diplomas2 = Diploma.create(user: user2, start_time: "01-09-2019", end_time: "30-06-2020", title: "Diplôme en Architecture d'Intérieur", description: "Formation en design d'intérieur, dessin technique et gestion de projet.")
-experiences2 = Experience.create(user: user2, start_time: "01-07-2021", end_time: "30-01-2023", title: "Architecte d'Intérieur chez ABC Design", description: "Conception de plans d'aménagement et de design intérieur pour des projets résidentiels et commerciaux.")
+diplomas2 = Diploma.create(user: user2, start_time: "01-09-2019", end_time: "30-06-2020", title: "Diplôme d'État d'Infirmier", description: "Formation en soins infirmiers, pharmacologie et hygiène hospitalière.")
+experiences2 = Experience.create(user: user2, start_time: "01-07-2021", end_time: "30-01-2023", title: "Infirmier à domicile chez ABC Santé", description: "Soins infirmiers à domicile pour des patients atteints de maladies chroniques.")
 
 user3 = User.create({ picture_url: "https://avatars.githubusercontent.com/u/122784805?v=4", first_name: "Philippe", last_name: "Goulliart", age: 49, email: "philippe@lewagon.fr",
                       password: "lewagon", job_title: "Infirmier à domicile" })
 diplomas3 = Diploma.create(user: user3, start_time: "01-09-2016", end_time: "30-06-2019", title: "Diplôme d'État d'Infirmier", description: "Formation en soins infirmiers, pharmacologie et hygiène hospitalière.")
 experiences3 = Experience.create(user: user3, start_time: "01-07-2019", end_time: "30-06-2021", title: "Infirmier à domicile chez ABC Santé", description: "Soins infirmiers à domicile pour des patients atteints de maladies chroniques.")
 
-offer1 = Offer.create!({ user_id: user3.id, job_title: user3.job_title, description: "Je suis à la recherche d'un travailleur indépendant pour me remplacer pendant que je suis en congé annuel. Le candidat retenu sera responsable de gérer mes clients et de fournir des services de qualité. Si vous êtes intéressés, veuillez me contacter avec votre CV.",
-                         salary: 150, start_time: random_date_1, end_time: random_date_2, address: "lille" })
 
 user4 = User.create({ picture_url: "https://avatars.githubusercontent.com/u/62162162?v=4", first_name: "Jeremy", last_name: "Twardowski", age: 36, email: "jeremy@lewagon.fr",
-                      password: "lewagon", job_title: "Infirmier à domicile" })
-diplomas4 = Diploma.create(user: user4, start_time: "01-09-2016", end_time: "30-06-2019", title: "Diplôme d'État d'Infirmier", description: "Formation en soins infirmiers, pharmacologie et hygiène hospitalière.")
-experiences4 = Experience.create(user: user4, start_time: "01-07-2019", end_time: "30-06-2021", title: "Infirmier à domicile chez ABC Santé", description: "Soins infirmiers à domicile pour des patients atteints de maladies chroniques.")
+  password: "lewagon", job_title: "Infirmier à domicile" })
+  diplomas4 = Diploma.create(user: user4, start_time: "01-09-2016", end_time: "30-06-2019", title: "Diplôme d'État d'Infirmier", description: "Formation en soins infirmiers, pharmacologie et hygiène hospitalière.")
+  experiences4 = Experience.create(user: user4, start_time: "01-07-2019", end_time: "30-06-2021", title: "Infirmier à domicile chez ABC Santé", description: "Soins infirmiers à domicile pour des patients atteints de maladies chroniques.")
 
 
-  offer2 = Offer.create!({ user_id: user4.id, job_title: user4.job_title, description: "Je suis à la recherche d'un travailleur indépendant pour me remplacer pendant que je suis en congé annuel. Le candidat retenu sera responsable de gérer mes clients et de fournir des services de qualité. Si vous êtes intéressés, veuillez me contacter avec votre CV.",
+  offer2 = Offer.create!({ user_id: user3.id, job_title: user3.job_title, description: "Je suis à la recherche d'un travailleur indépendant pour me remplacer pendant que je suis en congé annuel. Le candidat retenu sera responsable de gérer mes clients et de fournir des services de qualité. Si vous êtes intéressés, veuillez me contacter avec votre CV.",
     salary: 150, start_time: (Date.today + 3), end_time: (Date.today + 13), address: "lille" })
 
+    offer1 = Offer.create!({ user_id: user4.id, job_title: user4.job_title, description: "Je suis à la recherche d'un travailleur indépendant pour me remplacer pendant que je suis en congé annuel. Le candidat retenu sera responsable de gérer mes clients et de fournir des services de qualité. Si vous êtes intéressés, veuillez me contacter avec votre CV.",
+                             salary: 150, start_time: random_date_1, end_time: random_date_2, address: "lille" })
 
 # user5 = User.create({ first_name: "Sophie", last_name: "Koch", age: 52, email: "sophie@lewagon.fr",
 #                       password: "lewagon", job_title: "Psychologue clinicien" })
